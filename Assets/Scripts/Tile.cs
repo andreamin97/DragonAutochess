@@ -11,10 +11,11 @@ public class Tile : MonoBehaviour
     
     private MeshRenderer mr;
     private bool selected = false;
-
+    private PlayerController playerController;
     private void Start()
     {
         mr = GetComponent<MeshRenderer>();
+        playerController = Camera.main.GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -33,4 +34,5 @@ public class Tile : MonoBehaviour
     {
         selected = !selected;
     }
+
 }
