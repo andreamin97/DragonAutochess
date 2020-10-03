@@ -12,9 +12,11 @@ public class Tile : MonoBehaviour
     private MeshRenderer mr;
     private bool selected = false;
     private PlayerController playerController;
+    private BoardManager bm;
     private void Start()
     {
         mr = GetComponent<MeshRenderer>();
+        bm = FindObjectOfType<BoardManager>();
         playerController = Camera.main.GetComponent<PlayerController>();
     }
 
@@ -28,6 +30,10 @@ public class Tile : MonoBehaviour
         {
             mr.material = material;
         }
+
+        if (Physics.CheckBox(transform.position, transform.localScale / 1.75f, Quaternion.identity,
+            LayerMask.GetMask("Minis")))
+            bm.SetUnitAtSlot(null, this.gameObject);
     }
 
     public void ToggleSelected()
