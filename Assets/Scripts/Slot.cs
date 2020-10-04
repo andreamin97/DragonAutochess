@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
@@ -50,6 +52,14 @@ public class Slot : MonoBehaviour
             {
                 Vector3 spawnPosition = benchSlot.transform.position + Vector3.up;
                 GameObject newUnit = Instantiate(baseUnit, spawnPosition, Quaternion.identity);
+
+                NavMeshHit navHit;
+                if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
+                {
+                    newUnit.transform.position = navHit.position;
+                    newUnit.AddComponent<NavMeshAgent>();
+                }
+                
                 Unit temp = newUnit.GetComponent<Unit>();
                 temp.UnitClass = unit;
                 temp.InitUnit();

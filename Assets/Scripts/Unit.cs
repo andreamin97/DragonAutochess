@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
@@ -12,18 +13,22 @@ public class Unit : MonoBehaviour
     private Image unitThumbnail;
     private string unitName;
     private int unitCost;
-
     private PlayerController _playerController;
     private MeshFilter meshFilter;
     private BoardManager boardManager;
     private GameObject currentTile;
     private bool canBeSwapped = true;
+    public bool isActive = false;
+    private NavMeshAgent _navMeshAgent;
+    
+    public bool isFighting = false;
 
     private void Start()
     {
         _playerController = Camera.main.GetComponent<PlayerController>();
         boardManager = FindObjectOfType<BoardManager>();
         meshFilter = GetComponent<MeshFilter>();
+        _navMeshAgent = GetComponent<NavMeshAgent>();
         
         Physics.IgnoreLayerCollision(9,9);
         
@@ -32,12 +37,14 @@ public class Unit : MonoBehaviour
 
     private void Update()
     {
-        Collider[] colliders = Physics.OverlapBox(transform.position, transform.localScale / 1.75f, Quaternion.identity,
-            LayerMask.GetMask("Board"));
-        foreach (Collider coll in colliders)
+        if (!_playerController.isFighting)
         {
-            currentTile = coll.gameObject;
-            boardManager.SetUnitAtSlot(this.gameObject, coll.gameObject);
+            Collider[] colliders = Physics.OverlapBox(transform.position, transform.localScale / 1.75f, Quaternion.identity, LayerMask.GetMask("Board"));
+            foreach (Collider coll in colliders)
+            {
+                currentTile = coll.gameObject;
+                boardManager.SetUnitAtSlot(this.gameObject, coll.gameObject);
+            }
         }
     }
 
@@ -45,6 +52,7 @@ public class Unit : MonoBehaviour
     {
         _playerController.selectedUnit = this.gameObject;
         canBeSwapped = false;
+        _navMeshAgent.enabled = false;
 
     }
 
@@ -72,6 +80,13 @@ public class Unit : MonoBehaviour
         }
 
         canBeSwapped = true;
+
+        NavMeshHit navHit;
+        if(NavMesh.SamplePosition(transform.position, out navHit, 1, -1))
+        {
+            transform.position = navHit.position;
+            _navMeshAgent.enabled = true;
+        }
     }
 
     public void InitUnit()

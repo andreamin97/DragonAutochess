@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public GameObject selectedTile = null;
     public ShopManager shopManager;
     [Range(0,100)]public int Gold;
+    public bool isFighting = false;
     
     private Ray ray;
     private RaycastHit hitData;
@@ -43,7 +44,11 @@ public class PlayerController : MonoBehaviour
                   }
                   else
                   {
-                      if (selectedTile != null)
+                      if (isDragging)
+                      {
+                          // do nothing
+                      }
+                      else // qif (selectedTile != null)
                       {
                           selectedTile.GetComponent<Tile>().ToggleSelected();
                           selectedTile = null;

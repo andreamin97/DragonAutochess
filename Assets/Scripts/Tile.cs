@@ -11,13 +11,13 @@ public class Tile : MonoBehaviour
     
     private MeshRenderer mr;
     private bool selected = false;
-    private PlayerController playerController;
+    private PlayerController _playerController;
     private BoardManager bm;
     private void Start()
     {
         mr = GetComponent<MeshRenderer>();
         bm = FindObjectOfType<BoardManager>();
-        playerController = Camera.main.GetComponent<PlayerController>();
+        _playerController = Camera.main.GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -32,7 +32,7 @@ public class Tile : MonoBehaviour
         }
 
         if (Physics.CheckBox(transform.position, transform.localScale / 1.75f, Quaternion.identity,
-            LayerMask.GetMask("Minis")))
+            LayerMask.GetMask("Minis")) && !_playerController.isFighting)
             bm.SetUnitAtSlot(null, this.gameObject);
     }
 
