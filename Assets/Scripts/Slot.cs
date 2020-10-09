@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
@@ -20,32 +21,25 @@ public class Slot : MonoBehaviour
     
     private bool isEnabled = true;
     private BoardManager boardManager;
+    private PlayerController _playerController;
+
+    private GameObject playerUnits;
+
+    private void Awake()
+    {
+        boardManager = FindObjectOfType<BoardManager>();
+        _playerController = FindObjectOfType<PlayerController>();
+    }
 
     private void Start()
     {
-        boardManager = FindObjectOfType<BoardManager>();
-    }
-
-    private void Update()
-    {
-        if (isEnabled)
-        {
-            unitName.text = unit.Name;
-            unitCost.text = unit.Cost.ToString();
-        }
-        else
-        {
-            unitName.text = "null";
-            unitCost.text = "null";
-        }
+        UpdateSlot();
     }
 
     public void BuyUnit()
     {
         if (isEnabled)
         {
-            Debug.Log("Bought " + unitName.text);
-
             GameObject benchSlot = boardManager.GetBenchFreeSlot();
 
             if (benchSlot != null)
@@ -64,8 +58,10 @@ public class Slot : MonoBehaviour
                 temp.UnitClass = unit;
                 temp.InitUnit();
                 isEnabled = false;
+                
+                _playerController.AddOwnedUnit(newUnit);
             }
-
+            
             
         }
         
@@ -75,5 +71,12 @@ public class Slot : MonoBehaviour
     public void Enable()
     {
         isEnabled = true;
+    }
+
+    public void UpdateSlot(string name="", string cost="", BaseUnit unitClass = null)
+    {
+        unitName.text = name;
+        unitCost.text = cost;
+        unit = unitClass;
     }
 }

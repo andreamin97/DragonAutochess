@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitClass: {fileID: 11400000, guid: dc06b647f8341944a92a0d891579d659, type: 2}
+  attackRange: 2
   isActive: 0
   isFighting: 0
 --- !u!114 &5035862278911469044
@@ -141,4 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8931d041f01384c98fb2fb865c5145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 7247ddc85c3e6654dac417bb8ada6b65, type: 2}
+  _state: 0
+  profile: {fileID: 0}

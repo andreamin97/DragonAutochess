@@ -6,15 +6,13 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     
-    public Material selectedMaterial;
-    public Material material;
+    public GameObject selectedOutline;
     
     private MeshRenderer mr;
     private bool selected = false;
     private PlayerController _playerController;
     private BoardManager bm;
-    private void Start()
-    {
+    private void Start() {
         mr = GetComponent<MeshRenderer>();
         bm = FindObjectOfType<BoardManager>();
         _playerController = Camera.main.GetComponent<PlayerController>();
@@ -24,11 +22,11 @@ public class Tile : MonoBehaviour
     {
         if (selected)
         {
-            mr.material = selectedMaterial;
+            selectedOutline.SetActive(true);
         }
         else
         {
-            mr.material = material;
+            selectedOutline.SetActive(false);
         }
 
         if (Physics.CheckBox(transform.position, transform.localScale / 1.75f, Quaternion.identity,

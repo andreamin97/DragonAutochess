@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Ray ray;
     private RaycastHit hitData;
     private BoardManager bm;
+    private List<GameObject> ownedUnits = new List<GameObject>();
     
     private void Start()
     {
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         if (selectedUnit != null && isDragging)
         {
@@ -66,5 +67,20 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKeyDown("d"))
             shopManager.RandomizeShop();
+    }
+
+    public void AddOwnedUnit(GameObject unit)
+    {
+        ownedUnits.Add(unit);
+    }
+
+    public void RemoveOwnedUnit(GameObject unit)
+    {
+        ownedUnits.Remove(unit);
+    }
+
+    public List<GameObject> GetOwnedUnits()
+    {
+        return ownedUnits;
     }
 }

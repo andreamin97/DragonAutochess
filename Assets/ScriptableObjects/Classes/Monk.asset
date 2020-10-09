@@ -16,8 +16,12 @@ MonoBehaviour:
   Health: 0
   Armor: 0
   MagicResist: 0
-  AttackDamage: 0
+  AttackDamage: 10
+  AttackRange: 2
+  AttackSpeed: 0.5
+  MovementSpeed: 12
   AbilityPower: 0
   Mesh: {fileID: 8573411899920157880, guid: 80dea734a34400148b095ce700d3395f, type: 3}
   Thumbnail: {fileID: 0}
   Cost: 0
+  _aiProfile: {fileID: 11400000, guid: d7d72d2265c6148408748412cfc816f4, type: 2}

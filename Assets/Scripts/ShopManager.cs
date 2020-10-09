@@ -30,8 +30,9 @@ public class ShopManager : MonoBehaviour
     {
         foreach (Slot slot in slots)
         {
-            slot.unit = unitsList.RandomUnit();
+            BaseUnit unit = unitsList.RandomUnit();
             slot.Enable();
+            slot.UpdateSlot(unit.Name, unit.Cost.ToString(), unit);
         }
     }
 }

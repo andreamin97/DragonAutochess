@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Cultist
   m_EditorClassIdentifier: 
   Name: 
-  Health: 0
-  Armor: 0
+  Health: 20
+  Armor: 3
   MagicResist: 0
   AttackDamage: 0
   AbilityPower: 0

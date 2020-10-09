@@ -11,9 +11,12 @@ public class BaseUnit : ScriptableObject
      [SerializeField] public float Armor;
      [SerializeField] public float MagicResist;
      [SerializeField] public float AttackDamage;
+     public float AttackRange;
+     public float AttackSpeed;
+     public float MovementSpeed;
      [SerializeField] public float AbilityPower;
      [SerializeField] public Mesh Mesh;
      [SerializeField] public Image Thumbnail;
      [SerializeField] public int Cost;
-
+     [SerializeField] public AIProfile _aiProfile;
 }

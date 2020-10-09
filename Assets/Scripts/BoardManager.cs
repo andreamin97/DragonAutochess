@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,9 +14,9 @@ public class BoardManager : MonoBehaviour
         public GameObject unit;
     }
 
-    public BoardTile[] board;
-    public BoardTile[] bench;
-    public BoardTile[] enemyBoard;
+    [SerializeField] public BoardTile[] board;
+    [SerializeField] public BoardTile[] bench;
+    [SerializeField] public BoardTile[] enemyBoard;
     public Board enemyPositioning;
 
     public GameObject baseEnemy;
@@ -36,7 +37,7 @@ public class BoardManager : MonoBehaviour
                     newUnit.transform.position = navHit.position;
                     newUnit.AddComponent<NavMeshAgent>();
                 }
-                
+                newUnit.transform.rotation = Quaternion.Euler(0f,180f, 0f);
                 Enemy temp = newUnit.GetComponent<Enemy>();
                 temp.enemy = enemyPositioning.GetEnemyAtIndex(i);
                 temp.InitUnit();
@@ -103,10 +104,23 @@ public class BoardManager : MonoBehaviour
         {
             if (tile.unit != null)
             {
-                Debug.Log("Unit Activated");
-                tile.unit.GetComponent<AIController>().Activate();
+                Debug.Log(tile.unit.name + " Activated");
+                tile.unit.GetComponent<Unit>().isActive = true;
             }
         }
+    }
+
+    public List<GameObject> EnemyList()
+    {
+        List<GameObject> tempList = new List<GameObject>();
+        
+        foreach (BoardTile tile in enemyBoard)
+        {
+            if (tile.unit != null)
+                tempList.Add(tile.unit.gameObject);
+        }
+
+        return tempList;
     }
 }
 

@@ -13,6 +13,9 @@ public class Unit : MonoBehaviour
     private Image unitThumbnail;
     private string unitName;
     private int unitCost;
+    public float attackRange = 2f;
+    public float _attackSpeed;
+    public float _attackDamage;
     private PlayerController _playerController;
     private MeshFilter meshFilter;
     private BoardManager boardManager;
@@ -20,15 +23,24 @@ public class Unit : MonoBehaviour
     private bool canBeSwapped = true;
     public bool isActive = false;
     private NavMeshAgent _navMeshAgent;
+    private AIController _aiController;
+    private float maxHealth;
+    private float currentHealth;
+    private float armor;
     
     public bool isFighting = false;
 
-    private void Start()
+    private void Awake()
     {
         _playerController = Camera.main.GetComponent<PlayerController>();
+    }
+
+    private void Start()
+    {
         boardManager = FindObjectOfType<BoardManager>();
         meshFilter = GetComponent<MeshFilter>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        _aiController = GetComponent<AIController>();
         
         Physics.IgnoreLayerCollision(9,9);
         
@@ -93,6 +105,15 @@ public class Unit : MonoBehaviour
     {
         unitName = UnitClass.Name;
         meshFilter.mesh = UnitClass.Mesh;
+        attackRange = UnitClass.AttackRange;
+        _attackDamage = UnitClass.AttackDamage;
+        _attackSpeed = UnitClass.AttackSpeed;
+        maxHealth = UnitClass.Health;
+        currentHealth = maxHealth;
+        armor = UnitClass.Armor;
+        
+        _navMeshAgent.speed = UnitClass.MovementSpeed;
+        _aiController.profile = UnitClass._aiProfile;
     }
 
     public void Swap(Vector3 location)
@@ -104,5 +125,19 @@ public class Unit : MonoBehaviour
     public GameObject GetCurretTile()
     {
         return currentTile;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= (damage-armor);
+        
+        if(currentHealth<=0f)
+            Destroy(this.gameObject);
     }
 }
