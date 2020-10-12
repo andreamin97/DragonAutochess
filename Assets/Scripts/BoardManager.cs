@@ -14,15 +14,23 @@ public class BoardManager : MonoBehaviour
         public GameObject unit;
     }
 
-    [SerializeField] public BoardTile[] board;
-    [SerializeField] public BoardTile[] bench;
-    [SerializeField] public BoardTile[] enemyBoard;
+    public BoardTile[] board;
+    public BoardTile[] bench;
+    public BoardTile[] enemyBoard;
     public Board enemyPositioning;
+    private PlayerController _playerController;
+
+    private List<GameObject> _ownedUnits = new List<GameObject>();
 
     public GameObject baseEnemy;
+
+    private void Awake()
+    {
+        _playerController = Camera.main.GetComponent<PlayerController>();
+    }
+
     private void Start()
     {
-        
         for (int i = 0; i < 32; i++)
         {
             if (enemyPositioning.enemyPositioning[i] != null)
@@ -35,11 +43,11 @@ public class BoardManager : MonoBehaviour
                 if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
                 {
                     newUnit.transform.position = navHit.position;
-                    newUnit.AddComponent<NavMeshAgent>();
+                    newUnit.GetComponent<NavMeshAgent>().enabled = true;
                 }
                 newUnit.transform.rotation = Quaternion.Euler(0f,180f, 0f);
-                Enemy temp = newUnit.GetComponent<Enemy>();
-                temp.enemy = enemyPositioning.GetEnemyAtIndex(i);
+                EnemyUnit temp = newUnit.GetComponent<EnemyUnit>();
+                temp.enemyClass = enemyPositioning.GetEnemyAtIndex(i);
                 temp.InitUnit();
 
                 enemyBoard[i].unit = newUnit;
@@ -104,8 +112,14 @@ public class BoardManager : MonoBehaviour
         {
             if (tile.unit != null)
             {
-                Debug.Log(tile.unit.name + " Activated");
-                tile.unit.GetComponent<Unit>().isActive = true;
+                tile.unit.GetComponent<PlayerUnit>().isActive = true;
+            }
+        }
+        foreach (BoardTile tile in enemyBoard)
+        {
+            if (tile.unit != null)
+            {
+                tile.unit.GetComponent<EnemyUnit>().isActive = true;
             }
         }
     }
@@ -121,6 +135,30 @@ public class BoardManager : MonoBehaviour
         }
 
         return tempList;
+    }
+    
+    public List<GameObject> PlayerUnitList()
+    {
+        return _ownedUnits;
+    }
+
+    public void BuyUnit(GameObject unit)
+    {
+        _ownedUnits.Add(unit);
+    }
+
+    public void RemoveUnit(GameObject unit, bool wasSold)
+    {
+        switch (wasSold)
+        {
+            case true:
+                _playerController.Gold += unit.GetComponent<PlayerUnit>().unitCost;
+                _ownedUnits.Remove(unit);
+                break;
+            case false:
+                _ownedUnits.Remove(unit);
+                break;
+        }
     }
 }
 

@@ -40,29 +40,53 @@ public class Slot : MonoBehaviour
     {
         if (isEnabled)
         {
+            
+            //Check if the unit can level up
+            List<GameObject> playerUnits = boardManager.PlayerUnitList();
+            GameObject[] units = null;
+            int unitCount = 0;
+            
             GameObject benchSlot = boardManager.GetBenchFreeSlot();
-
-            if (benchSlot != null)
+            
+            foreach (var unit in playerUnits)
             {
-                Vector3 spawnPosition = benchSlot.transform.position + Vector3.up;
-                GameObject newUnit = Instantiate(baseUnit, spawnPosition, Quaternion.identity);
-
-                NavMeshHit navHit;
-                if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
+                if (unit.GetComponent<PlayerUnit>().UnitClass == unit)
                 {
-                    newUnit.transform.position = navHit.position;
-                    newUnit.AddComponent<NavMeshAgent>();
+                    units[unitCount] = unit;
+                    unitCount++;
                 }
-                
-                Unit temp = newUnit.GetComponent<Unit>();
-                temp.UnitClass = unit;
-                temp.InitUnit();
-                isEnabled = false;
-                
-                _playerController.AddOwnedUnit(newUnit);
             }
             
-            
+            if (unitCount >= 3)
+            {
+                units[0].GetComponent<PlayerUnit>().LevelUp();
+                for (int i = 1; i < unitCount; i++)
+                {
+                    boardManager.RemoveUnit(units[i], false);
+                }
+            }
+            else
+            {
+                if (benchSlot != null)
+                {
+                    Vector3 spawnPosition = benchSlot.transform.position + Vector3.up;
+                    GameObject newUnit = Instantiate(baseUnit, spawnPosition, Quaternion.identity);
+
+                    NavMeshHit navHit;
+                    if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
+                    {
+                        newUnit.transform.position = navHit.position;
+                        newUnit.GetComponent<NavMeshAgent>().enabled = true;
+                    }
+                
+                    PlayerUnit temp = newUnit.GetComponent<PlayerUnit>();
+                    temp.UnitClass = unit;
+                    temp.InitUnit();
+                    isEnabled = false;
+                
+                    boardManager.BuyUnit(newUnit);
+                }
+            }
         }
         
 

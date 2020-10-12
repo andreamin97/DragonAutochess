@@ -9,6 +9,7 @@
         <e p="ScriptableObjects" t="Include">
           <e p="AI" t="Include">
             <e p="AIProfile.cs" t="Include" />
+            <e p="nemyStandardAIProfile.cs" t="Include" />
             <e p="StandardAIProfile.cs" t="Include" />
           </e>
           <e p="BaseEnemy.cs" t="Include" />
@@ -19,11 +20,12 @@
         <e p="Scripts" t="Include">
           <e p="AIController.cs" t="Include" />
           <e p="BoardManager.cs" t="Include" />
-          <e p="Enemy.cs" t="Include" />
+          <e p="EnemyAIController.cs" t="Include" />
+          <e p="EnemyUnit.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="PlayerUnit.cs" t="Include" />
           <e p="ShopManager.cs" t="Include" />
           <e p="Slot.cs" t="Include" />
-          <e p="StateManager.cs" t="Include" />
           <e p="Tile.cs" t="Include" />
           <e p="Unit.cs" t="Include" />
         </e>

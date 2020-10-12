@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public GameObject selectedTile = null;
     public ShopManager shopManager;
     [Range(0,100)]public int Gold;
-    public bool isFighting = false;
-    
+    [HideInInspector]public bool isFighting = false;
+
     private Ray ray;
     private RaycastHit hitData;
     private BoardManager bm;

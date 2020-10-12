@@ -6,14 +6,14 @@ using UnityEngine.UI;
  [CreateAssetMenu (menuName = "Units/Enemy")]
 public class BaseEnemy : ScriptableObject
 {
-     [SerializeField] public string Name;
-     [SerializeField] public float Health;
-     [SerializeField] public float Armor;
-     [SerializeField] public float MagicResist;
-     [SerializeField] public float AttackDamage;
-     [SerializeField] public float AbilityPower;
-     [SerializeField] public Mesh Mesh;
-     [SerializeField] public Image Thumbnail;
-     [SerializeField] public int Cost;
-
+     public string Name;
+     public float Health;
+     public float Armor;
+     public float MagicResist;
+     public float AttackDamage;
+     public float AbilityPower;
+     public Mesh Mesh;
+     public Image Thumbnail;
+     public int Cost;
+     public AIProfile _aiProfile;
 }
