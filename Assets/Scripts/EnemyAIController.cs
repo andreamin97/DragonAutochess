@@ -34,12 +34,9 @@ public class EnemyAIController : MonoBehaviour
         
         if (_unit.isActive)
         {
-            Debug.Log("Im Active");
             if (_target == null)
             {
-                _target = profile.AcquireTarget(_boardManager.PlayerUnitList(), transform.position).GetComponent<PlayerUnit>();
-                if (_target == null)
-                    _unit.isActive = false;
+                _target = profile.AcquireTarget(_boardManager.PlayerFightingUnitList(), transform.position).GetComponent<PlayerUnit>();
             }
             
             distance = Vector3.Distance(_target.transform.position, transform.position);
@@ -47,11 +44,10 @@ public class EnemyAIController : MonoBehaviour
             
             if (distance <= _unit.attackRange)
             {
-                Debug.Log("Im Walking");
                 _navMeshAgent.SetDestination(transform.position);
                 if (nextAttack <= 0f)
                 {
-                    Debug.Log("Attacking Unit");
+                    Debug.Log("attacking "+ _target.UnitClass.name);
                     _target.TakeDamage(_unit._attackDamage);
                     nextAttack = _unit._attackSpeed;
                 }

@@ -14,15 +14,13 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     {
-        canvas.gameObject.SetActive(false);
+        canvas.gameObject.SetActive(false); 
         RandomizeShop();
     }
 
     public void ToggleShopUI()
     {
         isShopOpen = !isShopOpen;
-        if(isShopOpen)
-            RandomizeShop();
         canvas.gameObject.SetActive(isShopOpen);
     }
 

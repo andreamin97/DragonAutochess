@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class BoardManager : MonoBehaviour
 {
@@ -17,10 +18,12 @@ public class BoardManager : MonoBehaviour
     public BoardTile[] board;
     public BoardTile[] bench;
     public BoardTile[] enemyBoard;
-    public Board enemyPositioning;
+    public Board[] enemyPositioning;
     private PlayerController _playerController;
 
-    private List<GameObject> _ownedUnits = new List<GameObject>();
+    public List<GameObject> _ownedUnits = new List<GameObject>();
+    public List<GameObject> fightingUnits = new List<GameObject>();
+    public List<GameObject> enemyFightingUnits = new List<GameObject>();
 
     public GameObject baseEnemy;
 
@@ -31,13 +34,39 @@ public class BoardManager : MonoBehaviour
 
     private void Start()
     {
+        DeployEnemyBoard();
+    }
+
+    private void Update()
+    {
+        if (_playerController.isFighting && (fightingUnits.Count <= 0 || EnemyList().Count <= 0))
+        {
+            foreach (GameObject unit in fightingUnits)
+            {
+                unit.GetComponent<PlayerUnit>().isActive = false;
+            }
+            foreach (GameObject unit in enemyFightingUnits)
+            {
+                unit.GetComponent<EnemyUnit>().isActive = false;
+            }
+
+            _playerController.isFighting = false;
+            ResetPlayerUnitsPosition();
+            DeployEnemyBoard();
+        }
+    }
+
+    void DeployEnemyBoard()
+    {
+        int boardIndex = UnityEngine.Random.Range(0, enemyPositioning.Length-1);
+        
         for (int i = 0; i < 32; i++)
         {
-            if (enemyPositioning.enemyPositioning[i] != null)
+            if (enemyPositioning[boardIndex].enemyPositioning[i] != null)
             {
                 Vector3 spawnPosition = enemyBoard[i].tile.transform.position + Vector3.up;
-                
-                GameObject newUnit = Instantiate(baseEnemy, spawnPosition, Quaternion.identity); 
+
+                GameObject newUnit = Instantiate(baseEnemy, spawnPosition, Quaternion.identity);
 
                 NavMeshHit navHit;
                 if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
@@ -45,9 +74,10 @@ public class BoardManager : MonoBehaviour
                     newUnit.transform.position = navHit.position;
                     newUnit.GetComponent<NavMeshAgent>().enabled = true;
                 }
-                newUnit.transform.rotation = Quaternion.Euler(0f,180f, 0f);
+
+                newUnit.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
                 EnemyUnit temp = newUnit.GetComponent<EnemyUnit>();
-                temp.enemyClass = enemyPositioning.GetEnemyAtIndex(i);
+                temp.enemyClass = enemyPositioning[boardIndex].GetEnemyAtIndex(i);
                 temp.InitUnit();
 
                 enemyBoard[i].unit = newUnit;
@@ -62,8 +92,7 @@ public class BoardManager : MonoBehaviour
             if (tile.unit == null)
                 return tile.tile;
         }
-
-        Debug.Log("Bench Full");
+        
         return null;
     }
 
@@ -108,20 +137,25 @@ public class BoardManager : MonoBehaviour
 
     public void StartEncounter()
     {
-        foreach (BoardTile tile in board)
+        for (int i = 0; i < 32; i++)
         {
-            if (tile.unit != null)
+            if (board[i].unit != null)
             {
-                tile.unit.GetComponent<PlayerUnit>().isActive = true;
+                board[i].unit.GetComponent<PlayerUnit>().isActive = true;
+                fightingUnits.Add(board[i].unit);
             }
         }
-        foreach (BoardTile tile in enemyBoard)
+        
+        for (int i = 0; i < 32; i++)
         {
-            if (tile.unit != null)
+            if (enemyBoard[i].unit != null)
             {
-                tile.unit.GetComponent<EnemyUnit>().isActive = true;
+                enemyBoard[i].unit.GetComponent<EnemyUnit>().isActive = true;
+                enemyFightingUnits.Add(enemyBoard[i].unit);
             }
         }
+
+        _playerController.isFighting = true;
     }
 
     public List<GameObject> EnemyList()
@@ -137,6 +171,11 @@ public class BoardManager : MonoBehaviour
         return tempList;
     }
     
+    public List<GameObject> PlayerFightingUnitList()
+    {
+        return fightingUnits;
+    }
+
     public List<GameObject> PlayerUnitList()
     {
         return _ownedUnits;
@@ -158,6 +197,27 @@ public class BoardManager : MonoBehaviour
             case false:
                 _ownedUnits.Remove(unit);
                 break;
+        }
+    }
+
+    private void ResetPlayerUnitsPosition()
+    {
+        if (fightingUnits.Count > 0)
+        {
+            foreach (GameObject unit in fightingUnits)
+            {
+                if (unit != null)
+                {
+                    for (int i = 0; i < 32; i++)
+                    {
+                        if (unit == board[i].unit)
+                        {
+                            unit.GetComponent<AIController>().ResetUnit(board[i].tile.transform.position);
+                        }
+                    }
+                }
+            }
+                
         }
     }
 }

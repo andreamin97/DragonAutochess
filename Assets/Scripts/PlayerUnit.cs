@@ -134,4 +134,11 @@ public class PlayerUnit : Unit
         levelText.text = (++unitLevel).ToString();
     }
 
+    public override void TakeDamage(float damage)
+    {
+        
+        if(currentHealth-damage <=0 )
+            boardManager.fightingUnits.Remove(this.gameObject);
+        base.TakeDamage(damage);
+    }
 }

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40fb9cdd9bb591c49bcf2b6e6d054bca, type: 3}
-  m_Name: EnemyBoard_0
+  m_Name: EnemyBoard_2
   m_EditorClassIdentifier: 
   enemyPositioning:
-  - {fileID: 11400000, guid: 22bb07250a7f91d47b4c3d59dc8f8498, type: 2}
-  - {fileID: 11400000, guid: 22bb07250a7f91d47b4c3d59dc8f8498, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 11400000, guid: 22bb07250a7f91d47b4c3d59dc8f8498, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 22bb07250a7f91d47b4c3d59dc8f8498, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 22bb07250a7f91d47b4c3d59dc8f8498, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 22bb07250a7f91d47b4c3d59dc8f8498, type: 2}
   - {fileID: 0}
   - {fileID: 0}

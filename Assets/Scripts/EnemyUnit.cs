@@ -21,6 +21,17 @@ public class EnemyUnit : Unit
         maxHealth = enemyClass.Health;
         currentHealth = maxHealth;
         armor = enemyClass.Armor;
+        _attackDamage = enemyClass.AttackDamage;
+        _attackSpeed = enemyClass.AttackSpeed;
+        attackRange = enemyClass.AttackRange;
        _aiController.profile = enemyClass._aiProfile;
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        if(currentHealth-damage <=0 )
+            boardManager.enemyFightingUnits.Remove((this.gameObject));
+        base.TakeDamage(damage);
+        
     }
 }

@@ -38,54 +38,51 @@ public class Slot : MonoBehaviour
 
     public void BuyUnit()
     {
-        if (isEnabled)
+        //Check if the unit can level up
+        List<GameObject> playerUnits = boardManager.PlayerUnitList();
+        List<GameObject> units = new List<GameObject>();
+        int unitCount = 0;
+        
+        GameObject benchSlot = boardManager.GetBenchFreeSlot();
+        
+        foreach (GameObject ownedUnit in playerUnits)
         {
-            
-            //Check if the unit can level up
-            List<GameObject> playerUnits = boardManager.PlayerUnitList();
-            GameObject[] units = null;
-            int unitCount = 0;
-            
-            GameObject benchSlot = boardManager.GetBenchFreeSlot();
-            
-            foreach (var unit in playerUnits)
+            if (ownedUnit.GetComponent<PlayerUnit>().UnitClass == unit)
             {
-                if (unit.GetComponent<PlayerUnit>().UnitClass == unit)
-                {
-                    units[unitCount] = unit;
-                    unitCount++;
-                }
+                units.Add(ownedUnit);
+                unitCount++;
             }
-            
-            if (unitCount >= 3)
+        }
+        
+        if (unitCount >= 3)
+        {
+            units[0].GetComponent<PlayerUnit>().LevelUp();
+            for (int i = 1; i < unitCount; i++)
             {
-                units[0].GetComponent<PlayerUnit>().LevelUp();
-                for (int i = 1; i < unitCount; i++)
-                {
-                    boardManager.RemoveUnit(units[i], false);
-                }
+                boardManager.RemoveUnit(units[i], false);
+                Destroy(units[i]);
             }
-            else
+        }
+        else
+        {
+            if (benchSlot != null)
             {
-                if (benchSlot != null)
-                {
-                    Vector3 spawnPosition = benchSlot.transform.position + Vector3.up;
-                    GameObject newUnit = Instantiate(baseUnit, spawnPosition, Quaternion.identity);
+                Vector3 spawnPosition = benchSlot.transform.position + Vector3.up;
+                GameObject newUnit = Instantiate(baseUnit, spawnPosition, Quaternion.identity);
 
-                    NavMeshHit navHit;
-                    if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
-                    {
-                        newUnit.transform.position = navHit.position;
-                        newUnit.GetComponent<NavMeshAgent>().enabled = true;
-                    }
-                
-                    PlayerUnit temp = newUnit.GetComponent<PlayerUnit>();
-                    temp.UnitClass = unit;
-                    temp.InitUnit();
-                    isEnabled = false;
-                
-                    boardManager.BuyUnit(newUnit);
+                NavMeshHit navHit;
+                if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
+                {
+                    newUnit.transform.position = navHit.position;
+                    newUnit.GetComponent<NavMeshAgent>().enabled = true;
                 }
+            
+                PlayerUnit temp = newUnit.GetComponent<PlayerUnit>();
+                temp.UnitClass = unit;
+                temp.InitUnit();
+                isEnabled = false;
+            
+                boardManager.BuyUnit(newUnit);
             }
         }
         

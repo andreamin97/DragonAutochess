@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Health: 20
-  Armor: 3
+  Armor: 0
   MagicResist: 0
-  AttackDamage: 0
+  AttackDamage: 5
+  AttackRange: 3
+  AttackSpeed: 1
   AbilityPower: 0
   Mesh: {fileID: 1465178627079746931, guid: 3f200090053fb1744b8997d46f7f98f3, type: 3}
   Thumbnail: {fileID: 0}

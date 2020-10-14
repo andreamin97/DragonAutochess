@@ -29,8 +29,8 @@ public class Tile : MonoBehaviour
             selectedOutline.SetActive(false);
         }
 
-        if (Physics.CheckBox(transform.position, transform.localScale / 1.75f, Quaternion.identity,
-            LayerMask.GetMask("Minis")) && !_playerController.isFighting)
+        if ((Physics.CheckBox(transform.position, transform.localScale / 1.75f, Quaternion.identity,
+            LayerMask.GetMask("Minis"))) && !_playerController.isFighting)
             bm.SetUnitAtSlot(null, this.gameObject);
     }
 

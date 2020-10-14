@@ -11,6 +11,8 @@ public class BaseEnemy : ScriptableObject
      public float Armor;
      public float MagicResist;
      public float AttackDamage;
+     public float AttackRange;
+     public float AttackSpeed;
      public float AbilityPower;
      public Mesh Mesh;
      public Image Thumbnail;

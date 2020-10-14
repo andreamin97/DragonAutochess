@@ -30,7 +30,7 @@ public class Unit : MonoBehaviour
         meshFilter = GetComponent<MeshFilter>();
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         currentHealth -= (damage-armor);
         

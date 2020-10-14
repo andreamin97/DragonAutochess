@@ -35,8 +35,6 @@ public class AIController : MonoBehaviour
             if (_target == null)
             {
                 _target = profile.AcquireTarget(_boardManager.EnemyList(), transform.position).GetComponent<EnemyUnit>();
-                if (_target == null)
-                    _unit.isActive = false;
             }
             
             distance = Vector3.Distance(_target.transform.position, transform.position);
@@ -58,5 +56,10 @@ public class AIController : MonoBehaviour
 
         nextAttack -= Time.deltaTime;
 
+    }
+
+    public void ResetUnit(Vector3 position)
+    {
+        _navMeshAgent.SetDestination(position);
     }
 }

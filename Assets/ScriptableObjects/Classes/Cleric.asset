@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01601ddd549e221499cb700a8521bc4d, type: 3}
-  m_Name: Monk
+  m_Name: Cleric
   m_EditorClassIdentifier: 
-  Name: Monk
-  Health: 50
-  Armor: 0
+  Name: Human Cleric
+  Health: 30
+  Armor: 5
   MagicResist: 0
-  AttackDamage: 10
+  AttackDamage: 3
   AttackRange: 2
-  AttackSpeed: 0.75
-  MovementSpeed: 12
+  AttackSpeed: 1.2
+  MovementSpeed: 5
   AbilityPower: 0
-  Mesh: {fileID: 8573411899920157880, guid: 80dea734a34400148b095ce700d3395f, type: 3}
+  Mesh: {fileID: -3290055138444541337, guid: a816ad76cb2ea39458f3114d7e8fbd83, type: 3}
   Thumbnail: {fileID: 0}
   Cost: 0
   _aiProfile: {fileID: 11400000, guid: d7d72d2265c6148408748412cfc816f4, type: 2}
