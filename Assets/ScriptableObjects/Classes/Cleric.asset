@@ -12,16 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01601ddd549e221499cb700a8521bc4d, type: 3}
   m_Name: Cleric
   m_EditorClassIdentifier: 
-  Name: Human Cleric
-  Health: 30
-  Armor: 5
+  Name: Cleric
+  Health: 35
+  HpPerLevel: 3
+  Armor: 3
+  ArmorPerLevel: 0.4
   MagicResist: 0
+  MrPerLevel: 0
   AttackDamage: 3
+  ADPerLevel: 0.3
   AttackRange: 2
-  AttackSpeed: 1.2
+  AttackSpeed: 1.4
+  ASPerLevel: 0.1
   MovementSpeed: 5
   AbilityPower: 0
   Mesh: {fileID: -3290055138444541337, guid: a816ad76cb2ea39458f3114d7e8fbd83, type: 3}
   Thumbnail: {fileID: 0}
-  Cost: 0
+  Cost: 2
   _aiProfile: {fileID: 11400000, guid: d7d72d2265c6148408748412cfc816f4, type: 2}

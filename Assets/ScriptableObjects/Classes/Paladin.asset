@@ -10,18 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01601ddd549e221499cb700a8521bc4d, type: 3}
-  m_Name: Mage
+  m_Name: Paladin
   m_EditorClassIdentifier: 
-  Name: Mage
-  Health: 0
-  Armor: 0
+  Name: Paladin
+  Health: 50
+  HpPerLevel: 5
+  Armor: 5
+  ArmorPerLevel: 0.4
   MagicResist: 0
-  AttackDamage: 5
-  AttackRange: 10
-  AttackSpeed: 1
-  MovementSpeed: 6
+  MrPerLevel: 0
+  AttackDamage: 3
+  ADPerLevel: 0.3
+  AttackRange: 2
+  AttackSpeed: 1.4
+  ASPerLevel: 0.1
+  MovementSpeed: 5
   AbilityPower: 0
-  Mesh: {fileID: 1465178627079746931, guid: 3f200090053fb1744b8997d46f7f98f3, type: 3}
+  Mesh: {fileID: 2195083398729625618, guid: e48a861052e41d748b6b191a6197ca9a, type: 3}
   Thumbnail: {fileID: 0}
-  Cost: 0
+  Cost: 2
   _aiProfile: {fileID: 11400000, guid: d7d72d2265c6148408748412cfc816f4, type: 2}

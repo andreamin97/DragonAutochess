@@ -1,72 +1,127 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class BoardManager : MonoBehaviour
 {
-    [Serializable]
-    public struct BoardTile
-    {
-        public GameObject tile;
-        public GameObject unit;
-    }
-
     public BoardTile[] board;
     public BoardTile[] bench;
     public BoardTile[] enemyBoard;
     public Board[] enemyPositioning;
-    private PlayerController _playerController;
+
+    private int _currentFightBoardIndex;
 
     public List<GameObject> _ownedUnits = new List<GameObject>();
     public List<GameObject> fightingUnits = new List<GameObject>();
     public List<GameObject> enemyFightingUnits = new List<GameObject>();
 
     public GameObject baseEnemy;
+    private PlayerController _playerController;
+    private GoogleSheetsForUnity _sheetsForUnity;
+    private ShopManager _shopManager;
 
+    private float _fightTimer = 0f;
+    private int _stage = 1;
+    private int _unitCount;
+
+    public int Stage => _stage;
+
+    public Text stageText;
+    public Text maxUnit;
+    public Text playerGold;
+    
+    
     private void Awake()
     {
+        _sheetsForUnity = FindObjectOfType<GoogleSheetsForUnity>();
         _playerController = Camera.main.GetComponent<PlayerController>();
+        _shopManager = FindObjectOfType<ShopManager>();
     }
 
     private void Start()
     {
         DeployEnemyBoard();
+        stageText.text = _stage.ToString();
+        maxUnit.text = (_playerController.playerLevel + 1).ToString();
     }
 
     private void Update()
     {
-        if (_playerController.isFighting && (fightingUnits.Count <= 0 || EnemyList().Count <= 0))
+
+        int fightingUnitCount = fightingUnits.Count;
+        int enemyFightingUnitCount = EnemyList().Count;
+        bool fightOver = false;
+
+        if (_playerController.isFighting)
         {
-            foreach (GameObject unit in fightingUnits)
+            if (fightingUnitCount <= 0)
             {
-                unit.GetComponent<PlayerUnit>().isActive = false;
-            }
-            foreach (GameObject unit in enemyFightingUnits)
-            {
-                unit.GetComponent<EnemyUnit>().isActive = false;
+                // The player has lost
+                // Check for Lose State: the player doesnt own any more units and has less then <CHEAPES UNIT COST> gold
+                
+                //if the player hasn't lost
+                
+                _playerController.isFighting = false;
+                
+                foreach (var unit in enemyFightingUnits) unit.GetComponent<EnemyUnit>().isActive = false;
+                
+                foreach (var unit in enemyFightingUnits)
+                {
+                    for (int i = 0; i < 32; i++)
+                    {
+                        if (unit == enemyPositioning[_currentFightBoardIndex].enemyPositioning[i])
+                        {
+                            unit.GetComponent<NavMeshAgent>().Warp(enemyBoard[i].tile.transform.position);
+                        }
+                    } 
+                }
+                fightOver = true;
             }
 
-            _playerController.isFighting = false;
-            ResetPlayerUnitsPosition();
-            DeployEnemyBoard();
+            if (enemyFightingUnitCount <= 0)
+            {
+                //the player has won
+                
+                _playerController.isFighting = false;
+                
+                foreach (var unit in fightingUnits) unit.GetComponent<PlayerUnit>().isActive = false;
+                
+                ResetPlayerUnitsPosition();
+                DeployEnemyBoard();
+                fightOver = true;
+               _stage++;
+               stageText.text = _stage.ToString();
+               _playerController.EditGold(5);
+               
+               _shopManager.RandomizeShop(false);
+            }
+
+            if (fightOver)
+            {
+                _sheetsForUnity.AppendToSheet("FightDuration", "B:B", new List<object>() { _unitCount, _stage-1, _fightTimer});
+               fightingUnits.Clear();
+            }
         }
+       
+        if (_playerController.isFighting)
+            _fightTimer += Time.deltaTime;
+
+        playerGold.text = _playerController.Gold.ToString();
     }
 
-    void DeployEnemyBoard()
+    private void DeployEnemyBoard()
     {
-        int boardIndex = UnityEngine.Random.Range(0, enemyPositioning.Length-1);
-        
-        for (int i = 0; i < 32; i++)
-        {
-            if (enemyPositioning[boardIndex].enemyPositioning[i] != null)
-            {
-                Vector3 spawnPosition = enemyBoard[i].tile.transform.position + Vector3.up;
+       _currentFightBoardIndex = Random.Range(0, enemyPositioning.Length - 1);
 
-                GameObject newUnit = Instantiate(baseEnemy, spawnPosition, Quaternion.identity);
+        for (var i = 0; i < 32; i++)
+            if (enemyPositioning[_currentFightBoardIndex].enemyPositioning[i] != null)
+            {
+                var spawnPosition = enemyBoard[i].tile.transform.position + Vector3.up;
+
+                var newUnit = Instantiate(baseEnemy, spawnPosition, Quaternion.identity);
 
                 NavMeshHit navHit;
                 if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
@@ -76,101 +131,92 @@ public class BoardManager : MonoBehaviour
                 }
 
                 newUnit.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-                EnemyUnit temp = newUnit.GetComponent<EnemyUnit>();
-                temp.enemyClass = enemyPositioning[boardIndex].GetEnemyAtIndex(i);
+                var temp = newUnit.GetComponent<EnemyUnit>();
+                temp.enemyClass = enemyPositioning[_currentFightBoardIndex].GetEnemyAtIndex(i);
                 temp.InitUnit();
 
                 enemyBoard[i].unit = newUnit;
             }
-        }
     }
 
     public GameObject GetBenchFreeSlot()
     {
-        foreach (BoardTile tile in bench)
-        {
+        foreach (var tile in bench)
             if (tile.unit == null)
                 return tile.tile;
-        }
-        
+
         return null;
     }
 
     public void SetUnitAtSlot(GameObject unit, GameObject tile)
     {
-        for (int i = 0; i < bench.Length; i++)
-        {
+        for (var i = 0; i < bench.Length; i++)
             if (bench[i].tile == tile)
-            {
                 bench[i].unit = unit;
-            }
-        }
-        for (int i = 0; i < board.Length; i++)
-        {
+        for (var i = 0; i < board.Length; i++)
             if (board[i].tile == tile)
-            {
                 board[i].unit = unit;
-            }
-        }
     }
 
     public GameObject IsSlotFree(GameObject tile)
     {
-        foreach (BoardTile boardTile in bench)
-        {
-            return boardTile.unit;
-        }
+        foreach (var boardTile in bench) return boardTile.unit;
 
         return null;
     }
 
     public bool IsUnitBenched(GameObject unit)
     {
-        foreach (BoardTile tile in bench)
-        {
+        foreach (var tile in bench)
             if (tile.unit == unit)
                 return true;
-        }
 
         return false;
     }
 
     public void StartEncounter()
     {
-        for (int i = 0; i < 32; i++)
-        {
+        for (var i = 0; i < 32; i++)
             if (board[i].unit != null)
             {
-                board[i].unit.GetComponent<PlayerUnit>().isActive = true;
-                fightingUnits.Add(board[i].unit);
+                if (fightingUnits.Count < _playerController.playerLevel + 1)
+                {
+                    fightingUnits.Add(board[i].unit);
+                }
+                else
+                {
+                    board[i].unit.GetComponent<NavMeshAgent>().Warp(GetBenchFreeSlot().transform.position);
+                }
+
             }
-        }
-        
-        for (int i = 0; i < 32; i++)
+
+        foreach (var unit in fightingUnits)
         {
+            unit.GetComponent<PlayerUnit>().isActive = true;
+        }
+
+    for (var i = 0; i < 32; i++)
             if (enemyBoard[i].unit != null)
             {
                 enemyBoard[i].unit.GetComponent<EnemyUnit>().isActive = true;
                 enemyFightingUnits.Add(enemyBoard[i].unit);
             }
-        }
 
         _playerController.isFighting = true;
+        _unitCount = fightingUnits.Count;
     }
 
     public List<GameObject> EnemyList()
     {
-        List<GameObject> tempList = new List<GameObject>();
-        
-        foreach (BoardTile tile in enemyBoard)
-        {
+        var tempList = new List<GameObject>();
+
+        foreach (var tile in enemyBoard)
             if (tile.unit != null)
                 tempList.Add(tile.unit.gameObject);
-        }
 
         return tempList;
     }
-    
+
     public List<GameObject> PlayerFightingUnitList()
     {
         return fightingUnits;
@@ -188,37 +234,36 @@ public class BoardManager : MonoBehaviour
 
     public void RemoveUnit(GameObject unit, bool wasSold)
     {
-        switch (wasSold)
+
+        if (wasSold)
         {
-            case true:
-                _playerController.Gold += unit.GetComponent<PlayerUnit>().unitCost;
-                _ownedUnits.Remove(unit);
-                break;
-            case false:
-                _ownedUnits.Remove(unit);
-                break;
+            _playerController.EditGold(unit.GetComponent<PlayerUnit>().unitCost);
+            Debug.Log(unit.GetComponent<PlayerUnit>().unitCost);
         }
+
+        for (int i = 0; i < 32; i++)
+                if(board[i].unit == unit)
+                    SetUnitAtSlot(null, board[i].tile);
+            
+        _ownedUnits.Remove(unit);
+
+        Destroy(unit);
     }
 
     private void ResetPlayerUnitsPosition()
     {
         if (fightingUnits.Count > 0)
-        {
-            foreach (GameObject unit in fightingUnits)
-            {
+            foreach (var unit in fightingUnits)
                 if (unit != null)
-                {
-                    for (int i = 0; i < 32; i++)
-                    {
+                    for (var i = 0; i < 32; i++)
                         if (unit == board[i].unit)
-                        {
                             unit.GetComponent<AIController>().ResetUnit(board[i].tile.transform.position);
-                        }
-                    }
-                }
-            }
-                
-        }
+    }
+
+    [Serializable]
+    public struct BoardTile
+    {
+        public GameObject tile;
+        public GameObject unit;
     }
 }
-

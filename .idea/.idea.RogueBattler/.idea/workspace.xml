@@ -26,27 +26,89 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dae5c17-6d06-4ecb-a251-a9c8bdf25cac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Meshes/human-cleric.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Meshes/human-cleric.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Cleric.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Cleric.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/EnemyBoard_2.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/EnemyBoard_2.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/EnemyBoard_3.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/EnemyBoard_3.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/Enemies.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/Enemies/banderhobb.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/Enemies/banderhobb.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/Enemies/gnoll-melee.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/Enemies/gnoll-melee.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/Enemies/mindflayer.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/Enemies/mindflayer.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/Warlock.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/Warlock.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/barbarian.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/barbarian.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/bard.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/bard.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/druid.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/druid.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/fighter.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/fighter.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/paladin.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/paladin.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/ranger.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/ranger.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/rogue.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/rogue.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/wizard.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/wizard.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Barbarian.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Barbarian.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Bard.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Bard.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Druid.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Druid.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Fighter.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Fighter.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Paladin.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Paladin.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Ranger.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Ranger.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Rogue.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Rogue.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Sorcerer.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Sorcerer.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Warlock.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Warlock.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Wizard.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Wizard.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Banderhobb.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Banderhobb.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Gnoll Melee.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Gnoll Melee.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Mind Flayer.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Mind Flayer.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemy Boards.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemy Boards/EnemyBoard_0.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemy Boards/EnemyBoard_0.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemy Boards/EnemyBoard_2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemy Boards/EnemyBoard_2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemy Boards/EnemyBoard_3.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemy Boards/EnemyBoard_3.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Cartoon_Texture_Pack/DIRT/Dirt_Path/Materials/Dirt_Path.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Cartoon_Texture_Pack/DIRT/Dirt_Path/Materials/Dirt_Path.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_01/Material/Grass_Flower_Tint_01_FlowerRed_B.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_01/Material/Grass_Flower_Tint_01_FlowerRed_B.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_01/Material/Grass_Flower_Tint_01_FlowerYellow_B.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_01/Material/Grass_Flower_Tint_01_FlowerYellow_B.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Cartoon_Texture_Pack/SAND/SAND_Beach/Materials/Sand_Beach_Base.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Cartoon_Texture_Pack/SAND/SAND_Beach/Materials/Sand_Beach_Base.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Cultist.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Cultist.fbx.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Scenes/SampleScene/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Scenes/SampleScene/NavMesh.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Unit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Unit.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/BaseUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/BaseUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Board.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Cleric.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Cleric.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Mage.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Mage.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Monk.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Monk.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Cultist.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Cultist.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EnemyBoard_0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/EnemyBoard_0.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Cultist.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Cultist.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EnemyBoard_0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EnemyBoard_0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EnemyBoard_2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EnemyBoard_2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EnemyBoard_3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EnemyBoard_3.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Misc/ShopList.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Misc/ShopList.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
@@ -58,7 +120,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Slot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Slot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,25 +160,28 @@
         <option value="$PROJECT_DIR$/Assets/Slot.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/UnitList.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StateManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Board.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AIProfile.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AI/EnemyStandardAIProfile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AI/nemyStandardAIProfile.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AI/AIProfile.cs" />
-        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/BaseUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Slot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AI/StandardAIProfile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Board.cs" />
+        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/BaseUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/GoogleSheetsForUnity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/UnitUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SellUnuit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Slot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
       </list>
     </option>
   </component>
@@ -145,9 +211,14 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="threadsIsVisibleKey" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value=":w" />
+    </option>
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -194,6 +265,17 @@
       <workItem from="1602531931865" duration="4371000" />
       <workItem from="1602620033886" duration="4555000" />
       <workItem from="1602674839784" duration="1654000" />
+      <workItem from="1603295105584" duration="687000" />
+      <workItem from="1603295846779" duration="3159000" />
+      <workItem from="1603306941914" duration="1283000" />
+      <workItem from="1603313102085" duration="1373000" />
+      <workItem from="1603357867547" duration="2439000" />
+      <workItem from="1603362211843" duration="3629000" />
+      <workItem from="1603384275171" duration="6442000" />
+      <workItem from="1603445732755" duration="5891000" />
+      <workItem from="1603463443163" duration="4701000" />
+      <workItem from="1603975459570" duration="1441000" />
+      <workItem from="1603995535852" duration="2521000" />
     </task>
     <servers />
   </component>
@@ -231,6 +313,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="707" y="405" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1603295216859">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="707" y="405" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603295216859" />
     <state width="1493" height="218" key="GridCell.Tab.0.bottom" timestamp="1602625391069">
       <screen x="0" y="1120" width="1536" height="824" />
     </state>
@@ -311,19 +397,25 @@
     </state>
     <state width="1493" height="218" key="GridCell.Tab.3.right/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.3.right/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467040" />
-    <state x="277" y="1177" key="SettingsEditor" timestamp="1602344485284">
-      <screen x="0" y="1120" width="1536" height="824" />
+    <state x="764" y="234" key="RiderGenerateDialog" timestamp="1603358164829">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="764" y="234" key="RiderGenerateDialog/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603358164829" />
+    <state x="346" y="112" key="SettingsEditor" timestamp="1603362169975">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="277" y="1177" key="SettingsEditor/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602344485284" />
-    <state x="425" y="747" key="run.anything.popup" timestamp="1601744040179">
+    <state x="346" y="112" key="SettingsEditor/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603362169975" />
+    <state x="425" y="747" key="run.anything.popup" timestamp="1603447642951">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="425" y="747" key="run.anything.popup/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1601744040179" />
-    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1602084176136">
+    <state x="425" y="747" key="run.anything.popup/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603447642951" />
+    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1603384579840">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="498" y="1298" width="672" height="538" key="search.everywhere.popup/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1601839915012" />
-    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602084176136" />
+    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603384579840" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

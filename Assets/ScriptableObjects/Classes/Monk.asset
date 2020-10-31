@@ -13,15 +13,20 @@ MonoBehaviour:
   m_Name: Monk
   m_EditorClassIdentifier: 
   Name: Monk
-  Health: 50
-  Armor: 0
-  MagicResist: 0
-  AttackDamage: 10
+  Health: 30
+  HpPerLevel: 2
+  Armor: 2
+  ArmorPerLevel: 0.25
+  MagicResist: 2
+  MrPerLevel: 0.12
+  AttackDamage: 3
+  ADPerLevel: 2
   AttackRange: 2
-  AttackSpeed: 0.75
+  AttackSpeed: 0.2
+  ASPerLevel: 0.12
   MovementSpeed: 12
   AbilityPower: 0
   Mesh: {fileID: 8573411899920157880, guid: 80dea734a34400148b095ce700d3395f, type: 3}
   Thumbnail: {fileID: 0}
-  Cost: 0
+  Cost: 2
   _aiProfile: {fileID: 11400000, guid: d7d72d2265c6148408748412cfc816f4, type: 2}
