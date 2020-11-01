@@ -648,9 +648,9 @@ MonoBehaviour:
   fightingUnits: []
   enemyFightingUnits: []
   baseEnemy: {fileID: 8568662639758380621, guid: 6a7292e384f0265429a5d143bd81d42f, type: 3}
-  stageText: {fileID: 0}
-  maxUnit: {fileID: 0}
-  playerGold: {fileID: 0}
+  stageText: {fileID: 1282820580}
+  maxUnit: {fileID: 2045482786}
+  playerGold: {fileID: 1090324102}
 --- !u!4 &87826964
 Transform:
   m_ObjectHideFlags: 0

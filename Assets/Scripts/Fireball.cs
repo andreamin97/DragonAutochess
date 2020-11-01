@@ -15,10 +15,12 @@ public class Fireball : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (unit = other.gameObject.GetComponent<EnemyUnit>())
+        if ((unit = other.gameObject.GetComponent<EnemyUnit>()) && unit.isActive==true)
         {
             unit.TakeDamage(50f);
+            Debug.Log(other.gameObject.GetComponent<EnemyUnit>().enemyClass + "took 50 damage.");
         }
+        Destroy(this.gameObject);
     }
 
     public void SetPosition(Vector3 pos)

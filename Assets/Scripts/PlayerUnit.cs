@@ -137,15 +137,19 @@ public class PlayerUnit : Unit
         {
             case "Cleric":
                 _aiController.ability1 = gameObject.AddComponent<Heal>();
-                _aiController.ability1.InitAbility("Heal", "Heal a friendly target for 10HP", 6f);
+                _aiController.ability1.InitAbility("Heal", "Heal a friendly target for 10HP", 5f);
                 break;
             case "Druid":
                 _aiController.ability1 = gameObject.AddComponent<SproutingRoots>();
-                _aiController.ability1.InitAbility("Sprouting Roots", "Snare an enemy for 5 seconds, preventing their movement.", 8f);
+                _aiController.ability1.InitAbility("Sprouting Roots", "Snare an enemy for 5 seconds, preventing their movement.", 4f);
                 break;
             case "Sorcerer":
                 _aiController.ability1 = gameObject.AddComponent<Fireball_Ability>();
-                _aiController.ability1.InitAbility("Fireball", "Deal 30 damage in a 5ft area around the target", 2f);
+                _aiController.ability1.InitAbility("Fireball", "Deal 30 damage in a 5ft area around the target", 5f);
+                break;
+            case "Warlock":
+                _aiController.ability1 = gameObject.AddComponent<SapLife>();
+                _aiController.ability1.InitAbility("Sap Life", "Deal twice your attack damage to your target and heal half that amount" , 4f);
                 break;
         }
         
