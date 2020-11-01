@@ -12,11 +12,12 @@ public class Unit : MonoBehaviour
     public bool isActive;
 
     public bool isFighting;
-    protected float armor;
+    [SerializeField]protected float armor;
     protected float _mRes;
     protected BoardManager boardManager;
     public float currentHealth;
     public float maxHealth;
+    public float leech = 0f;
 
     protected MeshFilter meshFilter;
 

@@ -151,6 +151,18 @@ public class PlayerUnit : Unit
                 _aiController.ability1 = gameObject.AddComponent<SapLife>();
                 _aiController.ability1.InitAbility("Sap Life", "Deal twice your attack damage to your target and heal half that amount" , 4f);
                 break;
+            case "Paladin":
+                _aiController.ability1 = gameObject.AddComponent<Bastion>();
+                _aiController.ability1.InitAbility("Bastion", "Snare self for 3seconds, but gain .5 armor/level" , 6f);
+                break;
+            case "Barbarian":
+                _aiController.ability1 = gameObject.AddComponent<Enrage>();
+                _aiController.ability1.InitAbility("Enrage", "Gain 1% eech for every 1% missing hp, up to 70%", 0f);
+                break;
+            case "Wizard":
+                _aiController.ability1 = gameObject.AddComponent<Singularity>();
+                _aiController.ability1.InitAbility("Singularity", "After a 3 seconds delay, pull all teleport all enemies in range to the center of the map", 10f);
+                break;
         }
         
     }
@@ -183,9 +195,14 @@ public class PlayerUnit : Unit
         
         if (currentHealth <= 0)
         {
-                boardManager.fightingUnits.Remove(gameObject);
+            boardManager.fightingUnits.Remove(gameObject);
 
-                boardManager.RemoveUnit(this.gameObject, false);
+            boardManager.RemoveUnit(this.gameObject, false);
         }
+    }
+
+    public void AddArmor(float value)
+    {
+        armor += value;
     }
 }

@@ -20,9 +20,12 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Abilities" t="Include">
+            <e p="Bastion.cs" t="Include" />
+            <e p="Enrage.cs" t="Include" />
             <e p="Fireball_Ability.cs" t="Include" />
             <e p="Heal.cs" t="Include" />
             <e p="SapLife.cs" t="Include" />
+            <e p="Singularity.cs" t="Include" />
             <e p="SproutingRoots.cs" t="Include" />
           </e>
           <e p="Ability.cs" t="Include" />
@@ -35,6 +38,7 @@
           <e p="PlayerUnit.cs" t="Include" />
           <e p="SellUnuit.cs" t="Include" />
           <e p="ShopManager.cs" t="Include" />
+          <e p="Singularity_PF.cs" t="Include" />
           <e p="Slot.cs" t="Include" />
           <e p="Tile.cs" t="Include" />
           <e p="Unit.cs" t="Include" />

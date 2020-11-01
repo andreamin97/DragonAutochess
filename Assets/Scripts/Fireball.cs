@@ -20,6 +20,11 @@ public class Fireball : MonoBehaviour
             unit.TakeDamage(50f);
             Debug.Log(other.gameObject.GetComponent<EnemyUnit>().enemyClass + "took 50 damage.");
         }
+
+        float f = 0f;
+        while (f < 1f)
+            f += Time.deltaTime;
+        
         Destroy(this.gameObject);
     }
 

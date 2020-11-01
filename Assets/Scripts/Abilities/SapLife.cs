@@ -9,7 +9,7 @@ public class SapLife : Ability
   public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
   {
     var unit = controller.GetComponent<PlayerUnit>();
-    controller._target.TakeDamage(unit._attackDamage*2f);
+    controller.target.TakeDamage(unit._attackDamage*2f);
     unit.TakeDamage(-unit._attackDamage);
 
     currentCd = cd;

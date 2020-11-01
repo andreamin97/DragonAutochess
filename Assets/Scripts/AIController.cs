@@ -1,22 +1,24 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 public class AIController : MonoBehaviour
 {
     public AIProfile profile;
     private BoardManager _boardManager;
     private NavMeshAgent _navMeshAgent;
-    public EnemyUnit _target;
+    [FormerlySerializedAs("_target")] public EnemyUnit target;
     private PlayerUnit _unit;
-    private float distance = float.PositiveInfinity;
-    private float nextAttack;
+    private float _distance = float.PositiveInfinity;
+    private float _nextAttack;
     private GoogleSheetsForUnity _sheetsForUnity;
     
     public Ability ability1;
     public float abilit1Cd;
-    private bool isCasting = false;
-    private bool hasCondition = false;
+    private bool _isCasting = false;
+    private Unit.Statuses _condition = Unit.Statuses.None;
+    private float _conditionDuration;
     
     private void Start()
     {
@@ -34,46 +36,89 @@ public class AIController : MonoBehaviour
 
         if (_unit.isActive)
         {
-            //Acquire a target if don't have one and save the distance
-            if (_target == null)
-                _target = profile.AcquireTarget(_boardManager.EnemyList(), transform.position)
-                    .GetComponent<EnemyUnit>();
-
-            distance = Vector3.Distance(_target.transform.position, transform.position);
-            
-            //Always prioritize casting an ability if able, abilities use the unit attackspeed
-            if (ability1 != null)
+            switch (_condition)
             {
-                if ((ability1.currentCd <= 0f) || isCasting)
-                {
-                    isCasting = ability1.Cast(_navMeshAgent, _boardManager, this);
-                }
+                case Unit.Statuses.None:
+                    
+                    //Acquire a target if don't have one and save the distance
+                    if (target == null)
+                        target = profile.AcquireTarget(_boardManager.EnemyList(), transform.position)
+                            .GetComponent<EnemyUnit>();
+            
+                    _distance = Vector3.Distance(target.transform.position, transform.position);
+                        
+                    //Always prioritize casting an ability if able, abilities use the unit attackspeed
+                    if (ability1 != null)
+                    {
+                        if ((ability1.currentCd <= 0f) || _isCasting)
+                        {
+                            _isCasting = ability1.Cast(_navMeshAgent, _boardManager, this);
+                        }
+                    }
+                        
+                        
+                    //move to the target or attack based on distance 
+                    if (_distance <= _unit.attackRange)
+                    {
+                        //Stop moving
+                        _navMeshAgent.SetDestination(transform.position);
+                        if (_nextAttack <= 0f)
+                        {
+                            AttackTarget(target);
+                        }
+                    }
+                    else if (_distance > _unit.attackRange)
+                    {
+                        _navMeshAgent.SetDestination(target.transform.position);
+                    }
+                        
+                    transform.LookAt(target.transform.position);
+                    transform.Rotate(new Vector3(0f, -90f, 0f));
+                        
+                    _nextAttack -= Time.deltaTime;
+                    ability1.currentCd -= Time.deltaTime;        
+                    
+                    break;        
+                
+                case Unit.Statuses.Snared:
+                    _navMeshAgent.SetDestination(transform.position);
+                    
+                    //Always prioritize casting an ability if able, abilities use the unit attackspeed
+                    if (ability1 != null)
+                    {
+                        if ((ability1.currentCd <= 0f) || _isCasting)
+                        {
+                            _isCasting = ability1.Cast(_navMeshAgent, _boardManager, this);
+                        }
+                    }
+                
+                    if (_distance <= _unit.attackRange && _nextAttack <= 0f)
+                    {
+                        AttackTarget(target);
+                    }
+                                    
+                    _conditionDuration -= Time.deltaTime;
+                    if (_conditionDuration <= 0)
+                    {
+                        _condition = Unit.Statuses.None;
+                        _conditionDuration = 0f;
+                    }
+                    break;
             }
-            
-            
-            //move to the target or attack based on distance 
-            if (distance <= _unit.attackRange)
-            {
-                _navMeshAgent.SetDestination(transform.position);
-                if (nextAttack <= 0f)
-                {
-                    Debug.Log("Attacking " + _target.name);
-                    _target.TakeDamage(_unit._attackDamage);
-                    nextAttack = _unit._attackSpeed;
-                }
-            }
-            else if (distance > _unit.attackRange)
-            {
-                _navMeshAgent.SetDestination(_target.transform.position);
-            }
-            
-            transform.LookAt(_target.transform.position);
-            transform.Rotate(new Vector3(0f, -90f, 0f));
-            
+                   
         }
+            
+    }
+
+    private void AttackTarget(EnemyUnit target)
+    {
+       
+        target.TakeDamage(_unit._attackDamage);
         
-        nextAttack -= Time.deltaTime;
-        ability1.currentCd -= Time.deltaTime;
+        if(_unit.leech > 0f)
+            _unit.TakeDamage(-(_unit._attackDamage*_unit.leech));
+        
+        _nextAttack = _unit._attackSpeed;
     }
 
     public void ResetUnit(Vector3 position)
@@ -83,11 +128,12 @@ public class AIController : MonoBehaviour
 
     public void ResetTarget()
     {
-        _target = null;
+        target = null;
     }
 
-    public void SetCondition()
+    public void SetCondition(Unit.Statuses cond, float duration)
     {
-        
+        _condition = cond;
+        _conditionDuration = duration;
     }
 }

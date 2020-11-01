@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,8 +15,8 @@ public class PlayerController : MonoBehaviour
     private BoardManager bm;
     private RaycastHit hitData;
     private readonly List<GameObject> ownedUnits = new List<GameObject>();
-
-    public int playerLevel = 1;
+    public int level = 1;
+    [SerializeField]private int _experience = 0;
     
     private Ray ray;
 
@@ -87,5 +88,11 @@ public class PlayerController : MonoBehaviour
     public void EditGold(int gold)
     {
         Gold += gold;
+    }
+
+    public void GainExp(int exp)
+    {
+        _experience += exp;
+        level = (int) Math.Floor(Math.Sqrt(_experience));
     }
 }

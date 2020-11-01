@@ -13,8 +13,8 @@ public class EnemyAIController : MonoBehaviour
     private EnemyUnit _unit;
     private float distance = float.PositiveInfinity;
     private float nextAttack;
-    private Unit.Statuses condition = Unit.Statuses.None;
-    private float conditionDuration;
+    private Unit.Statuses _condition = Unit.Statuses.None;
+    private float _conditionDuration;
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class EnemyAIController : MonoBehaviour
 
         if (_unit.isActive)
         {
-            switch (condition)
+            switch (_condition)
             {
                 case Unit.Statuses.None:
                     if (_target == null)
@@ -63,11 +63,11 @@ public class EnemyAIController : MonoBehaviour
                         nextAttack = _unit._attackSpeed;
                     }
                     
-                    conditionDuration -= Time.deltaTime;
-                    if (conditionDuration <= 0)
+                    _conditionDuration -= Time.deltaTime;
+                    if (_conditionDuration <= 0)
                     {
-                        condition = Unit.Statuses.None;
-                        conditionDuration = 0f;
+                        _condition = Unit.Statuses.None;
+                        _conditionDuration = 0f;
                     }
                     break;
             }
@@ -80,8 +80,8 @@ public class EnemyAIController : MonoBehaviour
 
     public void SetCondition(Unit.Statuses cond, float duration)
     {
-        condition = cond;
-        conditionDuration = duration;
+        _condition = cond;
+        _conditionDuration = duration;
     }
     
 }

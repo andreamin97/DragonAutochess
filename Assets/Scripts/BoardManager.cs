@@ -30,9 +30,10 @@ public class BoardManager : MonoBehaviour
     public int Stage => _stage;
 
     public Text stageText;
-    public Text maxUnit;
+    public Text maxUnitText;
+    public Text playerLevel;
     public Text playerGold;
-    
+    public int maxUnit = 2;
     
     private void Awake()
     {
@@ -45,7 +46,8 @@ public class BoardManager : MonoBehaviour
     {
         DeployEnemyBoard();
         stageText.text = _stage.ToString();
-        maxUnit.text = (_playerController.playerLevel + 1).ToString();
+        maxUnitText.text = (_playerController.level + 1).ToString();
+        maxUnit = _playerController.level + 1;
     }
 
     private void Update()
@@ -54,6 +56,9 @@ public class BoardManager : MonoBehaviour
         int fightingUnitCount = fightingUnits.Count;
         int enemyFightingUnitCount = EnemyList().Count;
         bool fightOver = false;
+
+        maxUnitText.text = (1 + _playerController.level).ToString();
+        playerLevel.text = _playerController.level.ToString();
 
         if (_playerController.isFighting)
         {
@@ -86,6 +91,7 @@ public class BoardManager : MonoBehaviour
                 //the player has won
                 
                 _playerController.isFighting = false;
+                _playerController.GainExp(1);
                 
                 foreach (var unit in fightingUnits) unit.GetComponent<PlayerUnit>().isActive = false;
                 
@@ -179,7 +185,7 @@ public class BoardManager : MonoBehaviour
         for (var i = 0; i < 32; i++)
             if (board[i].unit != null)
             {
-                if (fightingUnits.Count < _playerController.playerLevel + 1)
+                if (fightingUnits.Count < _playerController.level + 1)
                 {
                     fightingUnits.Add(board[i].unit);
                 }
