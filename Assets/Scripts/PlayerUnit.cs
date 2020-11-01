@@ -131,6 +131,24 @@ public class PlayerUnit : Unit
         armor = UnitClass.Armor;
         _navMeshAgent.speed = UnitClass.MovementSpeed;
         _aiController.profile = UnitClass._aiProfile;
+        
+        //create ability behaviour based on the class
+        switch (unitName)
+        {
+            case "Cleric":
+                _aiController.ability1 = gameObject.AddComponent<Heal>();
+                _aiController.ability1.InitAbility("Heal", "Heal a friendly target for 10HP", 6f);
+                break;
+            case "Druid":
+                _aiController.ability1 = gameObject.AddComponent<SproutingRoots>();
+                _aiController.ability1.InitAbility("Sprouting Roots", "Snare an enemy for 5 seconds, preventing their movement.", 8f);
+                break;
+            case "Sorcerer":
+                _aiController.ability1 = gameObject.AddComponent<Fireball_Ability>();
+                _aiController.ability1.InitAbility("Fireball", "Deal 30 damage in a 5ft area around the target", 2f);
+                break;
+        }
+        
     }
 
     public void Swap(Vector3 location)
@@ -159,13 +177,11 @@ public class PlayerUnit : Unit
     {
         base.TakeDamage(damage);
         
-        if (currentHealth - damage <= 0)
+        if (currentHealth <= 0)
         {
-            boardManager.fightingUnits.Remove(gameObject);
+                boardManager.fightingUnits.Remove(gameObject);
 
-            boardManager.RemoveUnit(this.gameObject, false);
+                boardManager.RemoveUnit(this.gameObject, false);
         }
-        
-        
     }
 }

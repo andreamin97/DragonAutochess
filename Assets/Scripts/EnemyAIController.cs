@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics;
+using UnityEditor.Animations;
+using UnityEngine;
 using UnityEngine.AI;
+using Debug = UnityEngine.Debug;
 
 public class EnemyAIController : MonoBehaviour
 {
@@ -10,6 +13,8 @@ public class EnemyAIController : MonoBehaviour
     private EnemyUnit _unit;
     private float distance = float.PositiveInfinity;
     private float nextAttack;
+    private Unit.Statuses condition = Unit.Statuses.None;
+    private float conditionDuration;
 
     private void Start()
     {
@@ -25,29 +30,58 @@ public class EnemyAIController : MonoBehaviour
 
         if (_unit.isActive)
         {
-            if (_target == null)
-                _target = profile.AcquireTarget(_boardManager.PlayerFightingUnitList(), transform.position)
-                    .GetComponent<PlayerUnit>();
-
-            distance = Vector3.Distance(_target.transform.position, transform.position);
-
-
-            if (distance <= _unit.attackRange)
+            switch (condition)
             {
-                _navMeshAgent.SetDestination(transform.position);
-                if (nextAttack <= 0f)
-                {
-                    Debug.Log("attacking " + _target.UnitClass.name);
-                    _target.TakeDamage(_unit._attackDamage);
-                    nextAttack = _unit._attackSpeed;
-                }
+                case Unit.Statuses.None:
+                    if (_target == null)
+                       _target = profile.AcquireTarget(_boardManager.PlayerFightingUnitList(), transform.position)
+                           .GetComponent<PlayerUnit>();
+            
+                    distance = Vector3.Distance(_target.transform.position, transform.position);
+            
+                    if (distance <= _unit.attackRange)
+                    {
+                        _navMeshAgent.SetDestination(transform.position);
+                        if (nextAttack <= 0f)
+                        {
+                            _target.TakeDamage(_unit._attackDamage);
+                            nextAttack = _unit._attackSpeed;
+                        }
+                    }
+                    else if (distance > _unit.attackRange)
+                    {
+                        _navMeshAgent.SetDestination(_target.transform.position);
+                    }        
+                    break;
+                
+                case Unit.Statuses.Snared:
+                    _navMeshAgent.SetDestination(transform.position);
+
+                    if (distance <= _unit.attackRange && nextAttack <= 0f)
+                    {
+                        _target.TakeDamage(_unit._attackDamage);
+                        nextAttack = _unit._attackSpeed;
+                    }
+                    
+                    conditionDuration -= Time.deltaTime;
+                    if (conditionDuration <= 0)
+                    {
+                        condition = Unit.Statuses.None;
+                        conditionDuration = 0f;
+                    }
+                    break;
             }
-            else if (distance > _unit.attackRange)
-            {
-                _navMeshAgent.SetDestination(_target.transform.position);
-            }
+            
+            
         }
 
         nextAttack -= Time.deltaTime;
     }
+
+    public void SetCondition(Unit.Statuses cond, float duration)
+    {
+        condition = cond;
+        conditionDuration = duration;
+    }
+    
 }

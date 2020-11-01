@@ -16,12 +16,12 @@ MonoBehaviour:
   Health: 35
   HpPerLevel: 3
   Armor: 3
-  ArmorPerLevel: 0.4
+  ArmorPerLevel: 0.3
   MagicResist: 0
   MrPerLevel: 0
   AttackDamage: 3
   ADPerLevel: 0.5
-  AttackRange: 3
+  AttackRange: 4
   AttackSpeed: 1.1
   ASPerLevel: 0.1
   MovementSpeed: 4
@@ -30,3 +30,4 @@ MonoBehaviour:
   Thumbnail: {fileID: 0}
   Cost: 2
   _aiProfile: {fileID: 11400000, guid: d7d72d2265c6148408748412cfc816f4, type: 2}
+  ability1: {fileID: 0}

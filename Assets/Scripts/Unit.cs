@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class Unit : MonoBehaviour
 
     public float _attackSpeed;
     public float _attackDamage;
+    public float movementSpeed = 3f;
 
     public bool isActive;
 
@@ -19,6 +21,14 @@ public class Unit : MonoBehaviour
     protected MeshFilter meshFilter;
 
     protected string unitName;
+    
+    public enum Statuses
+    {
+        None,
+        Snared
+    }
+
+    public Statuses currentStatus = Statuses.None;
 
     protected virtual void Awake()
     {
@@ -28,6 +38,13 @@ public class Unit : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
-        currentHealth -= damage - armor;
-    }
+        if (damage > 0f)
+        {
+            currentHealth -= Mathf.Clamp(damage - armor, 1f, maxHealth);
+        }
+        else if (damage < 0f)
+        {
+           currentHealth = Mathf.Clamp(currentHealth -= damage, 0f, maxHealth);
+        }
+}
 }

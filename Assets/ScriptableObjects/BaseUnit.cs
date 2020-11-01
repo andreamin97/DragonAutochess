@@ -24,4 +24,5 @@ public class BaseUnit : ScriptableObject
      public Image Thumbnail;
      public int Cost;
      public AIProfile _aiProfile;
+     public Ability ability1;
 }

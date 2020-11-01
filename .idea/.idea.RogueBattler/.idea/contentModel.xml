@@ -6,6 +6,7 @@
     <e p="D:\Unity Projects\RogueBattler" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Fireball.cs" t="Include" />
         <e p="GoogleSheetsForUnity.cs" t="Include" />
         <e p="ScriptableObjects" t="Include">
           <e p="AI" t="Include">
@@ -19,6 +20,12 @@
           <e p="UnitList.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="Abilities" t="Include">
+            <e p="Fireball_Ability.cs" t="Include" />
+            <e p="Heal.cs" t="Include" />
+            <e p="SproutingRoots.cs" t="Include" />
+          </e>
+          <e p="Ability.cs" t="Include" />
           <e p="AIController.cs" t="Include" />
           <e p="BoardManager.cs" t="Include" />
           <e p="EnemyAIController.cs" t="Include" />

@@ -643,16 +643,14 @@ MonoBehaviour:
   - tile: {fileID: 38921489}
     unit: {fileID: 0}
   enemyPositioning:
-  - {fileID: 11400000, guid: cf8c211d9d0a2a4418bf905a96f55ecc, type: 2}
-  - {fileID: 11400000, guid: 781c80886a124014397f2fe25e2703e0, type: 2}
-  - {fileID: 11400000, guid: 282a7138c8326014ebea5869db8b01c2, type: 2}
+  - {fileID: 11400000, guid: 90e44f63c0bec9f46b0ef1c33a9f2af7, type: 2}
   _ownedUnits: []
   fightingUnits: []
   enemyFightingUnits: []
   baseEnemy: {fileID: 8568662639758380621, guid: 6a7292e384f0265429a5d143bd81d42f, type: 3}
-  stageText: {fileID: 1282820580}
-  maxUnit: {fileID: 2045482786}
-  playerGold: {fileID: 1090324102}
+  stageText: {fileID: 0}
+  maxUnit: {fileID: 0}
+  playerGold: {fileID: 0}
 --- !u!4 &87826964
 Transform:
   m_ObjectHideFlags: 0

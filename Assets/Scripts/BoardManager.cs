@@ -192,7 +192,14 @@ public class BoardManager : MonoBehaviour
 
         foreach (var unit in fightingUnits)
         {
-            unit.GetComponent<PlayerUnit>().isActive = true;
+            var _unit = unit.GetComponent<PlayerUnit>();
+            _unit.isActive = true;
+            if (_unit.GetComponent<AIController>().ability1 != null)
+            {
+                _unit.GetComponent<AIController>().ability1.currentCd =
+                    _unit.GetComponent<AIController>().ability1.coolDown;
+            }
+
         }
 
     for (var i = 0; i < 32; i++)

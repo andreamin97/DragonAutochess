@@ -25,6 +25,7 @@ MonoBehaviour:
   AttackSpeed: 1.5
   ASPerLevel: 0.1
   AbilityPower: 0
+  MovementSpeed: 2
   Mesh: {fileID: -8250069872344295949, guid: 1326471f1cf6f084e83f51341b154415, type: 3}
   Thumbnail: {fileID: 0}
   _aiProfile: {fileID: 11400000, guid: d7d72d2265c6148408748412cfc816f4, type: 2}
