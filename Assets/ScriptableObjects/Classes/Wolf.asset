@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01601ddd549e221499cb700a8521bc4d, type: 3}
-  m_Name: Barbarian
+  m_Name: Wolf
   m_EditorClassIdentifier: 
-  Name: Barbarian
-  Health: 55
-  HpPerLevel: 5
-  Armor: 3
-  ArmorPerLevel: 0.34
+  Name: 
+  Health: 20
+  HpPerLevel: 0
+  Armor: 2
+  ArmorPerLevel: 0
   MagicResist: 0
   MrPerLevel: 0
-  AttackDamage: 6
-  ADPerLevel: 0.75
+  AttackDamage: 5
+  ADPerLevel: 0
   AttackRange: 2
   AttackSpeed: 1
-  ASPerLevel: 0.2
+  ASPerLevel: 0
   MovementSpeed: 3
   AbilityPower: 0
-  Mesh: {fileID: 3083861035038071930, guid: 55d8385cc722f76409b0f9c06ef4ab1e, type: 3}
+  Mesh: {fileID: -868154883475471725, guid: 9d10616b75b6a084698132f8fabb1728, type: 3}
   Thumbnail: {fileID: 0}
-  Cost: 2
+  Cost: 0
   _aiProfile: {fileID: 11400000, guid: d7d72d2265c6148408748412cfc816f4, type: 2}
   ability1: {fileID: 0}

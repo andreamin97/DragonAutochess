@@ -26,7 +26,6 @@ public class AIController : MonoBehaviour
         _boardManager = FindObjectOfType<BoardManager>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _unit = GetComponent<PlayerUnit>();
-        abilit1Cd = ability1.coolDown;
     }
 
     private void Update()
@@ -91,17 +90,13 @@ public class AIController : MonoBehaviour
                             _isCasting = ability1.Cast(_navMeshAgent, _boardManager, this);
                         }
                     }
-                
-                    if (_distance <= _unit.attackRange && _nextAttack <= 0f)
-                    {
-                        AttackTarget(target);
-                    }
                                     
                     _conditionDuration -= Time.deltaTime;
+                    _unit._conditionDuration = _conditionDuration;
+                    
                     if (_conditionDuration <= 0)
                     {
-                        _condition = Unit.Statuses.None;
-                        _conditionDuration = 0f;
+                        SetCondition(Unit.Statuses.None, 0f);
                     }
                     break;
             }
@@ -134,6 +129,9 @@ public class AIController : MonoBehaviour
     public void SetCondition(Unit.Statuses cond, float duration)
     {
         _condition = cond;
+        _unit._conditionMaxDuration = duration;
         _conditionDuration = duration;
+        _unit.currentStatus = cond;
     }
+
 }

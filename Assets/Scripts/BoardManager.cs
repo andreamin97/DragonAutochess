@@ -67,22 +67,20 @@ public class BoardManager : MonoBehaviour
                 // The player has lost
                 // Check for Lose State: the player doesnt own any more units and has less then <CHEAPES UNIT COST> gold
                 
-                //if the player hasn't lost
+                //if the player has lost
                 
                 _playerController.isFighting = false;
-                
-                foreach (var unit in enemyFightingUnits) unit.GetComponent<EnemyUnit>().isActive = false;
-                
+
                 foreach (var unit in enemyFightingUnits)
                 {
-                    for (int i = 0; i < 32; i++)
-                    {
-                        if (unit == enemyPositioning[_currentFightBoardIndex].enemyPositioning[i])
-                        {
-                            unit.GetComponent<NavMeshAgent>().Warp(enemyBoard[i].tile.transform.position);
-                        }
-                    } 
+                    unit.GetComponent<EnemyUnit>().TakeDamage(10000f);
+                    Debug.Log("Dead");
                 }
+                enemyFightingUnits.Clear();
+               
+                DeployEnemyBoard();
+                _shopManager.RandomizeShop(false);
+                
                 fightOver = true;
             }
 
@@ -93,7 +91,8 @@ public class BoardManager : MonoBehaviour
                 _playerController.isFighting = false;
                 _playerController.GainExp(1);
                 
-                foreach (var unit in fightingUnits) unit.GetComponent<PlayerUnit>().isActive = false;
+                foreach (var unit in fightingUnits) 
+                    unit.GetComponent<PlayerUnit>().isActive = false;
                 
                 ResetPlayerUnitsPosition();
                 DeployEnemyBoard();
@@ -185,7 +184,11 @@ public class BoardManager : MonoBehaviour
         for (var i = 0; i < 32; i++)
             if (board[i].unit != null)
             {
-                if (fightingUnits.Count < _playerController.level + 1)
+                if (fightingUnits.Count < _playerController.level + 1 && board[i].unit.GetComponent<PlayerUnit>().UnitClass.Name != "Wolf")
+                {
+                    fightingUnits.Add(board[i].unit);
+                }
+                else if (board[i].unit.GetComponent<PlayerUnit>().UnitClass.Name == "Wolf")
                 {
                     fightingUnits.Add(board[i].unit);
                 }
@@ -199,13 +202,15 @@ public class BoardManager : MonoBehaviour
         foreach (var unit in fightingUnits)
         {
             var _unit = unit.GetComponent<PlayerUnit>();
+            var _ai = _unit.GetComponent<AIController>(); 
             _unit.isActive = true;
-            if (_unit.GetComponent<AIController>().ability1 != null)
+           
+            if ( _ai != null)
             {
-                _unit.GetComponent<AIController>().ability1.currentCd =
-                    _unit.GetComponent<AIController>().ability1.coolDown;
+                //_ai.ability1.currentCd = _ai.ability1.coolDown;
+                _ai.SetCondition(Unit.Statuses.None, 0f);
+                _ai.ability1.castOnce = false;
             }
-
         }
 
     for (var i = 0; i < 32; i++)
@@ -270,8 +275,14 @@ public class BoardManager : MonoBehaviour
                 if (unit != null)
                     for (var i = 0; i < 32; i++)
                         if (unit == board[i].unit)
+                        {
                             unit.GetComponent<AIController>().ResetUnit(board[i].tile.transform.position);
-    }
+                            unit.GetComponent<PlayerUnit>()._attackSpeed =
+                                unit.GetComponent<PlayerUnit>().UnitClass.AttackSpeed +
+                                unit.GetComponent<PlayerUnit>().UnitClass.ASPerLevel;
+                        }
+    
+}
 
     [Serializable]
     public struct BoardTile

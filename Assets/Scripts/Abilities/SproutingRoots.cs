@@ -7,13 +7,16 @@ using UnityEngine.AI;
 public class SproutingRoots : Ability
 {
     public float cd = 8f;
-    public float snareDuration = 2f;
-    
+    public float snareDuration = 3f;
+    public float durationPerLevel = 0.5f;
     public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
     {
         float distance = 0f;
         EnemyUnit target = null;
         float tempDistance;
+
+        var _unit = controller.GetComponent<PlayerUnit>();
+        
         //get target
         foreach (var unit in boardManager.enemyFightingUnits)
         {
@@ -34,7 +37,7 @@ public class SproutingRoots : Ability
         
         currentCd = cd;
         
-        target.GetComponent<EnemyAIController>().SetCondition(Unit.Statuses.Snared, snareDuration);
+        target.GetComponent<EnemyAIController>().SetCondition(Unit.Statuses.Snared, snareDuration + durationPerLevel*_unit.unitLevel);
         
         //return
         controller.ResetTarget();

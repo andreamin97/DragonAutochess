@@ -1,8 +1,6 @@
 ﻿using System.Diagnostics;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
-using Debug = UnityEngine.Debug;
 
 public class EnemyAIController : MonoBehaviour
 {
@@ -10,6 +8,13 @@ public class EnemyAIController : MonoBehaviour
     private BoardManager _boardManager;
     private NavMeshAgent _navMeshAgent;
     private PlayerUnit _target;
+
+    public PlayerUnit Target
+    {
+        get => _target;
+        set => _target = value;
+    }
+
     private EnemyUnit _unit;
     private float distance = float.PositiveInfinity;
     private float nextAttack;
@@ -36,6 +41,12 @@ public class EnemyAIController : MonoBehaviour
                     if (_target == null)
                        _target = profile.AcquireTarget(_boardManager.PlayerFightingUnitList(), transform.position)
                            .GetComponent<PlayerUnit>();
+
+                    if (_target == null)
+                    {
+                        FindObjectOfType<PlayerController>().isFighting = false;
+                        _unit.isActive = false;
+                    }
             
                     distance = Vector3.Distance(_target.transform.position, transform.position);
             
@@ -64,10 +75,10 @@ public class EnemyAIController : MonoBehaviour
                     }
                     
                     _conditionDuration -= Time.deltaTime;
+                    _unit._conditionDuration = _conditionDuration;
                     if (_conditionDuration <= 0)
                     {
-                        _condition = Unit.Statuses.None;
-                        _conditionDuration = 0f;
+                        SetCondition(Unit.Statuses.None, 0f);
                     }
                     break;
             }
@@ -81,7 +92,14 @@ public class EnemyAIController : MonoBehaviour
     public void SetCondition(Unit.Statuses cond, float duration)
     {
         _condition = cond;
+        _unit._conditionMaxDuration = duration;
         _conditionDuration = duration;
+        _unit.currentStatus = cond;
     }
-    
+
+    public Unit.Statuses GetCondition()
+    {
+        return _condition;
+    }
+
 }

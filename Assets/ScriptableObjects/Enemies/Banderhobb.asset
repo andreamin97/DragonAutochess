@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Banderhobb
   m_EditorClassIdentifier: 
   Name: 
-  Health: 50
-  HpPerLevel: 4
+  Health: 45
+  HpPerLevel: 3
   Armor: 4
   ArmorPerLevel: 0.1
   MagicResist: 0
   MrPerLevel: 0
-  AttackDamage: 8
-  ADPerLevel: 0.2
+  AttackDamage: 7
+  ADPerLevel: 0.15
   AttackRange: 3
   AttackSpeed: 1.5
-  ASPerLevel: 0.1
+  ASPerLevel: 0.05
   AbilityPower: 0
   MovementSpeed: 2
   Mesh: {fileID: -8250069872344295949, guid: 1326471f1cf6f084e83f51341b154415, type: 3}

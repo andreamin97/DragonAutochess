@@ -163,6 +163,22 @@ public class PlayerUnit : Unit
                 _aiController.ability1 = gameObject.AddComponent<Singularity>();
                 _aiController.ability1.InitAbility("Singularity", "After a 3 seconds delay, pull all teleport all enemies in range to the center of the map", 10f);
                 break;
+            case "Rogue":
+                _aiController.ability1 = gameObject.AddComponent<Assasinate>();
+                _aiController.ability1.InitAbility("Assasinate", "Teleport to the lowest hp enemy and deal 5(+5/lvl) damage to it", 6f);
+                break;
+            case "Fighter":
+                _aiController.ability1 = gameObject.AddComponent<BladeSpin>();
+                _aiController.ability1.InitAbility("Blade Spin", "Deal my AD*lvl to all units around me", 3f);
+                break;
+            case "Bard":
+                _aiController.ability1 = gameObject.AddComponent<Inspiration>();
+                _aiController.ability1.InitAbility("Blade Spin", "Deal my AD*lvl to all units around me", 0f);
+                break;
+            case "Ranger":
+                _aiController.ability1 = gameObject.AddComponent<AnimalCompanion>();
+                _aiController.ability1.InitAbility("Blade Spin", "Deal my AD*lvl to all units around me", 0f);
+                break;
         }
         
     }
@@ -188,7 +204,7 @@ public class PlayerUnit : Unit
         armor += UnitClass.ArmorPerLevel;
         _mRes += UnitClass.MrPerLevel;
     }
-
+    
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
@@ -197,6 +213,16 @@ public class PlayerUnit : Unit
         {
             boardManager.fightingUnits.Remove(gameObject);
 
+            foreach (var unit in boardManager.enemyFightingUnits)
+            {
+                var _ai = unit.GetComponent<EnemyAIController>();
+
+                if (_ai.Target == this)
+                {
+                    _ai.Target = null;
+                }
+            }
+            
             boardManager.RemoveUnit(this.gameObject, false);
         }
     }

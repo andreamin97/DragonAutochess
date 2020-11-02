@@ -11,6 +11,7 @@ public class Ability : MonoBehaviour
     public string abilityText;
     public float coolDown = 5f;
     public float currentCd;
+    public bool castOnce = false;
 
     public void InitAbility(string name, string text, float cd)
     {

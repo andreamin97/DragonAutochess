@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool isDragging;
     [HideInInspector] public GameObject selectedTile;
     public ShopManager shopManager;
-    [Range(0, 100)] public int Gold = 5;
+    [Range(0, 100)] public int Gold = 6;
     public bool isFighting;
     private BoardManager bm;
     private RaycastHit hitData;

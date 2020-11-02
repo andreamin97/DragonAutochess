@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Mind Flayer
   m_EditorClassIdentifier: 
   Name: 
-  Health: 9
+  Health: 15
   HpPerLevel: 2
   Armor: 0
   ArmorPerLevel: 0.35
   MagicResist: 0
   MrPerLevel: 0
-  AttackDamage: 4
-  ADPerLevel: 0.5
-  AttackRange: 4
+  AttackDamage: 5
+  ADPerLevel: 0.4
+  AttackRange: 6
   AttackSpeed: 1
   ASPerLevel: 0.05
   AbilityPower: 0

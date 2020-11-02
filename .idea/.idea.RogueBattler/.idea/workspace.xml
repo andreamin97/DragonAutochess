@@ -26,30 +26,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dae5c17-6d06-4ecb-a251-a9c8bdf25cac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Singularity.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Singularity.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Bastion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Bastion.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Enrage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Singularity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Singularity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Singularity_PF.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Singularity_PF.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/wolf.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/wolf.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wolf.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Wolf.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Wolf.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Wolf.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/AnimalCompanion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/AnimalCompanion.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/BladeSpin.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Inspiration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GoogleSheetsForUnity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GoogleSheetsForUnity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemy Boards/TestBoard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemy Boards/TestBoard.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Misc/ShopList.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Misc/ShopList.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Unit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Unit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Barbarian.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Barbarian.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Banderhobb.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Banderhobb.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Gnoll Melee.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Gnoll Melee.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Mind Flayer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Mind Flayer.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/Fireball_Ability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Fireball_Ability.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/Bastion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Bastion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UnitUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UnitUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,8 +75,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Abilities/Inspiration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Programmi/Unity/2020.1.4f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Fireball.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Abilities/BladeSpin.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Programmi/Unity/2020.1.4f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/AI/StandardAIProfile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/UnitList.cs" root0="FORCE_HIGHLIGHTING" />
@@ -84,6 +93,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Abilities/Bastion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Abilities/Heal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -109,26 +119,31 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Slot.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Ability.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/BaseUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Ability.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Heal.cs" />
         <option value="$PROJECT_DIR$/Assets/Fireball.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Bastion.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Singularity_PF.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/GoogleSheetsForUnity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Singularity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Fireball_Ability.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Enrage.cs" />
+        <option value="$PROJECT_DIR$/Assets/GoogleSheetsForUnity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Bastion.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UnitUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/BladeSpin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ability.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Inspiration.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/AnimalCompanion.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
       </list>
     </option>
   </component>
@@ -225,7 +240,8 @@
       <workItem from="1603995535852" duration="2521000" />
       <workItem from="1604154675183" duration="21546000" />
       <workItem from="1604235244614" duration="14480000" />
-      <workItem from="1604266495025" duration="385000" />
+      <workItem from="1604266495025" duration="851000" />
+      <workItem from="1604319965469" duration="13469000" />
     </task>
     <servers />
   </component>
@@ -347,28 +363,31 @@
     </state>
     <state width="1493" height="218" key="GridCell.Tab.3.right/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.3.right/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467040" />
-    <state x="764" y="234" key="RiderGenerateDialog" timestamp="1603358164829">
+    <state x="764" y="234" key="RiderGenerateDialog" timestamp="1604331317567">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="764" y="234" key="RiderGenerateDialog/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603358164829" />
+    <state x="764" y="234" key="RiderGenerateDialog/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604331317567" />
     <state x="346" y="112" key="SettingsEditor" timestamp="1604168043793">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="277" y="1177" key="SettingsEditor/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602344485284" />
     <state x="346" y="112" key="SettingsEditor/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603362169975" />
     <state x="346" y="112" key="SettingsEditor/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604168043793" />
-    <state x="425" y="747" key="run.anything.popup" timestamp="1604262251972">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state x="425" y="1827" width="672" height="677" key="run.anything.popup" timestamp="1604328346309">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state x="425" y="747" key="run.anything.popup/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1601744040179" />
     <state x="425" y="747" key="run.anything.popup/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603447642951" />
+    <state x="425" y="1827" width="672" height="677" key="run.anything.popup/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1604328346309" />
     <state x="425" y="747" key="run.anything.popup/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604262251972" />
-    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1604249899170">
+    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1604330442899">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="498" y="1298" width="672" height="538" key="search.everywhere.popup/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1601839915012" />
     <state x="623" y="265" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603384579840" />
-    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604249899170" />
+    <state x="623" y="1345" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1604321181363" />
+    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604330442899" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

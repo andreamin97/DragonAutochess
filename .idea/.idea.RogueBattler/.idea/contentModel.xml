@@ -20,10 +20,14 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Abilities" t="Include">
+            <e p="AnimalCompanion.cs" t="Include" />
+            <e p="Assasinate.cs" t="Include" />
             <e p="Bastion.cs" t="Include" />
+            <e p="BladeSpin.cs" t="Include" />
             <e p="Enrage.cs" t="Include" />
             <e p="Fireball_Ability.cs" t="Include" />
             <e p="Heal.cs" t="Include" />
+            <e p="Inspiration.cs" t="Include" />
             <e p="SapLife.cs" t="Include" />
             <e p="Singularity.cs" t="Include" />
             <e p="SproutingRoots.cs" t="Include" />

@@ -19,6 +19,9 @@ public class Unit : MonoBehaviour
     public float maxHealth;
     public float leech = 0f;
 
+    public float _conditionMaxDuration;
+    public float _conditionDuration;
+    
     protected MeshFilter meshFilter;
 
     protected string unitName;
