@@ -6,11 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     public LayerMask boardLayer;
     public LayerMask unitLayer;
-    [HideInInspector] public GameObject selectedUnit;
+    /*[HideInInspector]*/ public GameObject selectedUnit;
     [HideInInspector] public bool isDragging;
     [HideInInspector] public GameObject selectedTile;
     public ShopManager shopManager;
-    [Range(0, 100)] public int Gold = 6;
+    [Range(0, 100)] public int Gold;
     public bool isFighting;
     private BoardManager bm;
     private RaycastHit hitData;
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         bm = FindObjectOfType<BoardManager>();
-        EditGold(5);
+        EditGold(6);
     }
 
     // Update is called once per frame

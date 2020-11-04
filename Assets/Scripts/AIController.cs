@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
 
-public class AIController : MonoBehaviour
+public class AIController : AIController_Base
 {
     public AIProfile profile;
     private BoardManager _boardManager;
@@ -14,7 +14,7 @@ public class AIController : MonoBehaviour
     private float _nextAttack;
     private GoogleSheetsForUnity _sheetsForUnity;
     
-    public Ability ability1;
+    // public Ability ability1;
     public float abilit1Cd;
     private bool _isCasting = false;
     private Unit.Statuses _condition = Unit.Statuses.None;

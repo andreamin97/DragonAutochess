@@ -26,7 +26,7 @@ public class Fireball_Ability : Ability
         
         else if (time >= castTimer)
         {
-            Instantiate(_fb, controller.target.transform.position + Vector3.up * 10f, Quaternion.identity);
+            Instantiate(_fb, controller.target.transform.position + Vector3.up * 15f, Quaternion.identity);
 
             time = 0f;
             currentCd = cd;

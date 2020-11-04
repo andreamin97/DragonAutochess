@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44eeebd7e3ac0204dbc223d31cfca396, type: 3}
   m_Name: Mind Flayer
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Mind Flayer
   Health: 15
   HpPerLevel: 2
   Armor: 0

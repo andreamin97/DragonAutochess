@@ -12,6 +12,7 @@ public class Heal : Ability
     private bool hasTarget = false;
     public float range = 3f;
     public float amount = 10f;
+    public float perLevel = 10f;
     public float cd = 8f;
     private float distance;
 
@@ -54,7 +55,7 @@ public class Heal : Ability
         else
         { 
             //heal
-            lowestUnit.TakeDamage(-amount);
+            lowestUnit.TakeDamage(-(amount+perLevel));
             
             //reset the target and set the cooldown, return false to stop casting from the AI controller
             controller.ResetTarget();

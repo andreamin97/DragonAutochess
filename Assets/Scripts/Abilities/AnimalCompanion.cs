@@ -21,23 +21,14 @@ public class AnimalCompanion : Ability
 
             if (wolf == null)
             {
-                obj = (GameObject) _fb;
-
-                NavMeshHit hitPosition;
-                NavMesh.SamplePosition(transform.position + Vector3.forward*3f, out hitPosition, 2f, NavMesh.AllAreas);
-
-                wolf = Instantiate(obj, hitPosition.position, Quaternion.identity);
-                wolf.GetComponent<PlayerUnit>().InitUnit();
+                Spawn(boardManager);
             }
             else
             {
                 wolf.GetComponent<PlayerUnit>().currentHealth = wolf.GetComponent<PlayerUnit>().maxHealth;
             }
 
-            wolf.GetComponent<NavMeshAgent>().enabled = true;
-            wolf.GetComponent<PlayerUnit>().isActive = true;
-            boardManager.fightingUnits.Add(wolf);
-            boardManager._ownedUnits.Add(wolf);
+            
 
             foreach (var unit in boardManager.enemyFightingUnits)
             {
@@ -54,5 +45,69 @@ public class AnimalCompanion : Ability
 
         currentCd = cd;
         return true;
+    }
+
+    private void Spawn(BoardManager boardManager)
+    {
+        int ownerIndex = boardManager.GetUnitIndexOnBoard(this.gameObject);
+
+        if (ownerIndex != -1)
+        {
+            for (int i = ownerIndex+1; i < 32; i++)
+            {
+                if (boardManager.IsBoardSlotFree(boardManager.board[i].tile) == null)
+                {
+                    
+                    // Found a free slot
+                    
+                    obj = (GameObject) _fb;
+
+                    NavMeshHit hitPosition;
+                    NavMesh.SamplePosition(boardManager.board[i].tile.transform.position + Vector3.up, out hitPosition, 1f, NavMesh.AllAreas);
+
+                    wolf = Instantiate(obj, hitPosition.position, Quaternion.identity);
+                    wolf.GetComponent<PlayerUnit>().InitUnit();
+                    
+                    wolf.GetComponent<NavMeshAgent>().enabled = true;
+                    boardManager.board[i].unit = wolf;
+                    wolf.GetComponent<PlayerUnit>().isActive = true;
+                    boardManager.fightingUnits.Add(wolf);
+                    boardManager._ownedUnits.Add(wolf);
+
+                    return;
+                }
+            }
+
+            if (wolf == null)
+            {
+                for (int i = ownerIndex-1; i >= 0; i--)
+                {
+                    if (boardManager.IsBoardSlotFree(boardManager.board[i].tile) == null)
+                    {
+                                    
+                        // Found a free slot
+                                    
+                        obj = (GameObject) _fb;
+                
+                        NavMeshHit hitPosition;
+                        NavMesh.SamplePosition(boardManager.board[i].tile.transform.position + Vector3.up, out hitPosition, 1f, NavMesh.AllAreas);
+
+                        var wolfUnit = wolf.GetComponent<PlayerUnit>();
+                        
+                        wolf = Instantiate(obj, hitPosition.position, Quaternion.identity);
+                        wolfUnit.unitLevel = gameObject.GetComponent<PlayerUnit>().unitLevel;
+                        wolfUnit.InitUnit();
+                                    
+                        wolf.GetComponent<NavMeshAgent>().enabled = true;
+                        boardManager.board[i].unit = wolf;
+                        wolf.GetComponent<PlayerUnit>().isActive = true;
+                        boardManager.fightingUnits.Add(wolf);
+                        boardManager._ownedUnits.Add(wolf);
+                        
+                        return;
+                    }
+                }
+            }
+        }
     }
 }

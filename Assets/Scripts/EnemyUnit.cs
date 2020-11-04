@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyUnit : Unit
@@ -7,6 +8,8 @@ public class EnemyUnit : Unit
     private EnemyAIController _aiController;
     private BoardManager _boardManager;
     private NavMeshAgent _navMeshAgent;
+
+    private UnitInspector _unitInspector;
     protected override void Awake()
     {
         base.Awake();
@@ -14,6 +17,7 @@ public class EnemyUnit : Unit
         _boardManager = FindObjectOfType<BoardManager>();
         meshFilter = GetComponent<MeshFilter>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        _unitInspector = FindObjectOfType<UnitInspector>();
     }
 
     public void InitUnit()
@@ -38,5 +42,12 @@ public class EnemyUnit : Unit
             boardManager.enemyFightingUnits.Remove(gameObject);
             Destroy(this.gameObject);
         }
+    }
+
+    private void OnMouseDown()
+    {
+        var _pc = FindObjectOfType<PlayerController>();
+        _pc.selectedUnit = gameObject;
+        _unitInspector.Show();
     }
 }

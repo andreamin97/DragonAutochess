@@ -52,4 +52,10 @@ public class ShopManager : MonoBehaviour
             }
         }
     }
+
+    public void CloseShop()
+    {
+        canvas.gameObject.SetActive(false);
+        isShopOpen = false;
+    }
 }

@@ -12,7 +12,7 @@ public class Unit : MonoBehaviour
     public bool isActive;
 
     public bool isFighting;
-    [SerializeField]protected float armor;
+    [SerializeField]public float armor;
     protected float _mRes;
     protected BoardManager boardManager;
     public float currentHealth;
@@ -24,7 +24,7 @@ public class Unit : MonoBehaviour
     
     protected MeshFilter meshFilter;
 
-    protected string unitName;
+    public string unitName;
     
     public enum Statuses
     {
@@ -38,6 +38,7 @@ public class Unit : MonoBehaviour
     {
         boardManager = FindObjectOfType<BoardManager>();
         meshFilter = GetComponent<MeshFilter>();
+        
     }
 
     public virtual void TakeDamage(float damage)
