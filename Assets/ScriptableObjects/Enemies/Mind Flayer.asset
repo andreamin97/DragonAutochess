@@ -12,19 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44eeebd7e3ac0204dbc223d31cfca396, type: 3}
   m_Name: Mind Flayer
   m_EditorClassIdentifier: 
-  Name: 
-  Health: 9
+  Name: Mind Flayer
+  Health: 15
   HpPerLevel: 2
   Armor: 0
   ArmorPerLevel: 0.35
   MagicResist: 0
   MrPerLevel: 0
-  AttackDamage: 4
-  ADPerLevel: 0.5
-  AttackRange: 4
+  AttackDamage: 5
+  ADPerLevel: 0.4
+  AttackRange: 6
   AttackSpeed: 1
   ASPerLevel: 0.05
   AbilityPower: 0
+  MovementSpeed: 3
   Mesh: {fileID: 3238583017736314578, guid: 3c4ff4ef82e6d744cb605019aab56f9b, type: 3}
   Thumbnail: {fileID: 0}
   _aiProfile: {fileID: 11400000, guid: d7d72d2265c6148408748412cfc816f4, type: 2}

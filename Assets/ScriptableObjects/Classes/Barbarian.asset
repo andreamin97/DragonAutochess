@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Barbarian
   Health: 55
-  HpPerLevel: 7
+  HpPerLevel: 5
   Armor: 3
   ArmorPerLevel: 0.34
   MagicResist: 0
   MrPerLevel: 0
-  AttackDamage: 4
-  ADPerLevel: 0.5
+  AttackDamage: 6
+  ADPerLevel: 0.75
   AttackRange: 2
-  AttackSpeed: 1.5
+  AttackSpeed: 1
   ASPerLevel: 0.2
   MovementSpeed: 3
   AbilityPower: 0
@@ -30,3 +30,4 @@ MonoBehaviour:
   Thumbnail: {fileID: 0}
   Cost: 2
   _aiProfile: {fileID: 11400000, guid: d7d72d2265c6148408748412cfc816f4, type: 2}
+  ability1: {fileID: 0}

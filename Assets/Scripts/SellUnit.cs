@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SellUnuit : MonoBehaviour
+public class SellUnit : MonoBehaviour
 {
     private BoardManager boardManager;
     private PlayerController _playerController;

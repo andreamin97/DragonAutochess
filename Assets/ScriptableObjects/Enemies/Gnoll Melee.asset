@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44eeebd7e3ac0204dbc223d31cfca396, type: 3}
   m_Name: Gnoll Melee
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Gnoll Melee
   Health: 20
   HpPerLevel: 4
   Armor: 2
@@ -20,11 +20,12 @@ MonoBehaviour:
   MagicResist: 0
   MrPerLevel: 0
   AttackDamage: 3
-  ADPerLevel: 0.5
+  ADPerLevel: 0.3
   AttackRange: 2
   AttackSpeed: 1
-  ASPerLevel: 0.1
+  ASPerLevel: 0.05
   AbilityPower: 0
+  MovementSpeed: 4
   Mesh: {fileID: -4205489885045695661, guid: 041fb50cc1efae547bdddbab5e9f78d7, type: 3}
   Thumbnail: {fileID: 0}
   _aiProfile: {fileID: 11400000, guid: d7d72d2265c6148408748412cfc816f4, type: 2}

@@ -19,6 +19,7 @@ public class BaseEnemy : ScriptableObject
      public float AttackSpeed;
      public float ASPerLevel;
      public float AbilityPower;
+     public float MovementSpeed;
      public Mesh Mesh;
      public Image Thumbnail;
      public AIProfile _aiProfile;

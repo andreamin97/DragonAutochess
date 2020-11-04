@@ -20,6 +20,8 @@ public class PlayerUnit : Unit
     private Image unitThumbnail;
     public bool CanBeSold = false;
 
+    private UnitInspector _unitInspector;
+
     protected override void Awake()
     {
         base.Awake();
@@ -28,6 +30,7 @@ public class PlayerUnit : Unit
         _aiController = GetComponent<AIController>();
         levelText = levelUI.GetComponent<Text>();
         Physics.IgnoreLayerCollision(9, 9);
+        _unitInspector = FindObjectOfType<UnitInspector>();
     }
 
 
@@ -55,18 +58,12 @@ public class PlayerUnit : Unit
             }
         }
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-    }
-
     private void OnMouseDown()
     {
+        _playerController.selectedUnit = gameObject;
         if (!_playerController.isFighting)
         {
-            _playerController.selectedUnit = gameObject;
+            _unitInspector.Show();
             canBeSwapped = false;
             _navMeshAgent.enabled = false;
             CanBeSold = true; 
@@ -131,6 +128,59 @@ public class PlayerUnit : Unit
         armor = UnitClass.Armor;
         _navMeshAgent.speed = UnitClass.MovementSpeed;
         _aiController.profile = UnitClass._aiProfile;
+        
+        //create ability behaviour based on the class
+        switch (unitName)
+        {
+            case "Cleric":
+                _aiController.ability1 = gameObject.AddComponent<Heal>();
+                _aiController.ability1.InitAbility("Heal", "Heal a friendly target for 10HP/lvl", 5f);
+                break;
+            case "Druid":
+                _aiController.ability1 = gameObject.AddComponent<SproutingRoots>();
+                _aiController.ability1.InitAbility("Sprouting Roots", "Snare an enemy for 5 seconds, impeding them to move and attack.", 4f);
+                break;
+            case "Sorcerer":
+                _aiController.ability1 = gameObject.AddComponent<Fireball_Ability>();
+                _aiController.ability1.InitAbility("Fireball", "Deal 30 damage around the target", 5f);
+                break;
+            case "Warlock":
+                _aiController.ability1 = gameObject.AddComponent<SapLife>();
+                _aiController.ability1.InitAbility("Sap Life", "Deal twice your attack damage to your target and heal half that amount" , 4f);
+                break;
+            case "Paladin":
+                _aiController.ability1 = gameObject.AddComponent<Bastion>();
+                _aiController.ability1.InitAbility("Bastion", "Snare self for 3seconds, but gain .5 armor/level" , 6f);
+                break;
+            case "Barbarian":
+                _aiController.ability1 = gameObject.AddComponent<Enrage>();
+                _aiController.ability1.InitAbility("Enrage", "Gain 1% leech for every 1% missing hp, up to 70%", 0f);
+                break;
+            case "Wizard":
+                _aiController.ability1 = gameObject.AddComponent<Singularity>();
+                _aiController.ability1.InitAbility("Singularity", "After a 3 seconds delay, pull all teleport all enemies in range to the center of the map and deal them 7 damage", 10f);
+                break;
+            case "Rogue":
+                _aiController.ability1 = gameObject.AddComponent<Assasinate>();
+                _aiController.ability1.InitAbility("Assasinate", "Teleport to the lowest hp enemy and deal 5(+5/lvl) damage to it", 6f);
+                break;
+            case "Fighter":
+                _aiController.ability1 = gameObject.AddComponent<BladeSpin>();
+                _aiController.ability1.InitAbility("Blade Spin", "Deal my AD*lvl to all units around me", 3f);
+                break;
+            case "Bard":
+                _aiController.ability1 = gameObject.AddComponent<Inspiration>();
+                _aiController.ability1.InitAbility("Inspiration", "Give all allies within a square from me at the beginning of the encounter 0.1AS/lvl", 0f);
+                break;
+            case "Ranger":
+                _aiController.ability1 = gameObject.AddComponent<AnimalCompanion>();
+                _aiController.ability1.InitAbility("Animal Companion", "At the beginning of an encounter summon a Wolf", 0f);
+                break;
+            case "Monk":
+                _aiController.ability1 = gameObject.AddComponent<ConcussiveFist>();
+                _aiController.ability1.InitAbility("Concussive Fist", "Strike the target, knocking them backwards and briefly snaring them", 4f);
+                break;}
+        
     }
 
     public void Swap(Vector3 location)
@@ -154,18 +204,31 @@ public class PlayerUnit : Unit
         armor += UnitClass.ArmorPerLevel;
         _mRes += UnitClass.MrPerLevel;
     }
-
+    
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
         
-        if (currentHealth - damage <= 0)
+        if (currentHealth <= 0)
         {
             boardManager.fightingUnits.Remove(gameObject);
 
+            foreach (var unit in boardManager.enemyFightingUnits)
+            {
+                var _ai = unit.GetComponent<EnemyAIController>();
+
+                if (_ai.Target == this)
+                {
+                    _ai.Target = null;
+                }
+            }
+            
             boardManager.RemoveUnit(this.gameObject, false);
         }
-        
-        
+    }
+
+    public void AddArmor(float value)
+    {
+        armor += value;
     }
 }

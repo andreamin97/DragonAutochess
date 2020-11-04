@@ -1,28 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public LayerMask boardLayer;
     public LayerMask unitLayer;
-    [HideInInspector] public GameObject selectedUnit;
+    /*[HideInInspector]*/ public GameObject selectedUnit;
     [HideInInspector] public bool isDragging;
     [HideInInspector] public GameObject selectedTile;
     public ShopManager shopManager;
-    [Range(0, 100)] public int Gold = 5;
+    [Range(0, 100)] public int Gold;
     public bool isFighting;
     private BoardManager bm;
     private RaycastHit hitData;
     private readonly List<GameObject> ownedUnits = new List<GameObject>();
-
-    public int playerLevel = 1;
+    public int level = 1;
+    [SerializeField]private int _experience = 0;
     
     private Ray ray;
 
     private void Start()
     {
         bm = FindObjectOfType<BoardManager>();
-        EditGold(5);
+        EditGold(6);
     }
 
     // Update is called once per frame
@@ -87,5 +88,11 @@ public class PlayerController : MonoBehaviour
     public void EditGold(int gold)
     {
         Gold += gold;
+    }
+
+    public void GainExp(int exp)
+    {
+        _experience += exp;
+        level = (int) Math.Floor(Math.Sqrt(_experience));
     }
 }
