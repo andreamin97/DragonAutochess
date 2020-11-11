@@ -26,32 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dae5c17-6d06-4ecb-a251-a9c8bdf25cac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/Druid_Snare.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/Druid_Snare.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GoogleSheetsForUnity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GoogleSheetsForUnity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile_Base.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile_Base.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/cdFillBar.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/cdFillBar.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/cleave_vfx_pf.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/cleave_vfx_pf.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/menu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/menu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/vfx_duration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GoogleSheetsForUnity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GoogleSheetsForUnity.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Projectile_Base.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Projectile_Base.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/cdFillBar.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/cdFillBar.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/cleave_vfx_pf.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/cleave_vfx_pf.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/menu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/menu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIController_Base.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIController_Base.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Projectile_Base.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile_Base.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/UnitList.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StateManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AIProfile.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AI/EnemyStandardAIProfile.cs" />
@@ -112,7 +91,6 @@
         <option value="$PROJECT_DIR$/Assets/UnitUI.cs" />
         <option value="$PROJECT_DIR$/Assets/SellUnuit.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Ability.cs" />
-        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Fireball.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Enrage.cs" />
@@ -120,12 +98,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Fireball_Ability.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SellUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UnitInspector.cs" />
         <option value="$PROJECT_DIR$/Assets/menu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/None.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/AnimalCompanion.cs" />
         <option value="$PROJECT_DIR$/Assets/cdFillBar.cs" />
@@ -141,7 +117,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Bastion.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/BaseUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AIController_Base.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AIController.cs" />
         <option value="$PROJECT_DIR$/Assets/cleave_vfx_pf.cs" />
@@ -150,6 +125,11 @@
         <option value="$PROJECT_DIR$/Assets/Projectile_Base.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" />
         <option value="$PROJECT_DIR$/Assets/vfx_duration.cs" />
+        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AIController_Base.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Projectile_Base.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" />
       </list>
     </option>
   </component>
@@ -189,10 +169,10 @@
     </option>
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19672">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="19672" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -252,7 +232,7 @@
       <workItem from="1604517639054" duration="701000" />
       <workItem from="1604595276950" duration="1820000" />
       <workItem from="1604759697965" duration="17673000" />
-      <workItem from="1605101743040" duration="12561000" />
+      <workItem from="1605101743040" duration="14582000" />
     </task>
     <servers />
   </component>
@@ -294,53 +274,61 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="707" y="405" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603295216859" />
-    <state width="1877" height="283" key="GridCell.Tab.0.bottom" timestamp="1604428486516">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.0.bottom" timestamp="1605127791455">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.0.bottom/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.0.bottom/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
+    <state width="1877" height="283" key="GridCell.Tab.0.bottom/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127791455" />
     <state width="1877" height="283" key="GridCell.Tab.0.bottom/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.0.center" timestamp="1604428486516">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.0.center" timestamp="1605127791454">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.0.center/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.0.center/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
+    <state width="1877" height="283" key="GridCell.Tab.0.center/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127791454" />
     <state width="1877" height="283" key="GridCell.Tab.0.center/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.0.left" timestamp="1604428486516">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.0.left" timestamp="1605127791454">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.0.left/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.0.left/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
+    <state width="1877" height="283" key="GridCell.Tab.0.left/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127791454" />
     <state width="1877" height="283" key="GridCell.Tab.0.left/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.0.right" timestamp="1604428486516">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.0.right" timestamp="1605127791455">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.0.right/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.0.right/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
+    <state width="1877" height="283" key="GridCell.Tab.0.right/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127791455" />
     <state width="1877" height="283" key="GridCell.Tab.0.right/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.1.bottom" timestamp="1604428486516">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.1.bottom" timestamp="1605127835017">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.1.bottom/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.1.bottom/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
+    <state width="1877" height="283" key="GridCell.Tab.1.bottom/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127835017" />
     <state width="1877" height="283" key="GridCell.Tab.1.bottom/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.1.center" timestamp="1604428486516">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.1.center" timestamp="1605127835017">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.1.center/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.1.center/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
+    <state width="1877" height="283" key="GridCell.Tab.1.center/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127835017" />
     <state width="1877" height="283" key="GridCell.Tab.1.center/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.1.left" timestamp="1604428486516">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.1.left" timestamp="1605127835017">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.1.left/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.1.left/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
+    <state width="1877" height="283" key="GridCell.Tab.1.left/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127835017" />
     <state width="1877" height="283" key="GridCell.Tab.1.left/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.1.right" timestamp="1604428486516">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.1.right" timestamp="1605127835017">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.1.right/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.1.right/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
+    <state width="1877" height="283" key="GridCell.Tab.1.right/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127835017" />
     <state width="1877" height="283" key="GridCell.Tab.1.right/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
     <state width="1877" height="283" key="GridCell.Tab.2.bottom" timestamp="1604428486517">
       <screen x="0" y="40" width="1920" height="1040" />
@@ -422,6 +410,23 @@
     <state x="623" y="265" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604417449640" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs</url>
+          <line>102</line>
+          <properties documentPath="D:\Unity Projects\RogueBattler\Assets\Scripts\EnemyAIController.cs" initialLine="102">
+            <startOffsets>
+              <option value="3000" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3014" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Frame#BoardManager.Update" memberName="colliders" />

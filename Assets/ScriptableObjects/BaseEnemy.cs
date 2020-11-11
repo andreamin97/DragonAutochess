@@ -23,4 +23,6 @@ public class BaseEnemy : ScriptableObject
      public Mesh Mesh;
      public Image Thumbnail;
      public AIProfile _aiProfile;
+     public BaseUnit.Range range;
+     
 }

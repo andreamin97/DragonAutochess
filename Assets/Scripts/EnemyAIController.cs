@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAIController : AIController_Base 
+public class EnemyAIController : AIController_Base
 {
     public AIProfile profile;
     private BoardManager _boardManager;
@@ -39,51 +39,47 @@ public class EnemyAIController : AIController_Base
             {
                 case Unit.Statuses.None:
                     if (_target == null)
-                       _target = profile.AcquireTarget(_boardManager.PlayerFightingUnitList(), transform.position)
-                           .GetComponent<PlayerUnit>();
+                        _target = profile.AcquireTarget(_boardManager.PlayerFightingUnitList(), transform.position)
+                            .GetComponent<PlayerUnit>();
 
                     if (_target == null)
                     {
                         FindObjectOfType<PlayerController>().isFighting = false;
                         _unit.isActive = false;
                     }
-            
+
                     distance = Vector3.Distance(_target.transform.position, transform.position);
-            
+
                     if (distance <= _unit.attackRange)
                     {
                         _navMeshAgent.SetDestination(transform.position);
                         if (nextAttack <= 0f)
                         {
-                            _target.TakeDamage(_unit._attackDamage);
+                            AttackTarget(_target);
                             nextAttack = _unit._attackSpeed;
                         }
                     }
                     else if (distance > _unit.attackRange)
                     {
                         _navMeshAgent.SetDestination(_target.transform.position);
-                    }        
-                    break;
-                
-                case Unit.Statuses.Snared:
-                    _navMeshAgent.SetDestination(transform.position);
-
-                    if (distance <= _unit.attackRange && nextAttack <= 0f)
-                    {
-                        _target.TakeDamage(_unit._attackDamage);
-                        nextAttack = _unit._attackSpeed;
                     }
-                    
+
+                    break;
+
+                case Unit.Statuses.Snared:
+                    _navMeshAgent.SetDestination(transform.position); 
+
                     _conditionDuration -= Time.deltaTime;
                     _unit._conditionDuration = _conditionDuration;
                     if (_conditionDuration <= 0)
                     {
                         SetCondition(Unit.Statuses.None, 0f);
                     }
+
                     break;
             }
-            
-            
+
+
         }
 
         nextAttack -= Time.deltaTime;
@@ -102,4 +98,27 @@ public class EnemyAIController : AIController_Base
         return _condition;
     }
 
+    private void AttackTarget(PlayerUnit target)
+    {
+        switch (Range)
+        {
+            case BaseUnit.Range.Melee:
+                target.TakeDamage(_unit._attackDamage);
+                Instantiate(attackFX, target.transform);
+
+                if (_unit.leech > 0f)
+                    _unit.TakeDamage(-(_unit._attackDamage * _unit.leech));
+                break;
+            
+            case BaseUnit.Range.Ranged:
+                var projectile = (GameObject) Instantiate(Resources.Load("Projectile"), this.gameObject.transform);
+                var projBase = projectile.GetComponent<Projectile_Base>();
+                projBase.damage = _unit._attackDamage;
+                projBase.target = target;
+                projBase.VFX = attackFX;
+
+                break;
+        }
+
+    }
 }

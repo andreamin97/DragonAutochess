@@ -31,6 +31,7 @@ public class EnemyUnit : Unit
         attackRange = enemyClass.AttackRange;
         _aiController.profile = enemyClass._aiProfile;
         _navMeshAgent.speed = enemyClass.MovementSpeed;
+        _aiController.Range = enemyClass.range;
     }
 
     public override void TakeDamage(float damage)

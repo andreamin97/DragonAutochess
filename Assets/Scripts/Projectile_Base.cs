@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Projectile_Base : MonoBehaviour
 {
-    public EnemyUnit target;
+    public Unit target;
     private float _speed = 0.05f;
     public float damage;
     public GameObject VFX;
