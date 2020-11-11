@@ -38,7 +38,8 @@ public class SproutingRoots : Ability
         currentCd = cd;
         
         target.GetComponent<EnemyAIController>().SetCondition(Unit.Statuses.Snared, snareDuration + durationPerLevel*_unit.unitLevel);
-        
+        var snareFX = (GameObject)Instantiate(Resources.Load("VFX/Druid_Snare"), target.transform.position + Vector3.up/2f, Quaternion.Euler(-90f, 0f, 0f));
+        snareFX.GetComponent<vfx_duration>().duration = snareDuration;
         //return
         controller.ResetTarget();
         return false;

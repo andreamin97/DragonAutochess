@@ -7,8 +7,6 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="cdFillBar.cs" t="Include" />
-        <e p="cleave_vfx_pf.cs" t="Include" />
         <e p="FXIFIED" t="Include">
           <e p="common" t="Include">
             <e p="Shaders" t="Include">
@@ -16,7 +14,6 @@
             </e>
           </e>
         </e>
-        <e p="GoogleSheetsForUnity.cs" t="Include" />
         <e p="JMO Assets" t="Include">
           <e p="Cartoon FX" t="Include">
             <e p="Shaders" t="Include">
@@ -31,8 +28,6 @@
             </e>
           </e>
         </e>
-        <e p="menu.cs" t="Include" />
-        <e p="Projectile_Base.cs" t="Include" />
         <e p="ScriptableObjects" t="Include">
           <e p="AI" t="Include">
             <e p="AIProfile.cs" t="Include" />
@@ -64,11 +59,16 @@
           <e p="AIController.cs" t="Include" />
           <e p="AIController_Base.cs" t="Include" />
           <e p="BoardManager.cs" t="Include" />
+          <e p="cdFillBar.cs" t="Include" />
+          <e p="cleave_vfx_pf.cs" t="Include" />
           <e p="EnemyAIController.cs" t="Include" />
           <e p="EnemyUnit.cs" t="Include" />
           <e p="Fireball.cs" t="Include" />
+          <e p="GoogleSheetsForUnity.cs" t="Include" />
+          <e p="menu.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerUnit.cs" t="Include" />
+          <e p="Projectile_Base.cs" t="Include" />
           <e p="SellUnit.cs" t="Include" />
           <e p="ShopManager.cs" t="Include" />
           <e p="Singularity_PF.cs" t="Include" />
@@ -78,6 +78,7 @@
           <e p="UnitInspector.cs" t="Include" />
           <e p="UnitUI.cs" t="Include" />
         </e>
+        <e p="vfx_duration.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
