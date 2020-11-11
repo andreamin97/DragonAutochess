@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,8 +17,18 @@ public class PlayerController : MonoBehaviour
     private RaycastHit hitData;
     private readonly List<GameObject> ownedUnits = new List<GameObject>();
     public int level = 1;
-    [SerializeField]private int _experience = 0;
     
+    private int _experience = 0;
+    private int _nextLevelExperience = 1;
+
+    public Text experienceText;
+
+    public int Experience
+    {
+        get => _experience;
+        set => _experience = value;
+    }
+
     private Ray ray;
 
     private void Start()
@@ -64,10 +75,8 @@ public class PlayerController : MonoBehaviour
             selectedTile = null;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && selectedUnit != null && !isFighting)
-        {
-           // bm.RemoveUnit(selectedUnit, true);
-        }
+        _nextLevelExperience = Mathf.FloorToInt((Mathf.Pow(level+1f, 2f))); 
+        experienceText.text = _experience + " / " +  _nextLevelExperience;
     }
 
    public void AddOwnedUnit(GameObject unit)
@@ -93,6 +102,6 @@ public class PlayerController : MonoBehaviour
     public void GainExp(int exp)
     {
         _experience += exp;
-        level = (int) Math.Floor(Math.Sqrt(_experience));
+        level = Mathf.FloorToInt( Mathf.Sqrt(_experience + 1) );
     }
 }

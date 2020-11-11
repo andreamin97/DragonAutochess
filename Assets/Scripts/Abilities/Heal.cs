@@ -13,8 +13,14 @@ public class Heal : Ability
     public float range = 3f;
     public float amount = 10f;
     public float perLevel = 10f;
-    public float cd = 8f;
+    public float cd = 5f;
     private float distance;
+    public GameObject vEffect = null;
+
+    private void Start()
+    {
+        vEffect = (GameObject) Resources.Load("VFX/FX_Healing_AOE_AA");
+    }
 
     public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
     {
@@ -54,6 +60,8 @@ public class Heal : Ability
         }
         else
         { 
+            //Effect
+            Instantiate(vEffect, lowestUnit.transform);
             //heal
             lowestUnit.TakeDamage(-(amount+perLevel));
             

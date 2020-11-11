@@ -21,7 +21,7 @@ public class Inspiration : Ability
                 if (coll.GetComponent<PlayerUnit>() != null)
                 {
                     coll.GetComponent<PlayerUnit>()._attackSpeed -= (bonus + perLevel);
-                    Debug.Log(coll.GetComponent<PlayerUnit>().UnitClass);
+                    Instantiate( Resources.Load("VFX/Bard_Buff"), coll.transform.position+Vector3.up, Quaternion.Euler(-90f, 0f, 0f));
                 }
             }
 

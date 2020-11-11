@@ -14,15 +14,17 @@ public class Slot : MonoBehaviour
     public BaseUnit unit;
     private PlayerController _playerController;
     private BoardManager boardManager;
-
+    private GoogleSheetsForUnity _sheets;
     private bool isEnabled = true;
 
     private GameObject playerUnits;
+    private PlayerUnit temp;
 
     private void Awake()
     {
         boardManager = FindObjectOfType<BoardManager>();
         _playerController = FindObjectOfType<PlayerController>();
+        _sheets = FindObjectOfType<GoogleSheetsForUnity>();
     }
 
     private void Start()
@@ -61,6 +63,9 @@ public class Slot : MonoBehaviour
                     }
 
                     _playerController.EditGold(-unit.Cost);
+                    
+                    _sheets.AppendToSheet( "UnitsLevelUp", "A:A", new List<object>() { unit.Name,  units[0].GetComponent<PlayerUnit>().unitLevel, boardManager.Stage } );
+                    
                 }
                 else
                 {
@@ -76,7 +81,7 @@ public class Slot : MonoBehaviour
                             newUnit.GetComponent<NavMeshAgent>().enabled = true;
                         }
 
-                        var temp = newUnit.GetComponent<PlayerUnit>();
+                        temp = newUnit.GetComponent<PlayerUnit>();
                         temp.UnitClass = unit;
                         temp.InitUnit();
                         isEnabled = false;
@@ -85,10 +90,13 @@ public class Slot : MonoBehaviour
                         _playerController.EditGold(-unit.Cost);
                     }
                 }
+               
+                _sheets.AppendToSheet("Units", "A:A", new List<object>() { temp.unitName });
+                isEnabled = false;
+                UpdateSlot();
             }
 
-            isEnabled = false;
-            UpdateSlot();
+            
         }
         
     }

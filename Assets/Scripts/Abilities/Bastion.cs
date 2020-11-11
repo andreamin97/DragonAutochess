@@ -11,6 +11,13 @@ public class Bastion : Ability
     private bool isCasting = false;
     private PlayerUnit _unit = null;
     private float _bonusArmor = 0f;
+    public GameObject vEffect = null;
+    private GameObject effect;
+                                   
+    private void Start()
+    {
+        vEffect = (GameObject) Resources.Load("VFX/CFX4 Aura Bubble C");
+    }
     public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
     {
         if (_unit == null)
@@ -20,6 +27,7 @@ public class Bastion : Ability
         {
             _bonusArmor = 2f + 1f * _unit.unitLevel;
             _unit.AddArmor(_bonusArmor);
+            effect = Instantiate(vEffect, this.gameObject.transform);
             isCasting = true;
         }
         
@@ -31,6 +39,7 @@ public class Bastion : Ability
         }
         
         _unit.AddArmor(-(_bonusArmor));
+        Destroy(effect);
         _time = 0f;
         currentCd = _cd;
         return isCasting = false;

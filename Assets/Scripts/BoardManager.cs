@@ -12,12 +12,14 @@ public class BoardManager : MonoBehaviour
     public BoardTile[] bench;
     public BoardTile[] enemyBoard;
     public Board[] enemyPositioning;
-
+    public Board[] enemyPositioningBoss;
+    
     private int _currentFightBoardIndex;
 
     public List<GameObject> _ownedUnits = new List<GameObject>();
     public List<GameObject> fightingUnits = new List<GameObject>();
     public List<GameObject> enemyFightingUnits = new List<GameObject>();
+    public List<GameObject> summonedUnits = new List<GameObject>();
 
     public GameObject baseEnemy;
     private PlayerController _playerController;
@@ -38,6 +40,7 @@ public class BoardManager : MonoBehaviour
     public Text playerLevel;
     public Text playerGold;
     public int maxUnit = 2;
+    public Text fightButton;
 
     private string result;
     
@@ -68,6 +71,8 @@ public class BoardManager : MonoBehaviour
 
         if (_playerController.isFighting)
         {
+            fightButton.enabled = false;
+            
             if (fightingUnitCount <= 0)
             {
                 // The player has lost
@@ -86,6 +91,12 @@ public class BoardManager : MonoBehaviour
                
                 DeployEnemyBoard();
                 _shopManager.RandomizeShop(false);
+
+                foreach (var summon in summonedUnits)
+                {
+                    Destroy(summon);
+                }
+                summonedUnits.Clear();
                 
             }
 
@@ -96,6 +107,12 @@ public class BoardManager : MonoBehaviour
                 result = "Won";
                 _playerController.isFighting = false;
                 _playerController.GainExp(1);
+ 
+                foreach (var summon in summonedUnits)
+                {
+                    Destroy(summon);
+                }
+                summonedUnits.Clear();
                 
                 // Reset player board and spawn new enemies
                 foreach (var unit in fightingUnits) 
@@ -107,6 +124,7 @@ public class BoardManager : MonoBehaviour
                 _stage++;
                 stageText.text = _stage.ToString();
                 _playerController.EditGold(5);
+                _playerController.EditGold( (int)(_playerController.Gold*0.1f) );
                
                 _shopManager.RandomizeShop(false);
             }
@@ -114,6 +132,14 @@ public class BoardManager : MonoBehaviour
             if (fightOver)
             {
                 _sheetsForUnity.AppendToSheet("FightDuration", "B:B", new List<object>() { PlayerPrefs.GetString("MatchID"), _unitCount, _stage-1, _fightTimer, result});
+                
+                var unitsThatWon = new List<object>();
+                foreach (var unit in fightingUnits)
+                {
+                    unitsThatWon.Add(unit.GetComponent<PlayerUnit>().unitName);
+                }
+                _sheetsForUnity.AppendToSheet("UnitsWon", "A:A", unitsThatWon);
+                
                 fightingUnits.Clear();
             }
         }
@@ -124,6 +150,8 @@ public class BoardManager : MonoBehaviour
             {
                 PlayerLost();
             }
+
+            fightButton.enabled = true;
         }
        
         if (_playerController.isFighting)
@@ -134,29 +162,59 @@ public class BoardManager : MonoBehaviour
 
     private void DeployEnemyBoard()
     {
-        _currentFightBoardIndex = Random.Range(0, enemyPositioning.Length - 1);
+        if (_stage % 10 != 0)
+        {
+            _currentFightBoardIndex = Random.Range(0, enemyPositioning.Length - 1);
 
-        for (var i = 0; i < 32; i++)
-            if (enemyPositioning[_currentFightBoardIndex].enemyPositioning[i] != null)
-            {
-                var spawnPosition = enemyBoard[i].tile.transform.position + Vector3.up;
-
-                var newUnit = Instantiate(baseEnemy, spawnPosition, Quaternion.identity);
-
-                NavMeshHit navHit;
-                if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
+            for (var i = 0; i < 32; i++)
+                if (enemyPositioning[_currentFightBoardIndex].enemyPositioning[i] != null)
                 {
-                    newUnit.transform.position = navHit.position;
-                    newUnit.GetComponent<NavMeshAgent>().enabled = true;
+                    var spawnPosition = enemyBoard[i].tile.transform.position + Vector3.up;
+
+                    var newUnit = Instantiate(baseEnemy, spawnPosition, Quaternion.identity);
+
+                    NavMeshHit navHit;
+                    if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
+                    {
+                        newUnit.transform.position = navHit.position;
+                        newUnit.GetComponent<NavMeshAgent>().enabled = true;
+                    }
+
+                    newUnit.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+                    var temp = newUnit.GetComponent<EnemyUnit>();
+                    temp.enemyClass = enemyPositioning[_currentFightBoardIndex].GetEnemyAtIndex(i);
+                    temp.InitUnit();
+
+                    enemyBoard[i].unit = newUnit;
                 }
+        }
+        else
+        {
+            
+            _currentFightBoardIndex = Random.Range(0, enemyPositioningBoss.Length - 1);
 
-                newUnit.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-                var temp = newUnit.GetComponent<EnemyUnit>();
-                temp.enemyClass = enemyPositioning[_currentFightBoardIndex].GetEnemyAtIndex(i);
-                temp.InitUnit();
+            for (var i = 0; i < 32; i++)
+                if (enemyPositioningBoss[_currentFightBoardIndex].enemyPositioning[i] != null)
+                {
+                    var spawnPosition = enemyBoard[i].tile.transform.position + Vector3.up;
 
-                enemyBoard[i].unit = newUnit;
-            }
+                    var newUnit = Instantiate(baseEnemy, spawnPosition, Quaternion.identity);
+
+                    NavMeshHit navHit;
+                    if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
+                    {
+                        newUnit.transform.position = navHit.position;
+                        newUnit.GetComponent<NavMeshAgent>().enabled = true;
+                    }
+
+                    newUnit.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+                    var temp = newUnit.GetComponent<EnemyUnit>();
+                    temp.enemyClass = enemyPositioningBoss[_currentFightBoardIndex].GetEnemyAtIndex(i);
+                    temp.InitUnit();
+
+                    enemyBoard[i].unit = newUnit;
+                }
+        }
     }
 
     public GameObject GetBenchFreeSlot()
@@ -203,52 +261,61 @@ public class BoardManager : MonoBehaviour
 
     public void StartEncounter()
     {
-
-        for (var i = 0; i < 32; i++)
-            if (board[i].unit != null)
-            {
-                if (fightingUnits.Count < _playerController.level + 1 &&
-                    !board[i].unit.gameObject.CompareTag("Summon"))
-                {
-                    fightingUnits.Add(board[i].unit);
-                }
-                else if (board[i].unit.gameObject.CompareTag("Summon"))
-                {
-                    fightingUnits.Add(board[i].unit);
-                }
-                else
-                {
-                    board[i].unit.GetComponent<NavMeshAgent>().Warp(GetBenchFreeSlot().transform.position);
-                }
-
-            }
-
-        if (fightingUnits.Count > 0)
+        if (!_playerController.isFighting)
         {
-            foreach (var unit in fightingUnits)
-            {
-                var _unit = unit.GetComponent<PlayerUnit>();
-                var _ai = _unit.GetComponent<AIController>();
-                _unit.isActive = true;
-
-                if (_ai != null)
-                {
-                    //_ai.ability1.currentCd = _ai.ability1.coolDown;
-                    _ai.SetCondition(Unit.Statuses.None, 0f);
-                    _ai.ability1.castOnce = false;
-                }
-            }
-
             for (var i = 0; i < 32; i++)
-                if (enemyBoard[i].unit != null)
+                if (board[i].unit != null)
                 {
-                    enemyBoard[i].unit.GetComponent<EnemyUnit>().isActive = true;
-                    enemyFightingUnits.Add(enemyBoard[i].unit);
+                    if (fightingUnits.Count < _playerController.level + 1 &&
+                        !board[i].unit.gameObject.CompareTag("Summon"))
+                    {
+                        fightingUnits.Add(board[i].unit);
+                    }
+                    else if (board[i].unit.gameObject.CompareTag("Summon"))
+                    {
+                        fightingUnits.Add(board[i].unit);
+                    }
+                    else
+                    {
+                        board[i].unit.GetComponent<NavMeshAgent>().Warp(GetBenchFreeSlot().transform.position);
+                    }
+
                 }
 
-            _playerController.isFighting = true;
-            _unitCount = fightingUnits.Count;
+            if (fightingUnits.Count > 0)
+            {
+                foreach (var unit in fightingUnits)
+                {
+                    var _unit = unit.GetComponent<PlayerUnit>();
+                    var _ai = _unit.GetComponent<AIController>();
+                    _unit.isActive = true;
+
+                    if (_ai != null)
+                    {
+                        //_ai.ability1.currentCd = _ai.ability1.coolDown;
+                        _ai.SetCondition(Unit.Statuses.None, 0f);
+                        _ai.ability1.castOnce = false;
+                    }
+                }
+
+                for (var i = 0; i < 32; i++)
+                    if (enemyBoard[i].unit != null)
+                    {
+                        enemyBoard[i].unit.GetComponent<EnemyUnit>().isActive = true;
+                        enemyFightingUnits.Add(enemyBoard[i].unit);
+                    }
+
+                _playerController.isFighting = true;
+                _unitCount = fightingUnits.Count;
+            }
         }
+        
+        var unitsFighting = new List<object>();
+        foreach (var unit in fightingUnits)
+        {
+            unitsFighting.Add(unit.GetComponent<PlayerUnit>().unitName);
+        }
+        _sheetsForUnity.AppendToSheet("UnitsTotalGames", "A:A", unitsFighting);
     }
 
     public List<GameObject> EnemyList()
@@ -296,6 +363,21 @@ public class BoardManager : MonoBehaviour
         Destroy(unit);
     }
 
+    public void SellSelectedUnit()
+    {
+        var _unit = _playerController.selectedUnit.GetComponent<PlayerUnit>(); 
+        _playerController.EditGold(_unit.unitCost + (_unit.unitLevel-1)*_unit.unitCost/2);
+        
+        for (int i = 0; i < 32; i++)
+            if(board[i].unit == _playerController.selectedUnit)
+                SetUnitAtSlot(null, board[i].tile);
+        
+        _ownedUnits.Remove(_playerController.selectedUnit);
+        
+        Destroy(_playerController.selectedUnit);
+        _playerController.selectedUnit = null;
+    }
+
     private void ResetPlayerUnitsPosition()
     {
         if (fightingUnits.Count > 0)
@@ -305,6 +387,7 @@ public class BoardManager : MonoBehaviour
                         if (unit == board[i].unit)
                         {
                             unit.GetComponent<AIController>().ResetUnit(board[i].tile.transform.position);
+                            unit.GetComponent<AIController>().ability1.ResetCD();
                             unit.GetComponent<PlayerUnit>()._attackSpeed =
                                 unit.GetComponent<PlayerUnit>().UnitClass.AttackSpeed +
                                 unit.GetComponent<PlayerUnit>().UnitClass.ASPerLevel;
@@ -325,6 +408,15 @@ public class BoardManager : MonoBehaviour
         }
         
         return -1;
+    }
+
+    public void BuyExp()
+    {
+        if (_playerController.Gold >= 2)
+        {
+            _playerController.Gold -= 2;
+            _playerController.GainExp(2);
+        }
     }
 
     private void PlayerLost()

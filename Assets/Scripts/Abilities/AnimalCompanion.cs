@@ -69,10 +69,9 @@ public class AnimalCompanion : Ability
                     wolf.GetComponent<PlayerUnit>().InitUnit();
                     
                     wolf.GetComponent<NavMeshAgent>().enabled = true;
-                    boardManager.board[i].unit = wolf;
                     wolf.GetComponent<PlayerUnit>().isActive = true;
                     boardManager.fightingUnits.Add(wolf);
-                    boardManager._ownedUnits.Add(wolf);
+                    boardManager.summonedUnits.Add(wolf);
 
                     return;
                 }

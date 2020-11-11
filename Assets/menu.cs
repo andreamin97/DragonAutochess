@@ -1,18 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class menu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   public Canvas canvas;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   public void Hide()
+   {
+      var dateTime = (DateTime.Now);
+
+      var id = dateTime.ToString().Replace("/", "").Replace(" ", "").Replace(":", "");
+      
+      PlayerPrefs.SetString("MatchID", id);
+      SceneManager.LoadScene(1);
+   }
 }
