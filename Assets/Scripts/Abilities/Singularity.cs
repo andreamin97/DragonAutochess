@@ -10,6 +10,7 @@ public class Singularity : Ability
     private Object _fb = null;
     private float castTimer = .2f;
     private float time = 0f;
+    private GameObject prefab;
     
     public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
     {
@@ -26,7 +27,9 @@ public class Singularity : Ability
         
         else if (time >= castTimer)
         {
-            Instantiate(_fb, new Vector3(7f, 0f, 7f), Quaternion.Euler(45f, 0, 45f));
+            prefab = (GameObject) Instantiate(_fb, new Vector3(7f, 1f, 7f), Quaternion.Euler(-90f, 0, 0f));
+            
+            boardManager.summonedUnits.Add(prefab);
             
             time = 0f;
             currentCd = cd;

@@ -25,4 +25,11 @@ public class BaseUnit : ScriptableObject
      public int Cost;
      public AIProfile _aiProfile;
      public Ability ability1;
+     public Range range;
+
+     public enum Range
+     {
+        Melee,
+        Ranged
+     }
 }

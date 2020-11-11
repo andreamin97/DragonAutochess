@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Fireball : MonoBehaviour
@@ -12,19 +13,28 @@ public class Fireball : MonoBehaviour
     private MeshFilter _meshFilter;
     private Rigidbody _rigidbody;
 
+    private void Start()
+    {
+        Physics.IgnoreLayerCollision(9, 9);
+    }
+
     private void OnCollisionEnter(Collision other)
     {
-        if ((unit = other.gameObject.GetComponent<EnemyUnit>()) && unit.isActive==true)
+        if ((other.gameObject.CompareTag("Ground")));
         {
-            unit.TakeDamage(50f);
-            Debug.Log(other.gameObject.GetComponent<EnemyUnit>().enemyClass + "took 50 damage.");
-        }
+            var colls = Physics.OverlapSphere(other.gameObject.transform.position, 3f);
 
-        float f = 0f;
-        while (f < 1f)
-            f += Time.deltaTime;
-        
-        Destroy(this.gameObject);
+            foreach (var coll in colls)
+            {
+                if (coll.GetComponent<EnemyUnit>() != null)
+                {
+                    coll.GetComponent<EnemyUnit>().TakeDamage(50f);
+                    Debug.Log("HIT");
+                }
+            }
+            
+            Destroy(this.gameObject);
+        }
     }
 
     public void SetPosition(Vector3 pos)

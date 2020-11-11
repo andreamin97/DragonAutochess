@@ -107,11 +107,26 @@ public class AIController : AIController_Base
 
     private void AttackTarget(EnemyUnit target)
     {
-       
-        target.TakeDamage(_unit._attackDamage);
+        switch (Range)
+        {
+            case BaseUnit.Range.Melee:
+                target.TakeDamage(_unit._attackDamage);
+                Instantiate(attackFX, target.transform);
         
-        if(_unit.leech > 0f)
-            _unit.TakeDamage(-(_unit._attackDamage*_unit.leech));
+                if(_unit.leech > 0f)
+                    _unit.TakeDamage(-(_unit._attackDamage*_unit.leech));
+                break;
+            case BaseUnit.Range.Ranged:
+                var projectile = (GameObject) Instantiate(Resources.Load("Projectile"), this.gameObject.transform);
+                var projBase = projectile.GetComponent<Projectile_Base>();
+                projBase.damage = _unit._attackDamage;
+                projBase.target = target;
+                projBase.VFX = attackFX;
+                
+                break;
+        }
+       
+        
         
         _nextAttack = _unit._attackSpeed;
     }

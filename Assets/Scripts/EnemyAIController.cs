@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAIController : MonoBehaviour
+public class EnemyAIController : AIController_Base 
 {
     public AIProfile profile;
     private BoardManager _boardManager;
