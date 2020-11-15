@@ -444,7 +444,7 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    private void PlayerLost()
+    public void PlayerLost()
     {
         SceneManager.LoadScene(0);
     }

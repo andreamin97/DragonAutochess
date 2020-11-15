@@ -26,89 +26,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dae5c17-6d06-4ecb-a251-a9c8bdf25cac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/GoldFloatingText.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/GoldFloatingText.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/floatingTextAnim.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/floatingTextAnim.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/JMO Assets/Cartoon FX/CFX3 Prefabs/Light/CFX3_ResurrectionLight_Circle 1.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/JMO Assets/Cartoon FX/CFX3 Prefabs/Light/CFX3_ResurrectionLight_Circle 1.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials/glow_dot_add.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials/glow_dot_add.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials/particle trail additive intensify.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials/particle trail additive intensify.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials/particle trail additive.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials/particle trail additive.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Particle Attractor documentation.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Particle Attractor documentation.txt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 000 basic.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 000 basic.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 001 local revolving spherical only work at world origin.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 001 local revolving spherical only work at world origin.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 002 local revolving move.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 002 local revolving move.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 003 lightning.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 003 lightning.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 004 soft noise.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 004 soft noise.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 005 only work at world origin.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 005 only work at world origin.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle repeller 000.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle repeller 000.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle revolver 000 yz.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle revolver 000 yz.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle revolver 001 Megido.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle revolver 001 Megido.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle revolver 002 Eternal charge.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle revolver 002 Eternal charge.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle selfish 000 basic.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle selfish 000 basic.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorLinear.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorLinear.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorMove.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorMove.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorSelf.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorSelf.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorSpherical.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorSpherical.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/rotation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/rotation.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Shaders.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Shaders/Particles Additive Intensify.shader" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Shaders/Particles Additive Intensify.shader.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Textures/glow_small_dot.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Textures/glow_small_dot.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/DamageFloatingText.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/DamageFloatingText.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/GoldFloatingText.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/GoldFloatingText.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/LevelUp.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/LevelUp.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/SapLife.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/SapLife.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/Smoke.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/Smoke.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SapLife_pf.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SapLife_pf.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI_Floating_Text.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI_Floating_Text.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PauseMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Tut_pf.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Tut_pf.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ReplayTutorialButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ReplayTutorialButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TutorialButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TutorialButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TutorialManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/JMO Assets/Cartoon FX/CFX3 Prefabs/Light/CFX3_ResurrectionLight_Circle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/JMO Assets/Cartoon FX/CFX3 Prefabs/Light/CFX3_ResurrectionLight_Circle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Unit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Unit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Slot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Slot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UnitUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UnitUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/vfx_duration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/vfx_duration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TutorialManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TutorialManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +57,6 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/vfx_duration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Abilities/Inspiration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/AI/StandardAIProfile.cs" root0="FORCE_HIGHLIGHTING" />
@@ -144,6 +74,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Fireball.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Abilities/BladeSpin.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Programmi/Unity/2020.1.4f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PauseMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Abilities/None.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Abilities/Enrage.cs" root0="FORCE_HIGHLIGHTING" />
@@ -156,10 +87,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AI/nemyStandardAIProfile.cs" />
-        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AI/AIProfile.cs" />
-        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AI/StandardAIProfile.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Board.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tile.cs" />
         <option value="$PROJECT_DIR$/Assets/UnitUI.cs" />
@@ -201,12 +128,16 @@
         <option value="$PROJECT_DIR$/Assets/UI_Floating_Text.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UnitUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
         <option value="$PROJECT_DIR$/Assets/vfx_duration.cs" />
         <option value="$PROJECT_DIR$/Assets/SapLife_pf.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Slot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TutorialButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TutorialManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/ReplayTutorialButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/PauseMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
       </list>
     </option>
   </component>
@@ -315,6 +246,7 @@
       <workItem from="1605194238144" duration="2005000" />
       <workItem from="1605198652607" duration="12146000" />
       <workItem from="1605276426694" duration="1876000" />
+      <workItem from="1605446755879" duration="4685000" />
     </task>
     <servers />
   </component>
@@ -476,11 +408,11 @@
     <state width="1877" height="284" key="GridCell.Tab.3.right/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467040" />
     <state width="1877" height="283" key="GridCell.Tab.3.right/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014564" />
     <state width="1877" height="283" key="GridCell.Tab.3.right/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486517" />
-    <state x="764" y="1314" key="RiderGenerateDialog" timestamp="1605108715557">
+    <state x="764" y="1314" key="RiderGenerateDialog" timestamp="1605451146147">
       <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state x="764" y="234" key="RiderGenerateDialog/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603358164829" />
-    <state x="764" y="1314" key="RiderGenerateDialog/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605108715557" />
+    <state x="764" y="1314" key="RiderGenerateDialog/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605451146147" />
     <state x="764" y="234" key="RiderGenerateDialog/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604777576623" />
     <state x="346" y="1192" width="1197" height="804" key="SettingsEditor" timestamp="1605194499194">
       <screen x="0" y="1120" width="1920" height="1040" />
