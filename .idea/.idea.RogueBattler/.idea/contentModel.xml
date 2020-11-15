@@ -28,6 +28,20 @@
             </e>
           </e>
         </e>
+        <e p="Particle Attractor by Moonflower Carnivore" t="Include">
+          <e p="Particle Attractor documentation.txt" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="particleAttractorLinear.cs" t="Include" />
+            <e p="particleAttractorMove.cs" t="Include" />
+            <e p="particleAttractorSelf.cs" t="Include" />
+            <e p="particleAttractorSpherical.cs" t="Include" />
+            <e p="rotation.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Particles Additive Intensify.shader" t="Include" />
+          </e>
+        </e>
+        <e p="SapLife_pf.cs" t="Include" />
         <e p="ScriptableObjects" t="Include">
           <e p="AI" t="Include">
             <e p="AIProfile.cs" t="Include" />
@@ -78,6 +92,7 @@
           <e p="UnitInspector.cs" t="Include" />
           <e p="UnitUI.cs" t="Include" />
         </e>
+        <e p="UI_Floating_Text.cs" t="Include" />
         <e p="vfx_duration.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />

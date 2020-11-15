@@ -26,12 +26,89 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dae5c17-6d06-4ecb-a251-a9c8bdf25cac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Animations.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/GoldFloatingText.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/GoldFloatingText.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/floatingTextAnim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/floatingTextAnim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/JMO Assets/Cartoon FX/CFX3 Prefabs/Light/CFX3_ResurrectionLight_Circle 1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/JMO Assets/Cartoon FX/CFX3 Prefabs/Light/CFX3_ResurrectionLight_Circle 1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials/glow_dot_add.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials/glow_dot_add.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials/particle trail additive intensify.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials/particle trail additive intensify.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials/particle trail additive.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Materials/particle trail additive.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Particle Attractor documentation.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Particle Attractor documentation.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 000 basic.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 000 basic.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 001 local revolving spherical only work at world origin.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 001 local revolving spherical only work at world origin.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 002 local revolving move.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 002 local revolving move.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 003 lightning.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 003 lightning.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 004 soft noise.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 004 soft noise.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 005 only work at world origin.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle attractor 005 only work at world origin.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle repeller 000.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle repeller 000.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle revolver 000 yz.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle revolver 000 yz.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle revolver 001 Megido.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle revolver 001 Megido.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle revolver 002 Eternal charge.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle revolver 002 Eternal charge.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle selfish 000 basic.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Prefabs/Particle selfish 000 basic.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorLinear.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorLinear.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorMove.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorMove.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorSelf.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorSelf.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorSpherical.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/particleAttractorSpherical.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/rotation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Scripts/rotation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Shaders/Particles Additive Intensify.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Shaders/Particles Additive Intensify.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Textures/glow_small_dot.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Particle Attractor by Moonflower Carnivore/Textures/glow_small_dot.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/DamageFloatingText.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/DamageFloatingText.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/GoldFloatingText.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/GoldFloatingText.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/LevelUp.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/LevelUp.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/SapLife.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/SapLife.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/Smoke.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/VFX/Smoke.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SapLife_pf.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SapLife_pf.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI_Floating_Text.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI_Floating_Text.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIController_Base.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIController_Base.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Projectile_Base.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile_Base.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JMO Assets/Cartoon FX/CFX3 Prefabs/Light/CFX3_ResurrectionLight_Circle.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JMO Assets/Cartoon FX/CFX3 Prefabs/Light/CFX3_ResurrectionLight_Circle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Unit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Unit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Slot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Slot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UnitUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UnitUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/vfx_duration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/vfx_duration.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,9 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/StateManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AIProfile.cs" />
-        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AI/EnemyStandardAIProfile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AI/nemyStandardAIProfile.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/AI/AIProfile.cs" />
@@ -92,14 +166,11 @@
         <option value="$PROJECT_DIR$/Assets/SellUnuit.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Ability.cs" />
         <option value="$PROJECT_DIR$/Assets/Fireball.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Enrage.cs" />
         <option value="$PROJECT_DIR$/Assets/GoogleSheetsForUnity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Fireball_Ability.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SellUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UnitInspector.cs" />
         <option value="$PROJECT_DIR$/Assets/menu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/None.cs" />
@@ -107,10 +178,7 @@
         <option value="$PROJECT_DIR$/Assets/cdFillBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/ConcussiveFist.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ability.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UnitUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Slot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Heal.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Singularity_PF.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Singularity.cs" />
@@ -124,12 +192,21 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Inspiration.cs" />
         <option value="$PROJECT_DIR$/Assets/Projectile_Base.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" />
-        <option value="$PROJECT_DIR$/Assets/vfx_duration.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AIController_Base.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Projectile_Base.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" />
+        <option value="$USER_HOME$/.ideavimrc" />
+        <option value="$PROJECT_DIR$/Assets/UI_Floating_Text.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UnitUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/vfx_duration.cs" />
+        <option value="$PROJECT_DIR$/Assets/SapLife_pf.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Slot.cs" />
       </list>
     </option>
   </component>
@@ -159,7 +236,7 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="threadsIsVisibleKey" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -169,10 +246,10 @@
     </option>
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19672">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="19672" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -232,7 +309,12 @@
       <workItem from="1604517639054" duration="701000" />
       <workItem from="1604595276950" duration="1820000" />
       <workItem from="1604759697965" duration="17673000" />
-      <workItem from="1605101743040" duration="14582000" />
+      <workItem from="1605101743040" duration="15187000" />
+      <workItem from="1605193576687" duration="444000" />
+      <workItem from="1605194054049" duration="127000" />
+      <workItem from="1605194238144" duration="2005000" />
+      <workItem from="1605198652607" duration="12146000" />
+      <workItem from="1605276426694" duration="1876000" />
     </task>
     <servers />
   </component>
@@ -270,113 +352,129 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="1281" key="#Plugins" timestamp="1605194170375">
+      <screen x="0" y="1120" width="1920" height="1040" />
+    </state>
+    <state x="552" y="1281" key="#Plugins/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605194170375" />
+    <state x="717" y="1442" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605194069019">
+      <screen x="0" y="1120" width="1920" height="1040" />
+    </state>
+    <state x="717" y="1442" key="#com.intellij.fileTypes.FileTypeChooser/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605194069019" />
     <state x="707" y="405" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1603295216859">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="707" y="405" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603295216859" />
-    <state width="1877" height="283" key="GridCell.Tab.0.bottom" timestamp="1605127791455">
+    <state width="1877" height="283" key="GridCell.Tab.0.bottom" timestamp="1605129014563">
       <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.0.bottom/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.0.bottom/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
-    <state width="1877" height="283" key="GridCell.Tab.0.bottom/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127791455" />
+    <state width="1877" height="283" key="GridCell.Tab.0.bottom/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.0.bottom/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.0.center" timestamp="1605127791454">
+    <state width="1877" height="283" key="GridCell.Tab.0.center" timestamp="1605129014563">
       <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.0.center/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.0.center/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
-    <state width="1877" height="283" key="GridCell.Tab.0.center/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127791454" />
+    <state width="1877" height="283" key="GridCell.Tab.0.center/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.0.center/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.0.left" timestamp="1605127791454">
+    <state width="1877" height="283" key="GridCell.Tab.0.left" timestamp="1605129014563">
       <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.0.left/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.0.left/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
-    <state width="1877" height="283" key="GridCell.Tab.0.left/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127791454" />
+    <state width="1877" height="283" key="GridCell.Tab.0.left/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.0.left/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.0.right" timestamp="1605127791455">
+    <state width="1877" height="283" key="GridCell.Tab.0.right" timestamp="1605129014563">
       <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.0.right/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.0.right/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
-    <state width="1877" height="283" key="GridCell.Tab.0.right/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127791455" />
+    <state width="1877" height="283" key="GridCell.Tab.0.right/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.0.right/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.1.bottom" timestamp="1605127835017">
+    <state width="1877" height="283" key="GridCell.Tab.1.bottom" timestamp="1605129014563">
       <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.1.bottom/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.1.bottom/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
-    <state width="1877" height="283" key="GridCell.Tab.1.bottom/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127835017" />
+    <state width="1877" height="283" key="GridCell.Tab.1.bottom/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.1.bottom/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.1.center" timestamp="1605127835017">
+    <state width="1877" height="283" key="GridCell.Tab.1.center" timestamp="1605129014563">
       <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.1.center/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.1.center/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
-    <state width="1877" height="283" key="GridCell.Tab.1.center/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127835017" />
+    <state width="1877" height="283" key="GridCell.Tab.1.center/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.1.center/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.1.left" timestamp="1605127835017">
+    <state width="1877" height="283" key="GridCell.Tab.1.left" timestamp="1605129014563">
       <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.1.left/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.1.left/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
-    <state width="1877" height="283" key="GridCell.Tab.1.left/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127835017" />
+    <state width="1877" height="283" key="GridCell.Tab.1.left/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.1.left/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.1.right" timestamp="1605127835017">
+    <state width="1877" height="283" key="GridCell.Tab.1.right" timestamp="1605129014563">
       <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.1.right/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.1.right/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
-    <state width="1877" height="283" key="GridCell.Tab.1.right/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605127835017" />
+    <state width="1877" height="283" key="GridCell.Tab.1.right/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.1.right/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.2.bottom" timestamp="1604428486517">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.2.bottom" timestamp="1605129014563">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.2.bottom/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.2.bottom/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467040" />
+    <state width="1877" height="283" key="GridCell.Tab.2.bottom/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.2.bottom/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486517" />
-    <state width="1877" height="283" key="GridCell.Tab.2.center" timestamp="1604428486516">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.2.center" timestamp="1605129014563">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.2.center/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.2.center/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
+    <state width="1877" height="283" key="GridCell.Tab.2.center/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.2.center/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.2.left" timestamp="1604428486516">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.2.left" timestamp="1605129014563">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.2.left/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.2.left/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
+    <state width="1877" height="283" key="GridCell.Tab.2.left/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.2.left/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.2.right" timestamp="1604428486516">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.2.right" timestamp="1605129014563">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.2.right/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.2.right/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467039" />
+    <state width="1877" height="283" key="GridCell.Tab.2.right/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.2.right/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486516" />
-    <state width="1877" height="283" key="GridCell.Tab.3.bottom" timestamp="1604428486517">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.3.bottom" timestamp="1605129014564">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.3.bottom/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.3.bottom/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467040" />
+    <state width="1877" height="283" key="GridCell.Tab.3.bottom/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014564" />
     <state width="1877" height="283" key="GridCell.Tab.3.bottom/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486517" />
-    <state width="1877" height="283" key="GridCell.Tab.3.center" timestamp="1604428486517">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.3.center" timestamp="1605129014564">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.3.center/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.3.center/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467040" />
+    <state width="1877" height="283" key="GridCell.Tab.3.center/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014564" />
     <state width="1877" height="283" key="GridCell.Tab.3.center/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486517" />
-    <state width="1877" height="283" key="GridCell.Tab.3.left" timestamp="1604428486517">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.3.left" timestamp="1605129014563">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.3.left/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.3.left/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467040" />
+    <state width="1877" height="283" key="GridCell.Tab.3.left/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014563" />
     <state width="1877" height="283" key="GridCell.Tab.3.left/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486517" />
-    <state width="1877" height="283" key="GridCell.Tab.3.right" timestamp="1604428486517">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="283" key="GridCell.Tab.3.right" timestamp="1605129014564">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state width="1493" height="218" key="GridCell.Tab.3.right/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602625391069" />
     <state width="1877" height="284" key="GridCell.Tab.3.right/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1602520467040" />
+    <state width="1877" height="283" key="GridCell.Tab.3.right/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605129014564" />
     <state width="1877" height="283" key="GridCell.Tab.3.right/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604428486517" />
     <state x="764" y="1314" key="RiderGenerateDialog" timestamp="1605108715557">
       <screen x="0" y="1120" width="1920" height="1040" />
@@ -384,11 +482,12 @@
     <state x="764" y="234" key="RiderGenerateDialog/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603358164829" />
     <state x="764" y="1314" key="RiderGenerateDialog/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605108715557" />
     <state x="764" y="234" key="RiderGenerateDialog/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604777576623" />
-    <state x="346" y="112" key="SettingsEditor" timestamp="1604595324071">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state x="346" y="1192" width="1197" height="804" key="SettingsEditor" timestamp="1605194499194">
+      <screen x="0" y="1120" width="1920" height="1040" />
     </state>
     <state x="277" y="1177" key="SettingsEditor/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1602344485284" />
     <state x="346" y="112" key="SettingsEditor/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603362169975" />
+    <state x="346" y="1192" width="1197" height="804" key="SettingsEditor/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605194499194" />
     <state x="346" y="112" key="SettingsEditor/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604595324071" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1604764279961">
       <screen x="0" y="40" width="1920" height="1040" />
@@ -401,13 +500,13 @@
     <state x="425" y="747" key="run.anything.popup/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603447642951" />
     <state x="425" y="1827" width="672" height="677" key="run.anything.popup/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1604328346309" />
     <state x="425" y="747" key="run.anything.popup/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604262251972" />
-    <state x="623" y="1345" width="672" height="678" key="search.everywhere.popup" timestamp="1605122356744">
-      <screen x="0" y="1120" width="1920" height="1040" />
+    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1605210969017">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="498" y="1298" width="672" height="538" key="search.everywhere.popup/0.40.1920.1040/0.1120.1536.824@0.1120.1536.824" timestamp="1601839915012" />
     <state x="623" y="265" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040/0.1120.1536.824@0.40.1920.1040" timestamp="1603384579840" />
     <state x="623" y="1345" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040/0.1120.1920.1040@0.1120.1920.1040" timestamp="1605122356744" />
-    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1604417449640" />
+    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040/0.1120.1920.1040@0.40.1920.1040" timestamp="1605210969017" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

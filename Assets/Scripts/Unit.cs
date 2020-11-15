@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
@@ -49,7 +50,7 @@ public class Unit : MonoBehaviour
         }
         else if (damage < 0f)
         {
-           currentHealth = Mathf.Clamp(currentHealth -= damage, 0f, maxHealth);
+            currentHealth = Mathf.Clamp(currentHealth -= damage, 0f, maxHealth);
         }
-}
+    }
 }

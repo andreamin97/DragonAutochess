@@ -56,6 +56,7 @@ public class Slot : MonoBehaviour
                 if (unitCount >= 3)
                 {
                     units[0].GetComponent<PlayerUnit>().LevelUp();
+                    Instantiate(Resources.Load("VFX/LevelUp"), units[0].transform.position, Quaternion.identity);
                     for (var i = 1; i < unitCount; i++)
                     {
                         boardManager.RemoveUnit(units[i], false);

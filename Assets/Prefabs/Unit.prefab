@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 65}
+  m_AnchoredPosition: {x: 16.8, y: 97.6}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1587498852732481700
@@ -118,6 +118,7 @@ MonoBehaviour:
   status: {fileID: 2995908337144777533}
   name: {fileID: 1437489134265347712}
   statusDuration: {fileID: 5057927380656413029}
+  FloatingText: {fileID: 7928187248804886315, guid: 604668a05dd624c499c755466bf96400, type: 3}
 --- !u!1 &1748214302242822459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ability1: {fileID: 0}
+  Range: 0
   profile: {fileID: 0}
   target: {fileID: 0}
   abilit1Cd: 0

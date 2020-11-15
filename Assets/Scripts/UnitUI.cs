@@ -13,6 +13,7 @@ public class UnitUI : MonoBehaviour
     public Text status;
     public Text name;
     public Image statusDuration;
+    public GameObject FloatingText;
 
     private AIController_Base controller;
     private BoardManager _boardManager;
@@ -54,5 +55,12 @@ public class UnitUI : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void SpawnFloatingText(string text, Color color)
+    {
+        var dmgFloat = (GameObject)Instantiate(FloatingText, this.transform);
+        dmgFloat.GetComponent<Text>().text = text;
+        dmgFloat.GetComponent<Text>().color = color;
     }
 }
