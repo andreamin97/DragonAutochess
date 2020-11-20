@@ -8,7 +8,7 @@ public class AIController : AIController_Base
     public AIProfile profile;
     private BoardManager _boardManager;
     private NavMeshAgent _navMeshAgent;
-    [FormerlySerializedAs("_target")] public EnemyUnit target;
+    [FormerlySerializedAs("_target")] public Unit target;
     private PlayerUnit _unit;
     private float _distance = float.PositiveInfinity;
     private float _nextAttack;
@@ -105,7 +105,7 @@ public class AIController : AIController_Base
             
     }
 
-    private void AttackTarget(EnemyUnit target)
+    private void AttackTarget(Unit target)
     {
         switch (Range)
         {

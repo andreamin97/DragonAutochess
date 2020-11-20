@@ -1241,6 +1241,7 @@ MonoBehaviour:
   unitLevel: 0
   _navMeshAgent: {fileID: 0}
   CanBeSold: 0
+  vfx: {fileID: 100000, guid: ada5d62ffe762ce4fbccc70dcdbc9022, type: 3}
 --- !u!195 &3202502032056222309
 NavMeshAgent:
   m_ObjectHideFlags: 0

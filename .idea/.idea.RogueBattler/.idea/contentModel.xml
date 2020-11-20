@@ -41,8 +41,6 @@
             <e p="Particles Additive Intensify.shader" t="Include" />
           </e>
         </e>
-        <e p="PauseMenu.cs" t="Include" />
-        <e p="ReplayTutorialButton.cs" t="Include" />
         <e p="ScriptableObjects" t="Include">
           <e p="AI" t="Include">
             <e p="AIProfile.cs" t="Include" />
@@ -81,9 +79,11 @@
           <e p="Fireball.cs" t="Include" />
           <e p="GoogleSheetsForUnity.cs" t="Include" />
           <e p="menu.cs" t="Include" />
+          <e p="PauseMenu.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerUnit.cs" t="Include" />
           <e p="Projectile_Base.cs" t="Include" />
+          <e p="ReplayTutorialButton.cs" t="Include" />
           <e p="SapLife_pf.cs" t="Include" />
           <e p="SellUnit.cs" t="Include" />
           <e p="ShopManager.cs" t="Include" />

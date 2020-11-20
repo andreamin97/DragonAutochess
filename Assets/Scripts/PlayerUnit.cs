@@ -19,6 +19,7 @@ public class PlayerUnit : Unit
     private Text levelText;
     private Image unitThumbnail;
     public bool CanBeSold = false;
+    public GameObject vfx;
 
     private UnitInspector _unitInspector;
 
@@ -204,6 +205,10 @@ public class PlayerUnit : Unit
         _attackSpeed = Mathf.Clamp( _attackSpeed - UnitClass.ASPerLevel, 0.005f, 10f);
         armor += UnitClass.ArmorPerLevel;
         _mRes += UnitClass.MrPerLevel;
+        
+        // Instantiate(vfx, this.gameObject.transform.position, Quaternion.Euler(-90f, 0f, 0f));
+        
+        
     }
     
     public override void TakeDamage(float damage)

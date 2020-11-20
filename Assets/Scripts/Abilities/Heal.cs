@@ -41,6 +41,7 @@ public class Heal : Ability
             }
 
             hasTarget = true;
+            controller.target = lowestUnit;
         }
 
         //move to him
@@ -56,7 +57,7 @@ public class Heal : Ability
 
         if (distance > range)
         {
-            navMeshAgent.SetDestination(lowestUnit.transform.position);
+            //navMeshAgent.SetDestination(lowestUnit.transform.position);
         }
         else
         { 

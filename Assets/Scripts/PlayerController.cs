@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     private RaycastHit hitData;
     private readonly List<GameObject> ownedUnits = new List<GameObject>();
     public int level = 1;
-    
+    public GameObject levelUpText;
+    public Canvas uiCanvas;
     private int _experience = 0;
     private int _nextLevelExperience = 1;
 
@@ -40,6 +41,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        /*if(Input.GetKeyDown(KeyCode.A))
+            EditGold(1000);*/
+        
         if (selectedUnit != null && isDragging)
         {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -102,6 +106,12 @@ public class PlayerController : MonoBehaviour
     public void GainExp(int exp)
     {
         _experience += exp;
-        level = Mathf.FloorToInt( Mathf.Sqrt(_experience + 1) );
+        
+        
+        if (Mathf.FloorToInt( Mathf.Sqrt(_experience + 1) ) > level)
+        {
+            level = Mathf.FloorToInt( Mathf.Sqrt(_experience + 1) );
+            Instantiate(levelUpText, uiCanvas.transform.position, Quaternion.identity, uiCanvas.transform);
+        }
     }
 }

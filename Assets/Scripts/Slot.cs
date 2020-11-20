@@ -10,6 +10,12 @@ public class Slot : MonoBehaviour
     public Image unitThumbnail;
     public Text unitName;
     public Text unitCost;
+    public Text role;
+    public Text hp;
+    public Text armor;
+    public Text ad;
+    public Text atkSpd;
+    public Text abilityName;
 
     public BaseUnit unit;
     private PlayerController _playerController;
@@ -29,7 +35,7 @@ public class Slot : MonoBehaviour
 
     private void Start()
     {
-        UpdateSlot();
+        // UpdateSlot();
     }
 
     public void BuyUnit()
@@ -56,7 +62,8 @@ public class Slot : MonoBehaviour
                 if (unitCount >= 3)
                 {
                     units[0].GetComponent<PlayerUnit>().LevelUp();
-                    Instantiate(Resources.Load("VFX/LevelUp"), units[0].transform.position, Quaternion.identity);
+                    Instantiate(Resources.Load("VFX/LevelUp"), units[0].gameObject.transform.position + Vector3.up, Quaternion.Euler(-90f, 0f, 0f));
+                    
                     for (var i = 1; i < unitCount; i++)
                     {
                         boardManager.RemoveUnit(units[i], false);
@@ -112,5 +119,12 @@ public class Slot : MonoBehaviour
         unitName.text = name;
         unitCost.text = cost;
         unit = unitClass;
+
+        role.text = unit.role.ToString();
+        hp.text = "HP: " + unit.Health.ToString();
+        armor.text = "ARMOR: " + unit.Armor.ToString();
+        ad.text = "AD: " + unit.AttackDamage.ToString();
+        atkSpd.text = "AS: " + unit.AttackSpeed.ToString();
+        // abilityName.text = unit.ability1.abilityName;
     }
 }

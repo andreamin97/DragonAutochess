@@ -26,10 +26,18 @@ public class BaseUnit : ScriptableObject
      public AIProfile _aiProfile;
      public Ability ability1;
      public Range range;
+     public Role role;
 
      public enum Range
      {
         Melee,
         Ranged
+     }
+     
+     public enum Role
+     {
+         Tank,
+         Damage,
+         Support
      }
 }
