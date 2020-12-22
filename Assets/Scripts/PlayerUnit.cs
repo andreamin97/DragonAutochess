@@ -181,7 +181,8 @@ public class PlayerUnit : Unit
             case "Monk":
                 _aiController.ability1 = gameObject.AddComponent<ConcussiveFist>();
                 _aiController.ability1.InitAbility("Concussive Fist", "Strike the target, knocking them backwards and briefly snaring them", 4f, 4f);
-                break;}
+                break;
+        }
         
     }
 

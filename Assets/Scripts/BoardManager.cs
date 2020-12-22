@@ -286,9 +286,11 @@ public class BoardManager : MonoBehaviour
 
     public void StartEncounter()
     {
+        fightingUnits.Clear();
+        
         if (!_playerController.isFighting)
         {
-            for (var i = 0; i < 32; i++)
+            for (var i = 31; i  >= 0; i--)
                 if (board[i].unit != null)
                 {
                     if (fightingUnits.Count < _playerController.level + 1 &&
@@ -302,10 +304,27 @@ public class BoardManager : MonoBehaviour
                     }
                     else
                     {
-                        board[i].unit.GetComponent<NavMeshAgent>().Warp(GetBenchFreeSlot().transform.position);
-                    }
+                        GameObject benchSlot = GetBenchFreeSlot();
+                        if (benchSlot != null)
+                        {
+                            board[i].unit.GetComponent<NavMeshAgent>().Warp(benchSlot.transform.position);
 
+                            for (var x = 0; x < bench.Length; x++)
+                            {
+                                var benchTile = bench[x];
+                                if (benchTile.tile == benchSlot)
+                                    benchTile.unit = board[i].unit;
+                            }
+                        }
+                        else
+                        {
+                           RemoveUnit(board[i].unit, true);
+                        }
+
+                        board[i].unit = null;
+                    }
                 }
+               
 
             if (fightingUnits.Count > 0)
             {
@@ -367,6 +386,7 @@ public class BoardManager : MonoBehaviour
     public void BuyUnit(GameObject unit)
     {
         _ownedUnits.Add(unit);
+        _playerController.AddOwnedUnit(unit);
     }
 
     public void RemoveUnit(GameObject unit, bool wasSold)
@@ -384,7 +404,7 @@ public class BoardManager : MonoBehaviour
                 SetUnitAtSlot(null, board[i].tile);
             
         _ownedUnits.Remove(unit);
-
+        _playerController.RemoveOwnedUnit(unit);
         Destroy(unit);
     }
 

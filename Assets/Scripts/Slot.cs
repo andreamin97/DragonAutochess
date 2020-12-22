@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -16,50 +17,49 @@ public class Slot : MonoBehaviour
     public Text ad;
     public Text atkSpd;
     public Text abilityName;
-
+    public Image lvlUpArrow;
+    public GameObject InfoPane;
+        
     public BaseUnit unit;
     private PlayerController _playerController;
     private BoardManager boardManager;
+    private ShopManager _shopManager;
     private GoogleSheetsForUnity _sheets;
     private bool isEnabled = true;
 
-    private GameObject playerUnits;
+    // private GameObject playerUnits;
     private PlayerUnit temp;
+    private List<GameObject> playerUnits;
+    private List<GameObject> units;
 
+    private bool isInfoOpen = false;
+    
     private void Awake()
     {
         boardManager = FindObjectOfType<BoardManager>();
         _playerController = FindObjectOfType<PlayerController>();
         _sheets = FindObjectOfType<GoogleSheetsForUnity>();
+        _shopManager = FindObjectOfType<ShopManager>();
     }
-
+    
     private void Start()
     {
-        // UpdateSlot();
+        playerUnits = boardManager.PlayerUnitList();
+        units = new List<GameObject>();
     }
-
+    
     public void BuyUnit()
     {
         if (isEnabled)
         {
-
-            if (_playerController.Gold >= unit.Cost)
+            if (_playerController.Gold >= unit.Cost && boardManager.GetBenchFreeSlot() != null)
             {
-                //Check if the unit can level up
-                var playerUnits = boardManager.PlayerUnitList();
-                var units = new List<GameObject>();
-                var unitCount = 0;
+                CheckForLevelUp();
+                var unitCount = units.Count;
 
                 var benchSlot = boardManager.GetBenchFreeSlot();
 
-                foreach (var ownedUnit in playerUnits)
-                    if (ownedUnit.GetComponent<PlayerUnit>().UnitClass == unit)
-                    {
-                        units.Add(ownedUnit);
-                        unitCount++;
-                    }
-
-                if (unitCount >= 3)
+                if (unitCount >= 2)
                 {
                     units[0].GetComponent<PlayerUnit>().LevelUp();
                     Instantiate(Resources.Load("VFX/LevelUp"), units[0].gameObject.transform.position + Vector3.up, Quaternion.Euler(-90f, 0f, 0f));
@@ -70,6 +70,7 @@ public class Slot : MonoBehaviour
                         Destroy(units[i]);
                     }
 
+                    lvlUpArrow.enabled = false;
                     _playerController.EditGold(-unit.Cost);
                     
                     _sheets.AppendToSheet( "UnitsLevelUp", "A:A", new List<object>() { unit.Name,  units[0].GetComponent<PlayerUnit>().unitLevel, boardManager.Stage } );
@@ -101,12 +102,15 @@ public class Slot : MonoBehaviour
                
                 _sheets.AppendToSheet("Units", "A:A", new List<object>() { temp.unitName });
                 isEnabled = false;
-                UpdateSlot();
+                UpdateSlot("HIRED");
+                
+                foreach (var slot in _shopManager.slots)
+                {
+                    if (slot != this)
+                        slot.CheckForLevelUp();
+                }
             }
-
-            
         }
-        
     }
 
     public void Enable()
@@ -125,6 +129,65 @@ public class Slot : MonoBehaviour
         armor.text = "ARMOR: " + unit.Armor.ToString();
         ad.text = "AD: " + unit.AttackDamage.ToString();
         atkSpd.text = "AS: " + unit.AttackSpeed.ToString();
-        // abilityName.text = unit.ability1.abilityName;
+        abilityName.text = GetAbilityTextByClass(unit.Name);
+        CheckForLevelUp();
+    }
+
+    public void CheckForLevelUp()
+    {
+        units.Clear();
+        
+        foreach (var ownedUnit in playerUnits)
+            if (ownedUnit.GetComponent<PlayerUnit>().UnitClass == unit)
+            {
+                units.Add(ownedUnit);
+            }
+
+        if (units.Count >= 2)
+        {
+            lvlUpArrow.enabled = true;
+        }
+        else
+        {
+            lvlUpArrow.enabled = false;
+        }
+    }
+
+    public void ToggleInfo()
+    {
+        isInfoOpen = !isInfoOpen;
+        InfoPane.SetActive(isInfoOpen);
+    }
+
+    private string GetAbilityTextByClass(string name)
+    {
+        switch (name)
+        {
+            case "Druid":
+                return "Snare an enemy for 5 seconds, impeding them to move and attack.";
+            case "Cleric":
+                return "Heal a friendly target for 10HP/lvl";
+            case "Sorcerer":
+                
+            case "Warlock":
+                return "Deal twice your attack damage to your target and heal half that amount";
+            case "Paladin":
+                return "Snare self for 3seconds, but gain .5 armor/level";
+            case "Ranger":
+                return "Summon a wolf at the beginning of the combat";
+            case "Fighter":
+                return "Deal my AD*lvl to all units around me";
+            case "Barbarian":
+                return "Gain 1% leech for every 1% missing hp, up to 70%";
+            case "Rogue":
+                return "Teleport to the lowest hp enemy and deal 5(+5/lvl) damage to it";
+            case "Monk":
+                return "Strike the target, knocking them backwards and briefly snaring them";
+            case "Bard":
+                return "Give all allies within a square from me at the beginning of the encounter 0.1AS/lvl";
+            case "Wizard":
+            default:
+                return " ";
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class SproutingRoots : Ability
     public float cd = 8f;
     public float snareDuration = 3f;
     public float durationPerLevel = 0.5f;
+
     public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
     {
         float distance = 0f;

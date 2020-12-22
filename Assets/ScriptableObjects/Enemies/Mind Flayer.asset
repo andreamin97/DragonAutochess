@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Mind Flayer
   m_EditorClassIdentifier: 
   Name: Mind Flayer
-  Health: 15
-  HpPerLevel: 2
-  Armor: 0
-  ArmorPerLevel: 0.35
+  Health: 20
+  HpPerLevel: 0.5
+  Armor: 1
+  ArmorPerLevel: 0.05
   MagicResist: 0
   MrPerLevel: 0
   AttackDamage: 5
-  ADPerLevel: 0.4
+  ADPerLevel: 0.2
   AttackRange: 6
   AttackSpeed: 1
-  ASPerLevel: 0.05
+  ASPerLevel: 0.02
   AbilityPower: 0
   MovementSpeed: 3
   Mesh: {fileID: 3238583017736314578, guid: 3c4ff4ef82e6d744cb605019aab56f9b, type: 3}

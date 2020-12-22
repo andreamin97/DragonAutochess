@@ -41,8 +41,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        /*if(Input.GetKeyDown(KeyCode.A))
-            EditGold(1000);*/
+        if(Input.GetKeyDown(KeyCode.A))
+            EditGold(1000);
         
         if (selectedUnit != null && isDragging)
         {

@@ -61,10 +61,10 @@ public class AnimalCompanion : Ability
                     // Found a free slot
                     
                     obj = (GameObject) _fb;
-
+            
                     NavMeshHit hitPosition;
                     NavMesh.SamplePosition(boardManager.board[i].tile.transform.position + Vector3.up, out hitPosition, 1f, NavMesh.AllAreas);
-
+            
                     wolf = Instantiate(obj, hitPosition.position, Quaternion.identity);
                     wolf.GetComponent<PlayerUnit>().InitUnit();
                     
@@ -72,11 +72,11 @@ public class AnimalCompanion : Ability
                     wolf.GetComponent<PlayerUnit>().isActive = true;
                     boardManager.fightingUnits.Add(wolf);
                     boardManager.summonedUnits.Add(wolf);
-
+            
                     return;
                 }
             }
-
+            
             if (wolf == null)
             {
                 for (int i = ownerIndex-1; i >= 0; i--)
@@ -90,7 +90,7 @@ public class AnimalCompanion : Ability
                 
                         NavMeshHit hitPosition;
                         NavMesh.SamplePosition(boardManager.board[i].tile.transform.position + Vector3.up, out hitPosition, 1f, NavMesh.AllAreas);
-
+            
                         var wolfUnit = wolf.GetComponent<PlayerUnit>();
                         
                         wolf = Instantiate(obj, hitPosition.position, Quaternion.identity);

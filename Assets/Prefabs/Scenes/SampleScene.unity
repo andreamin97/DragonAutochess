@@ -2951,7 +2951,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1844314996545934505, guid: 0eaed4f70e504f34dada059ba46b06c4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -110
+      value: -134
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844314996545934505, guid: 0eaed4f70e504f34dada059ba46b06c4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0000038147
       objectReference: {fileID: 0}
     - target: {fileID: 1940921130038209859, guid: 0eaed4f70e504f34dada059ba46b06c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3003,7 +3007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1940921130038209859, guid: 0eaed4f70e504f34dada059ba46b06c4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 247.4
+      value: 227.14
       objectReference: {fileID: 0}
     - target: {fileID: 1940921130038209859, guid: 0eaed4f70e504f34dada059ba46b06c4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3011,7 +3015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1940921130038209859, guid: 0eaed4f70e504f34dada059ba46b06c4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 302.75845
+      value: 343.28555
       objectReference: {fileID: 0}
     - target: {fileID: 1940921130038209859, guid: 0eaed4f70e504f34dada059ba46b06c4, type: 3}
       propertyPath: m_AnchorMin.x
@@ -12293,6 +12297,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3634a8c578456b042b928009da171344, type: 3}
+--- !u!114 &1879706268 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4052459831323416044, guid: f67d50683b0ce174f99a0718793d1909, type: 3}
+  m_PrefabInstance: {fileID: 6751076336636526985}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1900544913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13943,6 +13958,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6751076336485169613, guid: f67d50683b0ce174f99a0718793d1909, type: 3}
+      propertyPath: lvlUpArrow
+      value: 
+      objectReference: {fileID: 1879706268}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f67d50683b0ce174f99a0718793d1909, type: 3}
 --- !u!1001 &7850280310364014411
