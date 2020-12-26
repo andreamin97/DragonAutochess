@@ -147,7 +147,7 @@ public class BoardManager : MonoBehaviour
                 {
                     unitsThatWon.Add(unit.GetComponent<PlayerUnit>().unitName);
                 }
-                _sheetsForUnity.AppendToSheet("UnitsWon", "A:A", unitsThatWon);
+                // _sheetsForUnity.AppendToSheet("UnitsWon", "A:A", unitsThatWon);
                 
                 fightingUnits.Clear();
             }
@@ -359,7 +359,7 @@ public class BoardManager : MonoBehaviour
         {
             unitsFighting.Add(unit.GetComponent<PlayerUnit>().unitName);
         }
-        _sheetsForUnity.AppendToSheet("UnitsTotalGames", "A:A", unitsFighting);
+        // _sheetsForUnity.AppendToSheet("UnitsTotalGames", "A:A", unitsFighting);
     }
 
     public List<GameObject> EnemyList()

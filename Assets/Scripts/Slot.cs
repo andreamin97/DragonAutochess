@@ -73,7 +73,7 @@ public class Slot : MonoBehaviour
                     lvlUpArrow.enabled = false;
                     _playerController.EditGold(-unit.Cost);
                     
-                    _sheets.AppendToSheet( "UnitsLevelUp", "A:A", new List<object>() { unit.Name,  units[0].GetComponent<PlayerUnit>().unitLevel, boardManager.Stage } );
+                    _sheets.AppendToSheet( "UnitsLevelUp", "A:A", new List<object>() { PlayerPrefs.GetString("MatchID"), unit.Name,  units[0].GetComponent<PlayerUnit>().unitLevel, boardManager.Stage } );
                     
                 }
                 else
@@ -100,7 +100,7 @@ public class Slot : MonoBehaviour
                     }
                 }
                
-                _sheets.AppendToSheet("Units", "A:A", new List<object>() { temp.unitName });
+                // _sheets.AppendToSheet("Units", "A:A", new List<object>() { temp.unitName });
                 isEnabled = false;
                 UpdateSlot("HIRED");
                 

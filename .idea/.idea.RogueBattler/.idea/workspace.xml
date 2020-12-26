@@ -26,21 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dae5c17-6d06-4ecb-a251-a9c8bdf25cac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/arrow.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueBattler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Slot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Slot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Fighter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Classes/Fighter.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Banderhobb.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Banderhobb.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Gnoll Melee.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Gnoll Melee.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Mind Flayer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Enemies/Mind Flayer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/AnimalCompanion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/AnimalCompanion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Slot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Slot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TutorialButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TutorialButton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +87,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Enrage.cs" />
         <option value="$PROJECT_DIR$/Assets/GoogleSheetsForUnity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Fireball_Ability.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SellUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UnitInspector.cs" />
         <option value="$PROJECT_DIR$/Assets/menu.cs" />
@@ -126,7 +115,6 @@
         <option value="$PROJECT_DIR$/Assets/SapLife_pf.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TutorialButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TutorialManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ReplayTutorialButton.cs" />
         <option value="$PROJECT_DIR$/Assets/PauseMenu.cs" />
@@ -135,10 +123,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Heal.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/AnimalCompanion.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TutorialButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Slot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/AnimalCompanion.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -255,7 +245,8 @@
       <workItem from="1608494758787" duration="5672000" />
       <workItem from="1608574202067" duration="2971000" />
       <workItem from="1608666458180" duration="205000" />
-      <workItem from="1608668182033" duration="6448000" />
+      <workItem from="1608668182033" duration="8330000" />
+      <workItem from="1609000234472" duration="442000" />
     </task>
     <servers />
   </component>

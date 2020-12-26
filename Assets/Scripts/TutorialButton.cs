@@ -16,6 +16,7 @@ public class TutorialButton : MonoBehaviour
 
     public void NextTutorial()
     {
+        
         if (_tutorialManager.TutorialIndex == NextTutorialIndex - 1)
         {
             _tutorialManager.NextTutorial();
