@@ -14,12 +14,10 @@ public class AIController : AIController_Base
     private float _nextAttack;
     private GoogleSheetsForUnity _sheetsForUnity;
     
-    // public Ability ability1;
-    public float abilit1Cd;
-    private bool _isCasting = false;
+    
     private Unit.Statuses _condition = Unit.Statuses.None;
     private float _conditionDuration;
-    
+
     private void Start()
     {
         _sheetsForUnity = FindObjectOfType<GoogleSheetsForUnity>();
@@ -47,50 +45,67 @@ public class AIController : AIController_Base
                     _distance = Vector3.Distance(target.transform.position, transform.position);
                         
                     //Always prioritize casting an ability if able, abilities use the unit attackspeed
-                    if (ability1 != null)
+                    if (abilityList != null)
                     {
-                        if ((ability1.currentCd <= 0f) || _isCasting)
+                        for(var i = 0; i < abilityList.Count; i++)
                         {
-                            _isCasting = ability1.Cast(_navMeshAgent, _boardManager, this);
+                            if (abilityList[i].ability.currentCd <= 0f || abilityList[i].isCasting)
+                            {
+                                var ability = abilityList[i];
+                                ability.isCasting = abilityList[i].ability.Cast(_navMeshAgent, _boardManager, this);
+                                break;
+                            }
                         }
                     }
                         
                         
                     //move to the target or attack based on distance 
-                    if (_distance <= _unit.attackRange)
+                    if (target != null)
                     {
-                        //Stop moving
-                        _navMeshAgent.SetDestination(transform.position);
-                        if (_nextAttack <= 0f)
+                        if (_distance <= _unit.attackRange)
                         {
-                            AttackTarget(target);
+                            //Stop moving
+                            _navMeshAgent.SetDestination(transform.position);
+                            if (_nextAttack <= 0f)
+                            {
+                                AttackTarget(target);
+                            }
+                        }
+                        else if (_distance > _unit.attackRange)
+                        {
+                            _navMeshAgent.SetDestination(target.transform.position);
+                        }
+
+                        transform.LookAt(target.transform.position);
+                        transform.Rotate(new Vector3(0f, -90f, 0f));
+
+                        _nextAttack -= Time.deltaTime;
+                        for (var i = 0; i < abilityList.Count; i++)
+                        {
+                            var ability = abilityList[i];
+                            ability.ability.currentCd -= Time.deltaTime;
                         }
                     }
-                    else if (_distance > _unit.attackRange)
-                    {
-                        _navMeshAgent.SetDestination(target.transform.position);
-                    }
-                        
-                    transform.LookAt(target.transform.position);
-                    transform.Rotate(new Vector3(0f, -90f, 0f));
-                        
-                    _nextAttack -= Time.deltaTime;
-                    ability1.currentCd -= Time.deltaTime;        
-                    
-                    break;        
-                
+
+                    break;
+
                 case Unit.Statuses.Snared:
                     _navMeshAgent.SetDestination(transform.position);
                     
                     //Always prioritize casting an ability if able, abilities use the unit attackspeed
-                    if (ability1 != null)
+                    if (abilityList != null)
                     {
-                        if ((ability1.currentCd <= 0f) || _isCasting)
+                        for(var i = 0; i < abilityList.Count; i++)
                         {
-                            _isCasting = ability1.Cast(_navMeshAgent, _boardManager, this);
+                            if (abilityList[i].ability.currentCd <= 0f || abilityList[i].isCasting)
+                            {
+                                var ability = abilityList[i];
+                                ability.isCasting = abilityList[i].ability.Cast(_navMeshAgent, _boardManager, this);
+                                break;
+                            }
                         }
                     }
-                                    
+                    
                     _conditionDuration -= Time.deltaTime;
                     _unit._conditionDuration = _conditionDuration;
                     

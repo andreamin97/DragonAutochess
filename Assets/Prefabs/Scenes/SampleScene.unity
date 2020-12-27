@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f6925c7d56beee5469f839e2b581a6c0, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: a5e3438d3a7c4904b86c3c33c4bd4bd5, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -4902,7 +4902,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.85
+  m_Intensity: 0.6
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -10756,7 +10756,10 @@ MonoBehaviour:
   - {fileID: 734130058}
   - {fileID: 295722358}
   - {fileID: 988237065}
-  unitsList: {fileID: 11400000, guid: 8d91aa98bf2c81940854eb9b9cf6724a, type: 2}
+  unitsList:
+  - {fileID: 1807370260553508752, guid: 532d76f6daa6e0243a8d2b608b3292eb, type: 3}
+  - {fileID: 7104627328255612818, guid: 2cc322bc41a585449a603ba8a49cc537, type: 3}
+  - {fileID: 4338960129480429610, guid: 4dc7d7453d169b24b86ddda6416a20b9, type: 3}
   canvas: {fileID: 177449991}
 --- !u!114 &1560189465
 MonoBehaviour:
@@ -12967,7 +12970,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 0.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

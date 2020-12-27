@@ -5,14 +5,38 @@ using UnityEngine;
 
 public class AIController_Base : MonoBehaviour
 {
-   public Ability ability1;
-   protected GameObject attackFX;
-   public BaseUnit.Range Range;
+    protected GameObject attackFX;
+    public BaseUnit.Range Range;
+   
+    public struct abilityStruct
+    {
+        public Ability ability;
+        public float coolDown;
+        public bool isCasting;
 
-   private void Awake()
-   {
-      attackFX = (GameObject)Resources.Load("VFX/FX_BloodExplosion_AB");
-   }
+        public abilityStruct(Ability abi, float cD, bool casting)
+        {
+            ability = abi;
+            coolDown = cD;
+            isCasting = casting;
+        }
+    }
+   
+    public List<abilityStruct> abilityList;
+
+    private void Awake()
+    {
+        attackFX = (GameObject)Resources.Load("VFX/FX_BloodExplosion_AB");
+        abilityList = new List<abilityStruct>();
+
+        var abilities = GetComponents<Ability>();
+
+        foreach (var abi in abilities)
+        {
+            abilityStruct temp = new abilityStruct(abi, abi.coolDown, false);
+            abilityList.Add(temp);
+        }
+    }
    
    
    

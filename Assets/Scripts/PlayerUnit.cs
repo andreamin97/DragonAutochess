@@ -135,58 +135,6 @@ public class PlayerUnit : Unit
         _aiController.profile = UnitClass._aiProfile;
         _aiController.Range = UnitClass.range;
         
-        //create ability behaviour based on the class
-        switch (unitName)
-        {
-            case "Cleric":
-                _aiController.ability1 = gameObject.AddComponent<Heal>();
-                _aiController.ability1.InitAbility("Heal", "Heal a friendly target for 10HP/lvl", 5f, 5f);
-                break;
-            case "Druid":
-                _aiController.ability1 = gameObject.AddComponent<SproutingRoots>();
-                _aiController.ability1.InitAbility("Sprouting Roots", "Snare an enemy for 5 seconds, impeding them to move and attack.", 4f, 4f);
-                break;
-            case "Sorcerer":
-                _aiController.ability1 = gameObject.AddComponent<Fireball_Ability>();
-                _aiController.ability1.InitAbility("Fireball", "Deal 30 damage around the target", 5f, 5f);
-                break;
-            case "Warlock":
-                _aiController.ability1 = gameObject.AddComponent<SapLife>();
-                _aiController.ability1.InitAbility("Sap Life", "Deal twice your attack damage to your target and heal half that amount" , 4f, 4f);
-                break;
-            case "Paladin":
-                _aiController.ability1 = gameObject.AddComponent<Bastion>();
-                _aiController.ability1.InitAbility("Bastion", "Snare self for 3seconds, but gain .5 armor/level" , 6f, 6f);
-                break;
-            case "Barbarian":
-                _aiController.ability1 = gameObject.AddComponent<Enrage>();
-                _aiController.ability1.InitAbility("Enrage", "Gain 1% leech for every 1% missing hp, up to 70%", 0f, 0f);
-                break;
-            case "Wizard":
-                _aiController.ability1 = gameObject.AddComponent<Singularity>();
-                _aiController.ability1.InitAbility("Singularity", "After a 3 seconds delay, pull all teleport all enemies in range to the center of the map and deal them 7 damage", 6f, 6f);
-                break;
-            case "Rogue":
-                _aiController.ability1 = gameObject.AddComponent<Assasinate>();
-                _aiController.ability1.InitAbility("Assasinate", "Teleport to the lowest hp enemy and deal 5(+5/lvl) damage to it", 6f, 6f);
-                break;
-            case "Fighter":
-                _aiController.ability1 = gameObject.AddComponent<BladeSpin>();
-                _aiController.ability1.InitAbility("Blade Spin", "Deal my AD*lvl to all units around me", 3f, 3f);
-                break;
-            case "Bard":
-                _aiController.ability1 = gameObject.AddComponent<Inspiration>();
-                _aiController.ability1.InitAbility("Inspiration", "Give all allies within a square from me at the beginning of the encounter 0.1AS/lvl", 0f, 0f);
-                break;
-            case "Ranger":
-                _aiController.ability1 = gameObject.AddComponent<AnimalCompanion>();
-                break;
-            case "Monk":
-                _aiController.ability1 = gameObject.AddComponent<ConcussiveFist>();
-                _aiController.ability1.InitAbility("Concussive Fist", "Strike the target, knocking them backwards and briefly snaring them", 4f, 4f);
-                break;
-        }
-        
     }
 
     public void Swap(Vector3 location)

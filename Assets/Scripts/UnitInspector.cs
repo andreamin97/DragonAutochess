@@ -44,7 +44,7 @@ public class UnitInspector : MonoBehaviour
             atkspd.text = unit._attackSpeed.ToString();
             leech.text = unit.leech.ToString();
             armor.text = unit.armor.ToString();
-            abilityText.text = unit.GetComponent<AIController_Base>().ability1.abilityText;
+            abilityText.text = unit.GetComponent<AIController_Base>().abilityList[0].ability.abilityText;
 
 
         }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    public GameObject baseUnit;
+    public GameObject Unit;
 
     public Image unitThumbnail;
     public Text unitName;
@@ -20,7 +20,6 @@ public class Slot : MonoBehaviour
     public Image lvlUpArrow;
     public GameObject InfoPane;
         
-    public BaseUnit unit;
     private PlayerController _playerController;
     private BoardManager boardManager;
     private ShopManager _shopManager;
@@ -52,7 +51,9 @@ public class Slot : MonoBehaviour
     {
         if (isEnabled)
         {
-            if (_playerController.Gold >= unit.Cost && boardManager.GetBenchFreeSlot() != null)
+            var cost = Unit.GetComponent<PlayerUnit>().unitCost;
+            
+            if (_playerController.Gold >= cost && boardManager.GetBenchFreeSlot() != null)
             {
                 CheckForLevelUp();
                 var unitCount = units.Count;
@@ -71,9 +72,9 @@ public class Slot : MonoBehaviour
                     }
 
                     lvlUpArrow.enabled = false;
-                    _playerController.EditGold(-unit.Cost);
+                    _playerController.EditGold(-cost);
                     
-                    _sheets.AppendToSheet( "UnitsLevelUp", "A:A", new List<object>() { PlayerPrefs.GetString("MatchID"), unit.Name,  units[0].GetComponent<PlayerUnit>().unitLevel, boardManager.Stage } );
+                    // _sheets.AppendToSheet( "UnitsLevelUp", "A:A", new List<object>() { PlayerPrefs.GetString("MatchID"), unit.Name,  units[0].GetComponent<PlayerUnit>().unitLevel, boardManager.Stage } );
                     
                 }
                 else
@@ -81,7 +82,7 @@ public class Slot : MonoBehaviour
                     if (benchSlot != null)
                     {
                         var spawnPosition = benchSlot.transform.position + Vector3.up;
-                        var newUnit = Instantiate(baseUnit, spawnPosition, Quaternion.identity);
+                        var newUnit = Instantiate(Unit, spawnPosition, Quaternion.identity);
 
                         NavMeshHit navHit;
                         if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
@@ -91,18 +92,17 @@ public class Slot : MonoBehaviour
                         }
 
                         temp = newUnit.GetComponent<PlayerUnit>();
-                        temp.UnitClass = unit;
                         temp.InitUnit();
                         isEnabled = false;
 
                         boardManager.BuyUnit(newUnit);
-                        _playerController.EditGold(-unit.Cost);
+                        _playerController.EditGold(-cost);
                     }
                 }
                
                 // _sheets.AppendToSheet("Units", "A:A", new List<object>() { temp.unitName });
                 isEnabled = false;
-                UpdateSlot("HIRED");
+                UpdateSlot();
                 
                 foreach (var slot in _shopManager.slots)
                 {
@@ -118,20 +118,23 @@ public class Slot : MonoBehaviour
         isEnabled = true;
     }
 
-    public void UpdateSlot(string name = "", string cost = "", BaseUnit unitClass = null)
+    public void UpdateSlot(GameObject unit = null)
     {
-        unitName.text = name;
-        unitCost.text = cost;
-        unit = unitClass;
+        Unit = unit;
+        
 
         if (unit != null)
         {
-            role.text = unit.role.ToString();
-            hp.text = "HP: " + unit.Health.ToString();
-            armor.text = "ARMOR: " + unit.Armor.ToString();
-            ad.text = "AD: " + unit.AttackDamage.ToString();
-            atkSpd.text = "AS: " + unit.AttackSpeed.ToString();
-            abilityName.text = GetAbilityTextByClass(unit.Name);
+            var unitScript = unit.GetComponent<PlayerUnit>();
+            var unitClass = unitScript.UnitClass;
+            unitName.text = unitScript.unitName;
+            unitCost.text = unitScript.unitCost.ToString();
+            role.text = unitClass.role.ToString();
+            hp.text = "HP: " + unitClass.Health.ToString();
+            armor.text = "ARMOR: " + unitClass.Armor.ToString();
+            ad.text = "AD: " + unitClass.AttackDamage.ToString();
+            atkSpd.text = "AS: " + unitClass.AttackSpeed.ToString();
+            abilityName.text = GetAbilityTextByClass(unitClass.Name);
         }
         else
         {
@@ -150,9 +153,15 @@ public class Slot : MonoBehaviour
     public void CheckForLevelUp()
     {
         units.Clear();
+        BaseUnit unitClass = null;
+
+        if (Unit != null)
+        {
+            unitClass = Unit.GetComponent<PlayerUnit>().UnitClass;
+        }
         
         foreach (var ownedUnit in playerUnits)
-            if (ownedUnit.GetComponent<PlayerUnit>().UnitClass == unit)
+            if (ownedUnit.GetComponent<PlayerUnit>().UnitClass == unitClass)
             {
                 units.Add(ownedUnit);
             }

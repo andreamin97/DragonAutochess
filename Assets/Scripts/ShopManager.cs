@@ -4,7 +4,7 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     public Slot[] slots;
-    public UnitList unitsList;
+    public GameObject[] unitsList;
     public Canvas canvas;
 
     private bool isShopOpen;
@@ -30,15 +30,16 @@ public class ShopManager : MonoBehaviour
 
     public void RandomizeShop(bool rerolling)
     {
-
+        var rand = new System.Random();
+        
         if (rerolling && _playerController.Gold >= 2)
         {
             _playerController.EditGold(-2);
             foreach (var slot in slots)
             {
-                var unit = unitsList.RandomUnit();
+                var unit = unitsList[rand.Next(0, unitsList.Length)];
                 slot.Enable();
-                slot.UpdateSlot(unit.Name, unit.Cost.ToString(), unit);
+                slot.UpdateSlot(unit);
             }
         }
         else if (rerolling && _playerController.Gold < 2) {}
@@ -46,9 +47,9 @@ public class ShopManager : MonoBehaviour
         {
             foreach (var slot in slots)
             {
-                var unit = unitsList.RandomUnit();
+                var unit = unitsList[rand.Next(0, unitsList.Length)];
                 slot.Enable();
-                slot.UpdateSlot(unit.Name, unit.Cost.ToString(), unit);
+                slot.UpdateSlot(unit);
             }
         }
     }

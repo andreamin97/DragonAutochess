@@ -19,7 +19,7 @@ public class cdFillBar : MonoBehaviour
     void Update()
     {
         controller = unit.GetComponent<AIController>();
-        _ability = controller.ability1;
+        _ability = controller.abilityList[0].ability;
         _cdSlider.value = _ability.currentCd / _ability.coolDown;
     }
 }

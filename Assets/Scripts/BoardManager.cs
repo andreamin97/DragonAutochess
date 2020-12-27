@@ -100,7 +100,7 @@ public class BoardManager : MonoBehaviour
                     Destroy(summon);
                 }
                 summonedUnits.Clear();
-                _sheetsForUnity.AppendToSheet("FightDuration", "B:B", new List<object>() { PlayerPrefs.GetString("MatchID"), _unitCount, _stage, _fightTimer, result});
+                // _sheetsForUnity.AppendToSheet("FightDuration", "B:B", new List<object>() { PlayerPrefs.GetString("MatchID"), _unitCount, _stage, _fightTimer, result});
                 
             }
 
@@ -135,7 +135,7 @@ public class BoardManager : MonoBehaviour
                 stageText.text = _stage.ToString();
                 _shopManager.RandomizeShop(false);
                 boardResetTimer = 0f;
-                _sheetsForUnity.AppendToSheet("FightDuration", "B:B", new List<object>() { PlayerPrefs.GetString("MatchID"), _unitCount, _stage-1, _fightTimer, result});
+                // _sheetsForUnity.AppendToSheet("FightDuration", "B:B", new List<object>() { PlayerPrefs.GetString("MatchID"), _unitCount, _stage-1, _fightTimer, result});
 
             }
 
@@ -318,7 +318,7 @@ public class BoardManager : MonoBehaviour
                         }
                         else
                         {
-                           RemoveUnit(board[i].unit, true);
+                            RemoveUnit(board[i].unit, true);
                         }
 
                         board[i].unit = null;
@@ -338,7 +338,12 @@ public class BoardManager : MonoBehaviour
                     {
                         //_ai.ability1.currentCd = _ai.ability1.coolDown;
                         _ai.SetCondition(Unit.Statuses.None, 0f);
-                        _ai.ability1.castOnce = false;
+
+                        for (var i = 0; i < _ai.abilityList.Count; i++)
+                        {
+                            var ability = _ai.abilityList[i].ability;
+                            ability.castOnce = false;
+                        }
                     }
                 }
 
@@ -431,11 +436,17 @@ public class BoardManager : MonoBehaviour
                     for (var i = 0; i < 32; i++)
                         if (unit == board[i].unit)
                         {
-                            unit.GetComponent<AIController>().ResetUnit(board[i].tile.transform.position);
-                            unit.GetComponent<AIController>().ability1.ResetCD();
+                            var aiController = unit.GetComponent<AIController>();
+                                aiController.ResetUnit(board[i].tile.transform.position);
                             unit.GetComponent<PlayerUnit>()._attackSpeed =
                                 unit.GetComponent<PlayerUnit>().UnitClass.AttackSpeed +
                                 unit.GetComponent<PlayerUnit>().UnitClass.ASPerLevel;
+
+                            for (int x = 0; i < aiController.abilityList.Count; i++)
+                            {
+                                var ability = aiController.abilityList[x].ability;
+                                ability.ResetCD();
+                            }
                         }
     
     }
