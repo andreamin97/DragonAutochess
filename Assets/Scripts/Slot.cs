@@ -124,13 +124,27 @@ public class Slot : MonoBehaviour
         unitCost.text = cost;
         unit = unitClass;
 
-        role.text = unit.role.ToString();
-        hp.text = "HP: " + unit.Health.ToString();
-        armor.text = "ARMOR: " + unit.Armor.ToString();
-        ad.text = "AD: " + unit.AttackDamage.ToString();
-        atkSpd.text = "AS: " + unit.AttackSpeed.ToString();
-        abilityName.text = GetAbilityTextByClass(unit.Name);
+        if (unit != null)
+        {
+            role.text = unit.role.ToString();
+            hp.text = "HP: " + unit.Health.ToString();
+            armor.text = "ARMOR: " + unit.Armor.ToString();
+            ad.text = "AD: " + unit.AttackDamage.ToString();
+            atkSpd.text = "AS: " + unit.AttackSpeed.ToString();
+            abilityName.text = GetAbilityTextByClass(unit.Name);
+        }
+        else
+        {
+            role.text = "";
+            hp.text = "";
+            armor.text = "";
+            ad.text = "";
+            atkSpd.text = "";
+            abilityName.text = GetAbilityTextByClass("");
+        }
+
         CheckForLevelUp();
+        
     }
 
     public void CheckForLevelUp()

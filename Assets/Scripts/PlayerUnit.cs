@@ -76,13 +76,16 @@ public class PlayerUnit : Unit
     private void OnMouseDrag()
     {
 
-        if (!_playerController.isFighting)
+        if (!_playerController.isFighting && _playerController.isDragging)
+        {
+            var x = Mathf.Lerp(transform.position.x, _playerController.selectedTile.transform.position.x, 0.5f);
+            var z = Mathf.Lerp(transform.position.z, _playerController.selectedTile.transform.position.z, 0.5f);
+            var y = _playerController.selectedTile.transform.position.y + 1f ;
+            transform.position = new Vector3(x, y, z);
+        }
+        else if (!_playerController.isFighting && !_playerController.isDragging)
         {
             _playerController.isDragging = true;
-            var x = Mathf.Lerp(transform.position.x, _playerController.selectedTile.transform.position.x, 0.75f);
-            var z = Mathf.Lerp(transform.position.z, _playerController.selectedTile.transform.position.z, 0.75f);
-            var y = _playerController.selectedTile.transform.position.y + 1f;
-            transform.position = new Vector3(x, y, z);
         }
     }
 

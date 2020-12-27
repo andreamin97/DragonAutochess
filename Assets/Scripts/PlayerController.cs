@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private int _nextLevelExperience = 1;
 
     public Text experienceText;
+    public Vector3 mouseWorldPosition;
 
     public int Experience
     {
@@ -48,6 +49,9 @@ public class PlayerController : MonoBehaviour
         {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+            Physics.Raycast(ray, out hitData, 1000);
+            mouseWorldPosition = hitData.transform.position;
+            
             if (Physics.Raycast(ray, out hitData, 1000, boardLayer))
             {
                 var newObject = hitData.transform.gameObject;
