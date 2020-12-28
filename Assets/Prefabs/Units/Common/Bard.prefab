@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3366369455082214818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856120235123107411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04457c8e1486e5a49acb2f150dbf7f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Inspiration
+  abilityText: At the beginning of combat, give me and all adjacent allies 0.1 attack
+    speed
+  coolDown: 0
+  currentCd: 0
+  castOnce: 0
+--- !u!1001 &868424155993532446
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -5738202884883393669, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: UnitClass
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d791bc82414e8644a22965c534be7b5, type: 2}
+    - target: {fileID: -5738202884883393669, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: unitName
+      value: Bard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655690250759401980, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655690250759401980, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5035862278911469044, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: Range
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984026837490368574, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568662639758380621, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_Name
+      value: Bard
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+--- !u!1 &8856120235123107411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8568662639758380621, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+  m_PrefabInstance: {fileID: 868424155993532446}
+  m_PrefabAsset: {fileID: 0}

@@ -136,7 +136,10 @@ public class AIController : AIController_Base
                 var projBase = projectile.GetComponent<Projectile_Base>();
                 projBase.damage = _unit._attackDamage;
                 projBase.target = target;
-                projBase.VFX = attackFX;
+                projBase.VFX = attackFX; 
+                
+                if(_unit.leech > 0f)
+                    _unit.TakeDamage(-(_unit._attackDamage*_unit.leech));
                 
                 break;
         }

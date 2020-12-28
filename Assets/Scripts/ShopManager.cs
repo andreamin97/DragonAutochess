@@ -1,19 +1,25 @@
 ﻿using System;
 using UnityEngine;
+using Random = System.Random;
 
 public class ShopManager : MonoBehaviour
 {
     public Slot[] slots;
-    public GameObject[] unitsList;
+    public GameObject[] commonUnitsList;
+    public AnimationCurve commonDropRate;
+    public GameObject[] epicUnitsList;
+    public AnimationCurve epicDropRate;
     public Canvas canvas;
 
     private bool isShopOpen;
     private BaseUnit unit;
     private PlayerController _playerController;
+    private Random rand;
 
     private void Awake()
     {
         _playerController = FindObjectOfType<PlayerController>();
+        rand = new Random();
     }
 
     private void Start()
@@ -30,27 +36,40 @@ public class ShopManager : MonoBehaviour
 
     public void RandomizeShop(bool rerolling)
     {
-        var rand = new System.Random();
+        
         
         if (rerolling && _playerController.Gold >= 2)
         {
             _playerController.EditGold(-2);
-            foreach (var slot in slots)
-            {
-                var unit = unitsList[rand.Next(0, unitsList.Length)];
-                slot.Enable();
-                slot.UpdateSlot(unit);
-            }
+
+            RandomizeSlots();
         }
         else if (rerolling && _playerController.Gold < 2) {}
         else
         {
-            foreach (var slot in slots)
+            RandomizeSlots();
+        }
+    }
+    
+    void RandomizeSlots()
+    {
+        GameObject unit = null;
+        
+        foreach (var slot in slots)
+        {
+            double dropPercent = rand.NextDouble();
+    
+            if (dropPercent <= commonDropRate.Evaluate(_playerController.level))
             {
-                var unit = unitsList[rand.Next(0, unitsList.Length)];
-                slot.Enable();
-                slot.UpdateSlot(unit);
+                unit = commonUnitsList[rand.Next(0, commonUnitsList.Length)];
             }
+            else if (dropPercent <= epicDropRate.Evaluate(_playerController.level))
+            {
+                unit = epicUnitsList[rand.Next(0, epicUnitsList.Length)];
+            }
+    
+            slot.Enable();
+            slot.UpdateSlot(unit);
         }
     }
 

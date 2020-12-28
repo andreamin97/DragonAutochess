@@ -10756,10 +10756,96 @@ MonoBehaviour:
   - {fileID: 734130058}
   - {fileID: 295722358}
   - {fileID: 988237065}
-  unitsList:
-  - {fileID: 1807370260553508752, guid: 532d76f6daa6e0243a8d2b608b3292eb, type: 3}
+  commonUnitsList:
+  - {fileID: 8630908795712081792, guid: 1067c5448548be8458a2971409b64219, type: 3}
   - {fileID: 7104627328255612818, guid: 2cc322bc41a585449a603ba8a49cc537, type: 3}
+  - {fileID: 8856120235123107411, guid: f1869e9ac038aea4485c0d3c30c5920f, type: 3}
+  - {fileID: 1807370260553508752, guid: 532d76f6daa6e0243a8d2b608b3292eb, type: 3}
+  - {fileID: 8086633322414505387, guid: 41c41757173aa30409527bd03a5c1637, type: 3}
+  - {fileID: 7976857687339985080, guid: 7c7e65431c1db4e429e36f66de634686, type: 3}
+  - {fileID: 8449518006782921464, guid: 998fe748556e00c4fa7b66fb68f06674, type: 3}
   - {fileID: 4338960129480429610, guid: 4dc7d7453d169b24b86ddda6416a20b9, type: 3}
+  - {fileID: 5697483370155709486, guid: 6335fed551c3c99489dcc628c7ebea08, type: 3}
+  - {fileID: 2323078690399406379, guid: d3c7f0f5bedb97f45ac230c765b6974e, type: 3}
+  - {fileID: 1415455627478230027, guid: 17bf08753756fef479196ce985cd1a12, type: 3}
+  - {fileID: 2631711171732777910, guid: ad8318403c7ff2847b9b02914b6028e5, type: 3}
+  commonDropRate:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: -0.050000012
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.76088583
+    - serializedVersion: 3
+      time: 3
+      value: 0.9
+      inSlope: -0.050000012
+      outSlope: -0.1
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.28881884
+      outWeight: 0
+    - serializedVersion: 3
+      time: 10
+      value: 0.2
+      inSlope: -0.1
+      outSlope: 0
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  epicUnitsList:
+  - {fileID: 2678130779245397132, guid: 5552a329368de4e47b5c1b86f2ed6f16, type: 3}
+  epicDropRate:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0.05
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.31276625
+    - serializedVersion: 3
+      time: 3
+      value: 0.1
+      inSlope: 0.05
+      outSlope: 0.1
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.194134
+      outWeight: 0.099921666
+    - serializedVersion: 3
+      time: 10
+      value: 0.8
+      inSlope: 0.1
+      outSlope: 0.013471107
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.1376385
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   canvas: {fileID: 177449991}
 --- !u!114 &1560189465
 MonoBehaviour:

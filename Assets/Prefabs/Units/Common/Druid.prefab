@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7136206864467298092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8630908795712081792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7391173bb29ae074c8b0db2b92ea0cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Sprouting Roots
+  abilityText: Snare a target for 3 seconds
+  coolDown: 6
+  currentCd: 6
+  castOnce: 0
+  cd: 6
+  snareDuration: 3
+  durationPerLevel: 0.5
+--- !u!1001 &84764201427599821
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -5738202884883393669, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: UnitClass
+      value: 
+      objectReference: {fileID: 11400000, guid: a5f0243324115584f8e6e1c04e00ecfd, type: 2}
+    - target: {fileID: -5738202884883393669, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: unitName
+      value: Druid
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655690250759401980, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655690250759401980, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5035862278911469044, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: Range
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336214138157456210, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5251586638495723739, guid: a95df77d770d1be4e937b9e1ff4894b8, type: 3}
+    - target: {fileID: 6984026837490368574, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568662639758380621, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_Name
+      value: Druid
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+--- !u!1 &8630908795712081792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8568662639758380621, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+  m_PrefabInstance: {fileID: 84764201427599821}
+  m_PrefabAsset: {fileID: 0}

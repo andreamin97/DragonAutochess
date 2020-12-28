@@ -33,6 +33,7 @@ public class AIController_Base : MonoBehaviour
 
         foreach (var abi in abilities)
         {
+            Debug.Log(abi.abilityName);
             abilityStruct temp = new abilityStruct(abi, abi.coolDown, false);
             abilityList.Add(temp);
         }

@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2788077443019562945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449518006782921464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef229d4c8deadc4ea3fc5ea912e46ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Bastion
+  abilityText: Snare me for 4 seconds and gain armor for the duration
+  coolDown: 5
+  currentCd: 5
+  castOnce: 0
+  _time: 4
+  vEffect: {fileID: 0}
+--- !u!1001 &263661349658526901
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -5738202884883393669, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: UnitClass
+      value: 
+      objectReference: {fileID: 11400000, guid: c7dbe3dbf2586d04c9456053bef88fe1, type: 2}
+    - target: {fileID: -5738202884883393669, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: unitName
+      value: Paladin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655690250759401980, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655690250759401980, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336214138157456210, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2195083398729625618, guid: e48a861052e41d748b6b191a6197ca9a, type: 3}
+    - target: {fileID: 6984026837490368574, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568662639758380621, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_Name
+      value: Paladin
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052747525458875639, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+--- !u!1 &8449518006782921464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8568662639758380621, guid: 1880f6ebe32c4754a9318dcb185dbe24, type: 3}
+  m_PrefabInstance: {fileID: 263661349658526901}
+  m_PrefabAsset: {fileID: 0}

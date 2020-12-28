@@ -1204,11 +1204,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8931d041f01384c98fb2fb865c5145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability1: {fileID: 0}
   Range: 0
-  profile: {fileID: 0}
+  profile: {fileID: 11400000, guid: d7d72d2265c6148408748412cfc816f4, type: 2}
   target: {fileID: 0}
-  abilit1Cd: 0
 --- !u!114 &-5738202884883393669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,7 +1234,7 @@ MonoBehaviour:
   unitName: 
   currentStatus: 0
   UnitClass: {fileID: 11400000, guid: dc06b647f8341944a92a0d891579d659, type: 2}
-  unitCost: 0
+  unitCost: 2
   levelUI: {fileID: 4644309652083206465}
   unitLevel: 0
   _navMeshAgent: {fileID: 0}
