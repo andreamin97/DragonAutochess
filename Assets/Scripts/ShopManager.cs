@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = System.Random;
 
 public class ShopManager : MonoBehaviour
@@ -10,11 +9,11 @@ public class ShopManager : MonoBehaviour
     public GameObject[] epicUnitsList;
     public AnimationCurve epicDropRate;
     public Canvas canvas;
+    private PlayerController _playerController;
 
     private bool isShopOpen;
-    private BaseUnit unit;
-    private PlayerController _playerController;
     private Random rand;
+    private BaseUnit unit;
 
     private void Awake()
     {
@@ -36,29 +35,29 @@ public class ShopManager : MonoBehaviour
 
     public void RandomizeShop(bool rerolling)
     {
-        
-        
         if (rerolling && _playerController.Gold >= 2)
         {
             _playerController.EditGold(-2);
 
             RandomizeSlots();
         }
-        else if (rerolling && _playerController.Gold < 2) {}
+        else if (rerolling && _playerController.Gold < 2)
+        {
+        }
         else
         {
             RandomizeSlots();
         }
     }
-    
-    void RandomizeSlots()
+
+    private void RandomizeSlots()
     {
         GameObject unit = null;
-        
+
         foreach (var slot in slots)
         {
-            double dropPercent = rand.NextDouble();
-    
+            var dropPercent = rand.NextDouble();
+
             if (dropPercent <= commonDropRate.Evaluate(_playerController.level))
             {
                 unit = commonUnitsList[rand.Next(0, commonUnitsList.Length)];
@@ -67,7 +66,7 @@ public class ShopManager : MonoBehaviour
             {
                 unit = epicUnitsList[rand.Next(0, epicUnitsList.Length)];
             }
-    
+
             slot.Enable();
             slot.UpdateSlot(unit);
         }

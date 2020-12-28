@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SellUnit : MonoBehaviour
 {
-    private BoardManager boardManager;
     private PlayerController _playerController;
+    private BoardManager boardManager;
 
     private void Awake()
     {
@@ -18,8 +15,6 @@ public class SellUnit : MonoBehaviour
     {
         if (Physics.CheckBox(transform.position, transform.localScale * 1.5f, Quaternion.identity,
             LayerMask.GetMask("Minis")) && !_playerController.isDragging)
-       {
-           boardManager.RemoveUnit(_playerController.selectedUnit, true);
-       }
+            boardManager.RemoveUnit(_playerController.selectedUnit, true);
     }
 }

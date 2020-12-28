@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.Remoting;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class ConcussiveFist : Ability
 {
-    private float _cd = 4;
-    private float timer = 0f;
-    private bool isCasting = false;
+    private readonly float _cd = 4;
+    private bool isCasting;
     private Vector3 knockDirection;
+    private float timer;
+
     public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
     {
         var target = controller.target;
@@ -17,7 +15,7 @@ public class ConcussiveFist : Ability
         if (Vector3.Distance(transform.position, target.transform.position) <=
             controller.GetComponent<PlayerUnit>().attackRange && !isCasting)
         {
-            target.TakeDamage(target.maxHealth*0.05f);
+            target.TakeDamage(target.maxHealth * 0.05f);
             target.GetComponent<EnemyAIController>().SetCondition(Unit.Statuses.Snared, 1f);
             // target.GetComponent<NavMeshAgent>().Warp(target.transform.position + transform.forward * 3f);
             knockDirection = transform.right;

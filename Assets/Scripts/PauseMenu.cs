@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -12,11 +9,8 @@ public class PauseMenu : MonoBehaviour
         menuCanvas.enabled = false;
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            menuCanvas.enabled = !menuCanvas.enabled;
-        } 
+        if (Input.GetKeyDown(KeyCode.Escape)) menuCanvas.enabled = !menuCanvas.enabled;
     }
 }

@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    private EnemyUnit unit;
-    private GameObject sphere;
     private SphereCollider _collider;
-    private MeshRenderer _meshRenderer;
     private MeshFilter _meshFilter;
+    private MeshRenderer _meshRenderer;
     private Rigidbody _rigidbody;
+    private GameObject sphere;
+    private EnemyUnit unit;
 
     private void Start()
     {
@@ -20,20 +16,18 @@ public class Fireball : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if ((other.gameObject.CompareTag("Ground")));
+        if (other.gameObject.CompareTag("Ground")) ;
         {
             var colls = Physics.OverlapSphere(other.gameObject.transform.position, 3f);
 
             foreach (var coll in colls)
-            {
                 if (coll.GetComponent<EnemyUnit>() != null)
                 {
                     coll.GetComponent<EnemyUnit>().TakeDamage(50f);
                     Debug.Log("HIT");
                 }
-            }
-            
-            Destroy(this.gameObject);
+
+            Destroy(gameObject);
         }
     }
 
@@ -41,5 +35,4 @@ public class Fireball : MonoBehaviour
     {
         transform.position = pos;
     }
-
 }

@@ -9,19 +9,19 @@ public class PlayerUnit : Unit
     public GameObject levelUI;
 
     [HideInInspector] public int unitLevel;
+    [SerializeField] private NavMeshAgent _navMeshAgent;
+    public bool CanBeSold;
+    public GameObject vfx;
     private AIController _aiController;
-    [SerializeField]private NavMeshAgent _navMeshAgent;
 
     private PlayerController _playerController;
+
+    private UnitInspector _unitInspector;
     private bool canBeSwapped = true;
 
     private GameObject currentTile;
     private Text levelText;
     private Image unitThumbnail;
-    public bool CanBeSold = false;
-    public GameObject vfx;
-
-    private UnitInspector _unitInspector;
 
     protected override void Awake()
     {
@@ -59,28 +59,27 @@ public class PlayerUnit : Unit
             }
         }
     }
+
     private void OnMouseDown()
     {
         _playerController.selectedUnit = gameObject;
-        
+
         _unitInspector.Show();
         if (!_playerController.isFighting)
         {
             canBeSwapped = false;
             _navMeshAgent.enabled = false;
-            CanBeSold = true; 
+            CanBeSold = true;
         }
-       
     }
 
     private void OnMouseDrag()
     {
-
         if (!_playerController.isFighting && _playerController.isDragging)
         {
             var x = Mathf.Lerp(transform.position.x, _playerController.selectedTile.transform.position.x, 0.5f);
             var z = Mathf.Lerp(transform.position.z, _playerController.selectedTile.transform.position.z, 0.5f);
-            var y = _playerController.selectedTile.transform.position.y + 1f ;
+            var y = _playerController.selectedTile.transform.position.y + 1f;
             transform.position = new Vector3(x, y, z);
         }
         else if (!_playerController.isFighting && !_playerController.isDragging)
@@ -108,14 +107,11 @@ public class PlayerUnit : Unit
             transform.position = navHit.position;
             _navMeshAgent.enabled = true;
         }
-        
-        boardManager.SetUnitAtSlot(null, currentTile);
-        boardManager.SetUnitAtSlot(this.gameObject, _playerController.selectedTile);
 
-        if (boardManager.IsUnitBenched(this.gameObject))
-        {
-            boardManager.fightingUnits.Remove(this.gameObject);
-        }
+        boardManager.SetUnitAtSlot(null, currentTile);
+        boardManager.SetUnitAtSlot(gameObject, _playerController.selectedTile);
+
+        if (boardManager.IsUnitBenched(gameObject)) boardManager.fightingUnits.Remove(gameObject);
 
         CanBeSold = false;
     }
@@ -134,7 +130,6 @@ public class PlayerUnit : Unit
         _navMeshAgent.speed = UnitClass.MovementSpeed;
         _aiController.profile = UnitClass._aiProfile;
         _aiController.Range = UnitClass.range;
-        
     }
 
     public void Swap(Vector3 location)
@@ -154,19 +149,17 @@ public class PlayerUnit : Unit
         maxHealth += UnitClass.HpPerLevel;
         currentHealth = maxHealth;
         _attackDamage += UnitClass.ADPerLevel;
-        _attackSpeed = Mathf.Clamp( _attackSpeed - UnitClass.ASPerLevel, 0.005f, 10f);
+        _attackSpeed = Mathf.Clamp(_attackSpeed - UnitClass.ASPerLevel, 0.005f, 10f);
         armor += UnitClass.ArmorPerLevel;
         _mRes += UnitClass.MrPerLevel;
-        
+
         // Instantiate(vfx, this.gameObject.transform.position, Quaternion.Euler(-90f, 0f, 0f));
-        
-        
     }
-    
+
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-        
+
         if (currentHealth <= 0)
         {
             boardManager.fightingUnits.Remove(gameObject);
@@ -175,13 +168,10 @@ public class PlayerUnit : Unit
             {
                 var _ai = unit.GetComponent<EnemyAIController>();
 
-                if (_ai.Target == this)
-                {
-                    _ai.Target = null;
-                }
+                if (_ai.Target == this) _ai.Target = null;
             }
-            
-            boardManager.RemoveUnit(this.gameObject, false);
+
+            boardManager.RemoveUnit(gameObject, false);
         }
     }
 

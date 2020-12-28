@@ -13,8 +13,6 @@ public class BoardManager : MonoBehaviour
     public BoardTile[] enemyBoard;
     public Board[] enemyPositioning;
     public Board[] enemyPositioningBoss;
-    
-    private int _currentFightBoardIndex;
 
     public List<GameObject> _ownedUnits = new List<GameObject>();
     public List<GameObject> fightingUnits = new List<GameObject>();
@@ -23,19 +21,9 @@ public class BoardManager : MonoBehaviour
 
     public GameObject baseEnemy;
     public GameObject FloatingText;
-    private PlayerController _playerController;
-    private GoogleSheetsForUnity _sheetsForUnity;
-    private ShopManager _shopManager;
-    private float boardResetTimer = 0f;
 
-    public bool gameRunning = false;
+    public bool gameRunning;
     public Canvas menu;
-
-    private float _fightTimer = 0f;
-    private int _stage = 1;
-    private int _unitCount;
-
-    public int Stage => _stage;
 
     public Text stageText;
     public Text maxUnitText;
@@ -44,8 +32,19 @@ public class BoardManager : MonoBehaviour
     public int maxUnit = 2;
     public Button fightButton;
 
+    private int _currentFightBoardIndex;
+
+    private float _fightTimer;
+    private PlayerController _playerController;
+    private GoogleSheetsForUnity _sheetsForUnity;
+    private ShopManager _shopManager;
+    private int _unitCount;
+    private float boardResetTimer;
+
     private string result;
-    
+
+    public int Stage { get; private set; } = 1;
+
     private void Awake()
     {
         _sheetsForUnity = FindObjectOfType<GoogleSheetsForUnity>();
@@ -56,27 +55,25 @@ public class BoardManager : MonoBehaviour
     private void Start()
     {
         DeployEnemyBoard();
-        stageText.text = _stage.ToString();
+        stageText.text = Stage.ToString();
         maxUnitText.text = (_playerController.level + 1).ToString();
         maxUnit = _playerController.level + 1;
     }
 
     private void Update()
     {
-
-        int fightingUnitCount = fightingUnits.Count;
-        int enemyFightingUnitCount = EnemyList().Count;
-        bool fightOver = false;
+        var fightingUnitCount = fightingUnits.Count;
+        var enemyFightingUnitCount = EnemyList().Count;
+        var fightOver = false;
 
         maxUnitText.text = (1 + _playerController.level).ToString();
         playerLevel.text = _playerController.level.ToString();
 
         fightButton.GetComponent<Image>().enabled = !_playerController.isFighting;
         fightButton.GetComponentInChildren<Text>().enabled = !_playerController.isFighting;
-       
+
         if (_playerController.isFighting)
         {
-
             if (fightingUnitCount <= 0)
             {
                 // The player has lost
@@ -84,83 +81,68 @@ public class BoardManager : MonoBehaviour
                 result = "Lost";
                 _playerController.isFighting = false;
                 fightOver = true;
-                
+
                 // Destroy the still alive enemies and spawn a new board
-                foreach (var unit in enemyFightingUnits)
-                {
-                    Destroy(unit);
-                }
+                foreach (var unit in enemyFightingUnits) Destroy(unit);
                 enemyFightingUnits.Clear();
-               
+
                 DeployEnemyBoard();
                 _shopManager.RandomizeShop(false);
 
-                foreach (var summon in summonedUnits)
-                {
-                    Destroy(summon);
-                }
+                foreach (var summon in summonedUnits) Destroy(summon);
                 summonedUnits.Clear();
                 // _sheetsForUnity.AppendToSheet("FightDuration", "B:B", new List<object>() { PlayerPrefs.GetString("MatchID"), _unitCount, _stage, _fightTimer, result});
-                
             }
 
             if (enemyFightingUnitCount <= 0)
             {
                 //the player has won
-                _stage++;
+                Stage++;
                 result = "Won";
                 _playerController.isFighting = false;
                 _playerController.GainExp(1);
- 
-                foreach (var summon in summonedUnits)
-                {
-                    Destroy(summon);
-                }
+
+                foreach (var summon in summonedUnits) Destroy(summon);
                 summonedUnits.Clear();
-                
+
                 // Reset player board and spawn new enemies
-                foreach (var unit in fightingUnits) 
+                foreach (var unit in fightingUnits)
                     unit.GetComponent<PlayerUnit>().isActive = false;
-                
+
                 ResetPlayerUnitsPosition();
-                
+
                 //give round won gold;
-                var goldFloat = (GameObject)Instantiate(FloatingText, playerGold.GetComponentInParent<Image>().transform.position + new Vector3( Random.Range(-10f, 10f),Random.Range(-10f, 10f), 0f ), Quaternion.identity, playerGold.GetComponentInParent<Image>().transform);
+                var goldFloat = Instantiate(FloatingText,
+                    playerGold.GetComponentInParent<Image>().transform.position +
+                    new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0f), Quaternion.identity,
+                    playerGold.GetComponentInParent<Image>().transform);
                 goldFloat.GetComponent<Text>().text = "+5";
                 _playerController.EditGold(5);
-                
+
                 fightOver = true;
                 DeployEnemyBoard();
-                
-                stageText.text = _stage.ToString();
+
+                stageText.text = Stage.ToString();
                 _shopManager.RandomizeShop(false);
                 boardResetTimer = 0f;
                 // _sheetsForUnity.AppendToSheet("FightDuration", "B:B", new List<object>() { PlayerPrefs.GetString("MatchID"), _unitCount, _stage-1, _fightTimer, result});
-
             }
 
             if (fightOver)
             {
-                
                 var unitsThatWon = new List<object>();
-                foreach (var unit in fightingUnits)
-                {
-                    unitsThatWon.Add(unit.GetComponent<PlayerUnit>().unitName);
-                }
+                foreach (var unit in fightingUnits) unitsThatWon.Add(unit.GetComponent<PlayerUnit>().unitName);
                 // _sheetsForUnity.AppendToSheet("UnitsWon", "A:A", unitsThatWon);
-                
+
                 fightingUnits.Clear();
             }
         }
         else
         {
             // Check for Lose State: the player doesnt own any more units and has less then <CHEAPES UNIT COST> gold
-            if (_ownedUnits.Count <= 0 && _playerController.Gold < 2)
-            {
-                PlayerLost();
-            }
+            if (_ownedUnits.Count <= 0 && _playerController.Gold < 2) PlayerLost();
         }
-       
+
         if (_playerController.isFighting)
             _fightTimer += Time.deltaTime;
 
@@ -169,25 +151,19 @@ public class BoardManager : MonoBehaviour
 
     private void BoardResetAfterTime(float time)
     {
-        if (boardResetTimer < time)
-        {
-            boardResetTimer += Time.deltaTime;
-        }
-        else
-        {
-            
-        }
+        if (boardResetTimer < time) boardResetTimer += Time.deltaTime;
     }
 
     private void DeployEnemyBoard()
     {
-        
         //Give Player Gold Interest
-        _playerController.EditGold( (int)(_playerController.Gold*0.1f) );
-        var goldFloat = (GameObject)Instantiate(FloatingText, playerGold.transform.position + new Vector3( Random.Range(-10f, 10f),Random.Range(-10f, 10f), 0f ), Quaternion.identity, playerGold.transform);
-        goldFloat.GetComponent<Text>().text = "+" + ((int)(_playerController.Gold * 0.1)).ToString();
-        
-        if (_stage % 10 != 0)
+        _playerController.EditGold((int) (_playerController.Gold * 0.1f));
+        var goldFloat = Instantiate(FloatingText,
+            playerGold.transform.position + new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0f),
+            Quaternion.identity, playerGold.transform);
+        goldFloat.GetComponent<Text>().text = "+" + (int) (_playerController.Gold * 0.1);
+
+        if (Stage % 10 != 0)
         {
             _currentFightBoardIndex = Random.Range(0, enemyPositioning.Length - 1);
 
@@ -215,7 +191,6 @@ public class BoardManager : MonoBehaviour
         }
         else
         {
-            
             _currentFightBoardIndex = Random.Range(0, enemyPositioningBoss.Length - 1);
 
             for (var i = 0; i < 32; i++)
@@ -274,7 +249,7 @@ public class BoardManager : MonoBehaviour
 
         return null;
     }
-    
+
     public bool IsUnitBenched(GameObject unit)
     {
         foreach (var tile in bench)
@@ -287,10 +262,10 @@ public class BoardManager : MonoBehaviour
     public void StartEncounter()
     {
         fightingUnits.Clear();
-        
+
         if (!_playerController.isFighting)
         {
-            for (var i = 31; i  >= 0; i--)
+            for (var i = 31; i >= 0; i--)
                 if (board[i].unit != null)
                 {
                     if (fightingUnits.Count < _playerController.level + 1 &&
@@ -304,7 +279,7 @@ public class BoardManager : MonoBehaviour
                     }
                     else
                     {
-                        GameObject benchSlot = GetBenchFreeSlot();
+                        var benchSlot = GetBenchFreeSlot();
                         if (benchSlot != null)
                         {
                             board[i].unit.GetComponent<NavMeshAgent>().Warp(benchSlot.transform.position);
@@ -324,7 +299,7 @@ public class BoardManager : MonoBehaviour
                         board[i].unit = null;
                     }
                 }
-               
+
 
             if (fightingUnits.Count > 0)
             {
@@ -358,12 +333,9 @@ public class BoardManager : MonoBehaviour
                 _unitCount = fightingUnits.Count;
             }
         }
-        
+
         var unitsFighting = new List<object>();
-        foreach (var unit in fightingUnits)
-        {
-            unitsFighting.Add(unit.GetComponent<PlayerUnit>().unitName);
-        }
+        foreach (var unit in fightingUnits) unitsFighting.Add(unit.GetComponent<PlayerUnit>().unitName);
         // _sheetsForUnity.AppendToSheet("UnitsTotalGames", "A:A", unitsFighting);
     }
 
@@ -396,18 +368,17 @@ public class BoardManager : MonoBehaviour
 
     public void RemoveUnit(GameObject unit, bool wasSold)
     {
-
         if (wasSold)
         {
-            PlayerUnit _unit = unit.GetComponent<PlayerUnit>();
-            _playerController.EditGold(_unit.unitCost + (_unit.unitLevel-1)*_unit.unitCost/2);
+            var _unit = unit.GetComponent<PlayerUnit>();
+            _playerController.EditGold(_unit.unitCost + (_unit.unitLevel - 1) * _unit.unitCost / 2);
             Debug.Log(unit.GetComponent<PlayerUnit>().unitCost);
         }
 
-        for (int i = 0; i < 32; i++)
-            if(board[i].unit == unit)
+        for (var i = 0; i < 32; i++)
+            if (board[i].unit == unit)
                 SetUnitAtSlot(null, board[i].tile);
-            
+
         _ownedUnits.Remove(unit);
         _playerController.RemoveOwnedUnit(unit);
         Destroy(unit);
@@ -415,15 +386,15 @@ public class BoardManager : MonoBehaviour
 
     public void SellSelectedUnit()
     {
-        var _unit = _playerController.selectedUnit.GetComponent<PlayerUnit>(); 
-        _playerController.EditGold(_unit.unitCost + (_unit.unitLevel-1)*_unit.unitCost/2);
-        
-        for (int i = 0; i < 32; i++)
-            if(board[i].unit == _playerController.selectedUnit)
+        var _unit = _playerController.selectedUnit.GetComponent<PlayerUnit>();
+        _playerController.EditGold(_unit.unitCost + (_unit.unitLevel - 1) * _unit.unitCost / 2);
+
+        for (var i = 0; i < 32; i++)
+            if (board[i].unit == _playerController.selectedUnit)
                 SetUnitAtSlot(null, board[i].tile);
-        
+
         _ownedUnits.Remove(_playerController.selectedUnit);
-        
+
         Destroy(_playerController.selectedUnit);
         _playerController.selectedUnit = null;
     }
@@ -437,32 +408,27 @@ public class BoardManager : MonoBehaviour
                         if (unit == board[i].unit)
                         {
                             var aiController = unit.GetComponent<AIController>();
-                                aiController.ResetUnit(board[i].tile.transform.position);
+                            aiController.ResetUnit(board[i].tile.transform.position);
                             unit.GetComponent<PlayerUnit>()._attackSpeed =
                                 unit.GetComponent<PlayerUnit>().UnitClass.AttackSpeed +
                                 unit.GetComponent<PlayerUnit>().UnitClass.ASPerLevel;
 
-                            for (int x = 0; i < aiController.abilityList.Count; i++)
+                            for (var x = 0; i < aiController.abilityList.Count; i++)
                             {
                                 var ability = aiController.abilityList[x].ability;
                                 ability.ResetCD();
                             }
                         }
-    
     }
 
     public int GetUnitIndexOnBoard(GameObject _unit)
     {
-        int index = 0;
+        var index = 0;
 
         for (index = 0; index < 32; index++)
-        {
             if (board[index].unit == _unit)
-            {
                 return index;
-            }
-        }
-        
+
         return -1;
     }
 
@@ -479,7 +445,7 @@ public class BoardManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-    
+
     [Serializable]
     public struct BoardTile
     {

@@ -1,25 +1,19 @@
-﻿using System.Diagnostics;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAIController : AIController_Base
 {
     public AIProfile profile;
     private BoardManager _boardManager;
+    private Unit.Statuses _condition = Unit.Statuses.None;
+    private float _conditionDuration;
     private NavMeshAgent _navMeshAgent;
-    private PlayerUnit _target;
-
-    public PlayerUnit Target
-    {
-        get => _target;
-        set => _target = value;
-    }
 
     private EnemyUnit _unit;
     private float distance = float.PositiveInfinity;
     private float nextAttack;
-    private Unit.Statuses _condition = Unit.Statuses.None;
-    private float _conditionDuration;
+
+    public PlayerUnit Target { get; set; }
 
     private void Start()
     {
@@ -34,53 +28,46 @@ public class EnemyAIController : AIController_Base
             _navMeshAgent = GetComponent<NavMeshAgent>();
 
         if (_unit.isActive)
-        {
             switch (_condition)
             {
                 case Unit.Statuses.None:
-                    if (_target == null)
-                        _target = profile.AcquireTarget(_boardManager.PlayerFightingUnitList(), transform.position)
+                    if (Target == null)
+                        Target = profile.AcquireTarget(_boardManager.PlayerFightingUnitList(), transform.position)
                             .GetComponent<PlayerUnit>();
 
-                    if (_target == null)
+                    if (Target == null)
                     {
                         FindObjectOfType<PlayerController>().isFighting = false;
                         _unit.isActive = false;
                     }
 
-                    distance = Vector3.Distance(_target.transform.position, transform.position);
+                    distance = Vector3.Distance(Target.transform.position, transform.position);
 
                     if (distance <= _unit.attackRange)
                     {
                         _navMeshAgent.SetDestination(transform.position);
                         if (nextAttack <= 0f)
                         {
-                            AttackTarget(_target);
+                            AttackTarget(Target);
                             nextAttack = _unit._attackSpeed;
                         }
                     }
                     else if (distance > _unit.attackRange)
                     {
-                        _navMeshAgent.SetDestination(_target.transform.position);
+                        _navMeshAgent.SetDestination(Target.transform.position);
                     }
 
                     break;
 
                 case Unit.Statuses.Snared:
-                    _navMeshAgent.SetDestination(transform.position); 
+                    _navMeshAgent.SetDestination(transform.position);
 
                     _conditionDuration -= Time.deltaTime;
                     _unit._conditionDuration = _conditionDuration;
-                    if (_conditionDuration <= 0)
-                    {
-                        SetCondition(Unit.Statuses.None, 0f);
-                    }
+                    if (_conditionDuration <= 0) SetCondition(Unit.Statuses.None, 0f);
 
                     break;
             }
-
-
-        }
 
         nextAttack -= Time.deltaTime;
     }
@@ -109,9 +96,9 @@ public class EnemyAIController : AIController_Base
                 if (_unit.leech > 0f)
                     _unit.TakeDamage(-(_unit._attackDamage * _unit.leech));
                 break;
-            
+
             case BaseUnit.Range.Ranged:
-                var projectile = (GameObject) Instantiate(Resources.Load("Projectile"), this.gameObject.transform);
+                var projectile = (GameObject) Instantiate(Resources.Load("Projectile"), gameObject.transform);
                 var projBase = projectile.GetComponent<Projectile_Base>();
                 projBase.damage = _unit._attackDamage;
                 projBase.target = target;
@@ -119,6 +106,5 @@ public class EnemyAIController : AIController_Base
 
                 break;
         }
-
     }
 }

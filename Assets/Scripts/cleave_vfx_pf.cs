@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class cleave_vfx_pf : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        Destroy(this.gameObject, GetComponent<ParticleSystem>().main.duration);
+        Destroy(gameObject, GetComponent<ParticleSystem>().main.duration);
     }
 }

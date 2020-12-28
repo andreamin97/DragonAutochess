@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "AI/Base Profile ")]
+[CreateAssetMenu(menuName = "AI/Base Profile ")]
 public class EnemyStandardAIProfile : AIProfile
 {
     public override GameObject AcquireTarget(List<GameObject> unitList, Vector3 position)
     {
         GameObject _closestUnit = null;
-        float distance = Single.PositiveInfinity;
+        var distance = float.PositiveInfinity;
 
-        foreach (GameObject unit in unitList)
+        foreach (var unit in unitList)
         {
             _closestUnit = Vector3.Distance(unit.transform.position, position) < distance ? unit : _closestUnit;
 

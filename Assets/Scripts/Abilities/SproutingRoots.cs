@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class SproutingRoots : Ability
@@ -13,15 +9,14 @@ public class SproutingRoots : Ability
 
     public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
     {
-        float distance = 0f;
+        var distance = 0f;
         EnemyUnit target = null;
         float tempDistance;
 
         var _unit = controller.GetComponent<PlayerUnit>();
-        
+
         //get target
         foreach (var unit in boardManager.enemyFightingUnits)
-        {
             if (target == null)
             {
                 target = unit.GetComponent<EnemyUnit>();
@@ -35,12 +30,13 @@ public class SproutingRoots : Ability
                     target = unit.GetComponent<EnemyUnit>();
                 }
             }
-        }
-        
+
         currentCd = cd;
-        
-        target.GetComponent<EnemyAIController>().SetCondition(Unit.Statuses.Snared, snareDuration + durationPerLevel*_unit.unitLevel);
-        var snareFX = (GameObject)Instantiate(Resources.Load("VFX/Druid_Snare"), target.transform.position + Vector3.up/2f, Quaternion.Euler(-90f, 0f, 0f));
+
+        target.GetComponent<EnemyAIController>()
+            .SetCondition(Unit.Statuses.Snared, snareDuration + durationPerLevel * _unit.unitLevel);
+        var snareFX = (GameObject) Instantiate(Resources.Load("VFX/Druid_Snare"),
+            target.transform.position + Vector3.up / 2f, Quaternion.Euler(-90f, 0f, 0f));
         snareFX.GetComponent<vfx_duration>().duration = snareDuration;
         //return
         controller.ResetTarget();

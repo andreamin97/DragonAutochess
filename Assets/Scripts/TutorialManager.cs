@@ -1,21 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
-
     public bool RunTutorial = true;
     public List<GameObject> TutorialWidgets;
 
-    private int tutorialIndex = -1;
-
-    public int TutorialIndex
-    {
-        get => tutorialIndex;
-        set => tutorialIndex = value;
-    }
+    public int TutorialIndex { get; set; } = -1;
 
     private void Start()
     {
@@ -24,8 +15,8 @@ public class TutorialManager : MonoBehaviour
 
     public void NextTutorial()
     {
-        tutorialIndex++;
-        switch (tutorialIndex)
+        TutorialIndex++;
+        switch (TutorialIndex)
         {
             case 0:
                 TutorialWidgets[0].SetActive(true);
@@ -52,6 +43,7 @@ public class TutorialManager : MonoBehaviour
                 break;
         }
     }
+
     public void PlayTutorial()
     {
         switch (PlayerPrefs.GetInt("hasPlayedTutorial"))
@@ -66,21 +58,18 @@ public class TutorialManager : MonoBehaviour
                 RunTutorial = true;
                 break;
         }
-     
+
         PlayerPrefs.GetInt("hasPlayedTutorial");
-        tutorialIndex = -1;
-     
+        TutorialIndex = -1;
+
         HideWidgets();
-     
+
         if (RunTutorial)
             NextTutorial();
     }
 
     private void HideWidgets()
     {
-        foreach (var widget in TutorialWidgets)
-        {
-            widget.SetActive(false);
-        }
+        foreach (var widget in TutorialWidgets) widget.SetActive(false);
     }
 }

@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu (menuName = "Units/Unit List")]
+[CreateAssetMenu(menuName = "Units/Unit List")]
 public class UnitList : ScriptableObject
 {
     public BaseUnit[] Units;

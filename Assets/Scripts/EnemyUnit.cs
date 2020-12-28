@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyUnit : Unit
@@ -10,6 +9,7 @@ public class EnemyUnit : Unit
     private NavMeshAgent _navMeshAgent;
 
     private UnitInspector _unitInspector;
+
     protected override void Awake()
     {
         base.Awake();
@@ -20,14 +20,21 @@ public class EnemyUnit : Unit
         _unitInspector = FindObjectOfType<UnitInspector>();
     }
 
+    private void OnMouseDown()
+    {
+        var _pc = FindObjectOfType<PlayerController>();
+        _pc.selectedUnit = gameObject;
+        _unitInspector.Show();
+    }
+
     public void InitUnit()
     {
         meshFilter.mesh = enemyClass.Mesh;
-        maxHealth = enemyClass.Health + enemyClass.HpPerLevel*_boardManager.Stage;
+        maxHealth = enemyClass.Health + enemyClass.HpPerLevel * _boardManager.Stage;
         currentHealth = maxHealth;
-        armor = enemyClass.Armor + enemyClass.ArmorPerLevel*_boardManager.Stage;
-        _attackDamage = enemyClass.AttackDamage + enemyClass.ADPerLevel*_boardManager.Stage;
-        _attackSpeed = Mathf.Clamp(enemyClass.AttackSpeed - enemyClass.ASPerLevel*_boardManager.Stage, 0.05f, 10f);
+        armor = enemyClass.Armor + enemyClass.ArmorPerLevel * _boardManager.Stage;
+        _attackDamage = enemyClass.AttackDamage + enemyClass.ADPerLevel * _boardManager.Stage;
+        _attackSpeed = Mathf.Clamp(enemyClass.AttackSpeed - enemyClass.ASPerLevel * _boardManager.Stage, 0.05f, 10f);
         attackRange = enemyClass.AttackRange;
         _aiController.profile = enemyClass._aiProfile;
         _navMeshAgent.speed = enemyClass.MovementSpeed;
@@ -41,14 +48,7 @@ public class EnemyUnit : Unit
         if (currentHealth - damage <= 0)
         {
             boardManager.enemyFightingUnits.Remove(gameObject);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
-    }
-
-    private void OnMouseDown()
-    {
-        var _pc = FindObjectOfType<PlayerController>();
-        _pc.selectedUnit = gameObject;
-        _unitInspector.Show();
     }
 }

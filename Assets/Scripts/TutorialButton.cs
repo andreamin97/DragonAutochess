@@ -1,25 +1,17 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TutorialButton : MonoBehaviour
 {
-    private TutorialManager _tutorialManager;
     public int NextTutorialIndex;
+    private TutorialManager _tutorialManager;
+
     private void Awake()
     {
-
         _tutorialManager = FindObjectOfType<TutorialManager>();
-
     }
 
     public void NextTutorial()
     {
-        
-        if (_tutorialManager.TutorialIndex == NextTutorialIndex - 1)
-        {
-            _tutorialManager.NextTutorial();
-        }
+        if (_tutorialManager.TutorialIndex == NextTutorialIndex - 1) _tutorialManager.NextTutorial();
     }
 }

@@ -1,22 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class cdFillBar : MonoBehaviour
 {
     public Unit unit;
-    private AIController controller;
     public Slider _cdSlider;
     private Ability _ability;
-    
+    private AIController controller;
+
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         controller = unit.GetComponent<AIController>();
         _ability = controller.abilityList[0].ability;

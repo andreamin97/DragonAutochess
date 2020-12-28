@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -19,20 +18,20 @@ public class Slot : MonoBehaviour
     public Text abilityName;
     public Image lvlUpArrow;
     public GameObject InfoPane;
-        
+
     private PlayerController _playerController;
-    private BoardManager boardManager;
-    private ShopManager _shopManager;
     private GoogleSheetsForUnity _sheets;
+    private ShopManager _shopManager;
+    private BoardManager boardManager;
     private bool isEnabled = true;
+
+    private bool isInfoOpen;
+    private List<GameObject> playerUnits;
 
     // private GameObject playerUnits;
     private PlayerUnit temp;
-    private List<GameObject> playerUnits;
     private List<GameObject> units;
 
-    private bool isInfoOpen = false;
-    
     private void Awake()
     {
         boardManager = FindObjectOfType<BoardManager>();
@@ -40,19 +39,19 @@ public class Slot : MonoBehaviour
         _sheets = FindObjectOfType<GoogleSheetsForUnity>();
         _shopManager = FindObjectOfType<ShopManager>();
     }
-    
+
     private void Start()
     {
         playerUnits = boardManager.PlayerUnitList();
         units = new List<GameObject>();
     }
-    
+
     public void BuyUnit()
     {
         if (isEnabled)
         {
             var cost = Unit.GetComponent<PlayerUnit>().unitCost;
-            
+
             if (_playerController.Gold >= cost && boardManager.GetBenchFreeSlot() != null)
             {
                 CheckForLevelUp();
@@ -63,8 +62,9 @@ public class Slot : MonoBehaviour
                 if (unitCount >= 2)
                 {
                     units[0].GetComponent<PlayerUnit>().LevelUp();
-                    Instantiate(Resources.Load("VFX/LevelUp"), units[0].gameObject.transform.position + Vector3.up, Quaternion.Euler(-90f, 0f, 0f));
-                    
+                    Instantiate(Resources.Load("VFX/LevelUp"), units[0].gameObject.transform.position + Vector3.up,
+                        Quaternion.Euler(-90f, 0f, 0f));
+
                     for (var i = 1; i < unitCount; i++)
                     {
                         boardManager.RemoveUnit(units[i], false);
@@ -73,9 +73,8 @@ public class Slot : MonoBehaviour
 
                     lvlUpArrow.enabled = false;
                     _playerController.EditGold(-cost);
-                    
+
                     // _sheets.AppendToSheet( "UnitsLevelUp", "A:A", new List<object>() { PlayerPrefs.GetString("MatchID"), unit.Name,  units[0].GetComponent<PlayerUnit>().unitLevel, boardManager.Stage } );
-                    
                 }
                 else
                 {
@@ -99,16 +98,14 @@ public class Slot : MonoBehaviour
                         _playerController.EditGold(-cost);
                     }
                 }
-               
+
                 // _sheets.AppendToSheet("Units", "A:A", new List<object>() { temp.unitName });
                 isEnabled = false;
                 UpdateSlot();
-                
+
                 foreach (var slot in _shopManager.slots)
-                {
                     if (slot != this)
                         slot.CheckForLevelUp();
-                }
             }
         }
     }
@@ -121,7 +118,7 @@ public class Slot : MonoBehaviour
     public void UpdateSlot(GameObject unit = null)
     {
         Unit = unit;
-        
+
 
         if (unit != null)
         {
@@ -130,10 +127,10 @@ public class Slot : MonoBehaviour
             unitName.text = unitScript.unitName;
             unitCost.text = unitScript.unitCost.ToString();
             role.text = unitClass.role.ToString();
-            hp.text = "HP: " + unitClass.Health.ToString();
-            armor.text = "ARMOR: " + unitClass.Armor.ToString();
-            ad.text = "AD: " + unitClass.AttackDamage.ToString();
-            atkSpd.text = "AS: " + unitClass.AttackSpeed.ToString();
+            hp.text = "HP: " + unitClass.Health;
+            armor.text = "ARMOR: " + unitClass.Armor;
+            ad.text = "AD: " + unitClass.AttackDamage;
+            atkSpd.text = "AS: " + unitClass.AttackSpeed;
             abilityName.text = GetAbilityTextByClass(unitClass.Name);
         }
         else
@@ -147,7 +144,6 @@ public class Slot : MonoBehaviour
         }
 
         CheckForLevelUp();
-        
     }
 
     public void CheckForLevelUp()
@@ -155,25 +151,16 @@ public class Slot : MonoBehaviour
         units.Clear();
         BaseUnit unitClass = null;
 
-        if (Unit != null)
-        {
-            unitClass = Unit.GetComponent<PlayerUnit>().UnitClass;
-        }
-        
+        if (Unit != null) unitClass = Unit.GetComponent<PlayerUnit>().UnitClass;
+
         foreach (var ownedUnit in playerUnits)
             if (ownedUnit.GetComponent<PlayerUnit>().UnitClass == unitClass)
-            {
                 units.Add(ownedUnit);
-            }
 
         if (units.Count >= 2)
-        {
             lvlUpArrow.enabled = true;
-        }
         else
-        {
             lvlUpArrow.enabled = false;
-        }
     }
 
     public void ToggleInfo()
@@ -191,7 +178,7 @@ public class Slot : MonoBehaviour
             case "Cleric":
                 return "Heal a friendly target for 10HP/lvl";
             case "Sorcerer":
-                
+
             case "Warlock":
                 return "Deal twice your attack damage to your target and heal half that amount";
             case "Paladin":

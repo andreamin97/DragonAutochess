@@ -1,22 +1,21 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
 
 public class AIController : AIController_Base
 {
     public AIProfile profile;
-    private BoardManager _boardManager;
-    private NavMeshAgent _navMeshAgent;
     [FormerlySerializedAs("_target")] public Unit target;
-    private PlayerUnit _unit;
-    private float _distance = float.PositiveInfinity;
-    private float _nextAttack;
-    private GoogleSheetsForUnity _sheetsForUnity;
-    
-    
+    private BoardManager _boardManager;
+
+
     private Unit.Statuses _condition = Unit.Statuses.None;
     private float _conditionDuration;
+    private float _distance = float.PositiveInfinity;
+    private NavMeshAgent _navMeshAgent;
+    private float _nextAttack;
+    private GoogleSheetsForUnity _sheetsForUnity;
+    private PlayerUnit _unit;
 
     private void Start()
     {
@@ -36,18 +35,18 @@ public class AIController : AIController_Base
             switch (_condition)
             {
                 case Unit.Statuses.None:
-                    
+
                     //Acquire a target if don't have one and save the distance
                     if (target == null)
                         target = profile.AcquireTarget(_boardManager.EnemyList(), transform.position)
                             .GetComponent<EnemyUnit>();
-            
+
                     _distance = Vector3.Distance(target.transform.position, transform.position);
-                        
+
                     //Always prioritize casting an ability if able, abilities use the unit attackspeed
                     if (abilityList != null)
                     {
-                        for(var i = 0; i < abilityList.Count; i++)
+                        for (var i = 0; i < abilityList.Count; i++)
                         {
                             if (abilityList[i].ability.currentCd <= 0f || abilityList[i].isCasting)
                             {
@@ -57,8 +56,8 @@ public class AIController : AIController_Base
                             }
                         }
                     }
-                        
-                        
+
+
                     //move to the target or attack based on distance 
                     if (target != null)
                     {
@@ -91,11 +90,11 @@ public class AIController : AIController_Base
 
                 case Unit.Statuses.Snared:
                     _navMeshAgent.SetDestination(transform.position);
-                    
+
                     //Always prioritize casting an ability if able, abilities use the unit attackspeed
                     if (abilityList != null)
                     {
-                        for(var i = 0; i < abilityList.Count; i++)
+                        for (var i = 0; i < abilityList.Count; i++)
                         {
                             if (abilityList[i].ability.currentCd <= 0f || abilityList[i].isCasting)
                             {
@@ -105,19 +104,18 @@ public class AIController : AIController_Base
                             }
                         }
                     }
-                    
+
                     _conditionDuration -= Time.deltaTime;
                     _unit._conditionDuration = _conditionDuration;
-                    
+
                     if (_conditionDuration <= 0)
                     {
                         SetCondition(Unit.Statuses.None, 0f);
                     }
+
                     break;
             }
-                   
         }
-            
     }
 
     private void AttackTarget(Unit target)
@@ -127,25 +125,24 @@ public class AIController : AIController_Base
             case BaseUnit.Range.Melee:
                 target.TakeDamage(_unit._attackDamage);
                 Instantiate(attackFX, target.transform);
-        
-                if(_unit.leech > 0f)
-                    _unit.TakeDamage(-(_unit._attackDamage*_unit.leech));
+
+                if (_unit.leech > 0f)
+                    _unit.TakeDamage(-(_unit._attackDamage * _unit.leech));
                 break;
             case BaseUnit.Range.Ranged:
-                var projectile = (GameObject) Instantiate(Resources.Load("Projectile"), this.gameObject.transform);
+                var projectile = (GameObject) Instantiate(Resources.Load("Projectile"), gameObject.transform);
                 var projBase = projectile.GetComponent<Projectile_Base>();
                 projBase.damage = _unit._attackDamage;
                 projBase.target = target;
-                projBase.VFX = attackFX; 
-                
-                if(_unit.leech > 0f)
-                    _unit.TakeDamage(-(_unit._attackDamage*_unit.leech));
-                
+                projBase.VFX = attackFX;
+
+                if (_unit.leech > 0f)
+                    _unit.TakeDamage(-(_unit._attackDamage * _unit.leech));
+
                 break;
         }
-       
-        
-        
+
+
         _nextAttack = _unit._attackSpeed;
     }
 
@@ -166,5 +163,4 @@ public class AIController : AIController_Base
         _conditionDuration = duration;
         _unit.currentStatus = cond;
     }
-
 }

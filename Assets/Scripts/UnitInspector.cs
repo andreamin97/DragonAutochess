@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UnitInspector : MonoBehaviour
@@ -15,15 +12,15 @@ public class UnitInspector : MonoBehaviour
     public Text armor;
     public Text leech;
     public Text abilityText;
-    
+
     public Slider healthBar;
     public Canvas canvas;
 
-    private GameObject oldUnit = null;
+    private PlayerController _playerController;
     private bool canDisable = true;
 
-    private PlayerController _playerController;
-    
+    private GameObject oldUnit = null;
+
     private void Awake()
     {
         _playerController = FindObjectOfType<PlayerController>();
@@ -31,7 +28,6 @@ public class UnitInspector : MonoBehaviour
 
     private void Update()
     {
-
         if (_playerController.selectedUnit != null)
         {
             var unit = _playerController.selectedUnit.GetComponent<Unit>();
@@ -45,23 +41,15 @@ public class UnitInspector : MonoBehaviour
             leech.text = unit.leech.ToString();
             armor.text = unit.armor.ToString();
             abilityText.text = unit.GetComponent<AIController_Base>().abilityList[0].ability.abilityText;
-
-
         }
-        
     }
 
     public void Hide()
     {
         if (canDisable)
-        {
-            canvas.enabled  = false;
-        }
+            canvas.enabled = false;
         else
-        {
             canDisable = true;
-        }
-        
     }
 
     public void Show()
