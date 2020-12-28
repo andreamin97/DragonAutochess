@@ -11,7 +11,8 @@ public class Unit : MonoBehaviour
     [Header("Base Unit Stats")] public float attackRange = 2f;
 
     public float _attackSpeed;
-    public float _attackDamage;
+    public float _attackDamageMin;
+    public float _attackDamageMax;
     public float movementSpeed = 3f;
 
     public bool isActive;
@@ -32,17 +33,22 @@ public class Unit : MonoBehaviour
     protected BoardManager boardManager;
 
     protected MeshFilter meshFilter;
+    protected AIController_Base _controller;
 
     protected virtual void Awake()
     {
         boardManager = FindObjectOfType<BoardManager>();
         meshFilter = GetComponent<MeshFilter>();
+        _controller = GetComponent<AIController_Base>();
     }
 
     public virtual void TakeDamage(float damage)
     {
         if (damage > 0f)
+        {
             currentHealth -= Mathf.Clamp(damage - armor, 1f, maxHealth);
+            _controller.ReduceAbilitiesCD();
+        }
         else if (damage < 0f) currentHealth = Mathf.Clamp(currentHealth -= damage, 0f, maxHealth);
     }
 }

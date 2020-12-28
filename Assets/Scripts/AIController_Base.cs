@@ -26,14 +26,22 @@ public class AIController_Base : MonoBehaviour
     public struct abilityStruct
     {
         public Ability ability;
-        public float coolDown;
+        //public float coolDown;
         public bool isCasting;
 
         public abilityStruct(Ability abi, float cD, bool casting)
         {
             ability = abi;
-            coolDown = cD;
+            // coolDown = cD;
             isCasting = casting;
+        }
+    }
+
+    public void ReduceAbilitiesCD(float value=.25f)
+    {
+        foreach (var ability in abilityList)
+        {
+            ability.ability.currentCd -= value;
         }
     }
 }

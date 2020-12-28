@@ -17,8 +17,14 @@ public class BladeSpin : Ability
 
         var colliders = Physics.OverlapSphere(transform.position, range);
         foreach (var coll in colliders)
+        {
+
             if (coll.gameObject.GetComponent<EnemyUnit>())
-                coll.gameObject.GetComponent<EnemyUnit>().TakeDamage(_unit._attackDamage * _unit.unitLevel);
+            {
+                var damage = Random.Range(_unit._attackDamageMin, _unit._attackDamageMax);
+                coll.gameObject.GetComponent<EnemyUnit>().TakeDamage(damage * _unit.unitLevel);
+            }
+        }
 
         currentCd = cd;
         return false;

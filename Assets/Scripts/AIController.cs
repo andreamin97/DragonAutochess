@@ -120,29 +120,32 @@ public class AIController : AIController_Base
 
     private void AttackTarget(Unit target)
     {
+        var damage = Random.Range(_unit._attackDamageMin, _unit._attackDamageMax);
+        
         switch (Range)
         {
             case BaseUnit.Range.Melee:
-                target.TakeDamage(_unit._attackDamage);
+                target.TakeDamage(damage);
                 Instantiate(attackFX, target.transform);
 
                 if (_unit.leech > 0f)
-                    _unit.TakeDamage(-(_unit._attackDamage * _unit.leech));
+                    _unit.TakeDamage(-damage * _unit.leech);
                 break;
             case BaseUnit.Range.Ranged:
                 var projectile = (GameObject) Instantiate(Resources.Load("Projectile"), gameObject.transform);
                 var projBase = projectile.GetComponent<Projectile_Base>();
-                projBase.damage = _unit._attackDamage;
+                projBase.damage = damage;
                 projBase.target = target;
                 projBase.VFX = attackFX;
 
                 if (_unit.leech > 0f)
-                    _unit.TakeDamage(-(_unit._attackDamage * _unit.leech));
-
+                    _unit.TakeDamage(-damage * _unit.leech);
+                
                 break;
         }
 
 
+        ReduceAbilitiesCD();
         _nextAttack = _unit._attackSpeed;
     }
 

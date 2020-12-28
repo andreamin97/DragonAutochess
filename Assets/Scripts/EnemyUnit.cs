@@ -33,7 +33,8 @@ public class EnemyUnit : Unit
         maxHealth = enemyClass.Health + enemyClass.HpPerLevel * _boardManager.Stage;
         currentHealth = maxHealth;
         armor = enemyClass.Armor + enemyClass.ArmorPerLevel * _boardManager.Stage;
-        _attackDamage = enemyClass.AttackDamage + enemyClass.ADPerLevel * _boardManager.Stage;
+        _attackDamageMin = enemyClass.AttackDamage + enemyClass.ADPerLevel * _boardManager.Stage;
+        _attackDamageMax = _attackDamageMin + 5f;
         _attackSpeed = Mathf.Clamp(enemyClass.AttackSpeed - enemyClass.ASPerLevel * _boardManager.Stage, 0.05f, 10f);
         attackRange = enemyClass.AttackRange;
         _aiController.profile = enemyClass._aiProfile;

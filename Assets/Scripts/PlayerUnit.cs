@@ -122,7 +122,8 @@ public class PlayerUnit : Unit
         unitCost = UnitClass.Cost;
         meshFilter.mesh = UnitClass.Mesh;
         attackRange = UnitClass.AttackRange;
-        _attackDamage = UnitClass.AttackDamage;
+        _attackDamageMin = UnitClass.AttackDamage;
+        _attackDamageMax = _attackDamageMin + 5f;
         _attackSpeed = UnitClass.AttackSpeed;
         maxHealth = UnitClass.Health;
         currentHealth = maxHealth;
@@ -148,7 +149,8 @@ public class PlayerUnit : Unit
         levelText.text = (++unitLevel).ToString();
         maxHealth += UnitClass.HpPerLevel;
         currentHealth = maxHealth;
-        _attackDamage += UnitClass.ADPerLevel;
+        _attackDamageMin += UnitClass.ADPerLevel;
+        _attackDamageMax += UnitClass.ADPerLevel;
         _attackSpeed = Mathf.Clamp(_attackSpeed - UnitClass.ASPerLevel, 0.005f, 10f);
         armor += UnitClass.ArmorPerLevel;
         _mRes += UnitClass.MrPerLevel;

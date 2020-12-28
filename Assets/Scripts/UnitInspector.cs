@@ -36,7 +36,7 @@ public class UnitInspector : MonoBehaviour
             unitCurrentHp.text = unit.currentHealth.ToString();
             unitMaxHp.text = unit.maxHealth.ToString();
             healthBar.value = unit.currentHealth / unit.maxHealth;
-            ad.text = unit._attackDamage.ToString();
+            ad.text = unit._attackDamageMin.ToString() + " - " + unit._attackDamageMax.ToString();
             atkspd.text = unit._attackSpeed.ToString();
             leech.text = unit.leech.ToString();
             armor.text = unit.armor.ToString();

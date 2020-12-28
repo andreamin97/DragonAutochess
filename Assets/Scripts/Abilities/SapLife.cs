@@ -14,8 +14,10 @@ public class SapLife : Ability
             Quaternion.identity);
         vEffetc.GetComponentInChildren<particleAttractorLinear>().target = unit.transform;
 
-        controller.target.TakeDamage(unit._attackDamage * 2f);
-        unit.TakeDamage(-unit._attackDamage);
+        var damage = Random.Range(unit._attackDamageMin, unit._attackDamageMax);
+        
+        controller.target.TakeDamage(damage * 2f);
+        unit.TakeDamage(-damage);
 
         currentCd = cd;
         return false;
