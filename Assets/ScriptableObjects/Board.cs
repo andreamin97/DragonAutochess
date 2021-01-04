@@ -3,9 +3,9 @@
 [CreateAssetMenu(menuName = "Board")]
 public class Board : ScriptableObject
 {
-    public BaseEnemy[] enemyPositioning;
+    public GameObject[] enemyPositioning;
 
-    public BaseEnemy GetEnemyAtIndex(int i)
+    public GameObject GetEnemyAtIndex(int i)
     {
         return enemyPositioning[i];
     }

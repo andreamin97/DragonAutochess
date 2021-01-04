@@ -10,7 +10,7 @@ public class Heal : Ability
     public GameObject vEffect;
     private float distance;
     private bool hasTarget;
-    private PlayerUnit lowestUnit;
+    private Unit lowestUnit;
 
     private void Start()
     {
@@ -22,16 +22,16 @@ public class Heal : Ability
         if (!hasTarget)
         {
             // acquire lowest on health friendly target
-            foreach (var unit in boardManager.fightingUnits)
+            foreach (var unit in controller.AlliedUnits)
                 if (lowestUnit == null)
                 {
-                    lowestUnit = unit.GetComponent<PlayerUnit>();
+                    lowestUnit = unit.GetComponent<Unit>();
                 }
                 else
                 {
-                    if (unit.GetComponent<PlayerUnit>().currentHealth / unit.GetComponent<PlayerUnit>().maxHealth <
+                    if (unit.GetComponent<Unit>().currentHealth / unit.GetComponent<Unit>().maxHealth <
                         lowestUnit.currentHealth / lowestUnit.maxHealth)
-                        lowestUnit = unit.GetComponent<PlayerUnit>();
+                        lowestUnit = unit.GetComponent<Unit>();
                 }
 
             hasTarget = true;
@@ -58,7 +58,7 @@ public class Heal : Ability
             //Effect
             Instantiate(vEffect, lowestUnit.transform);
             //heal
-            lowestUnit.TakeDamage(-(amount + perLevel), 0);
+            lowestUnit.TakeDamage(-(amount + perLevel*controller.GetComponent<Unit>().unitLevel), 0);
 
             //reset the target and set the cooldown, return false to stop casting from the AI controller
             controller.ResetTarget();

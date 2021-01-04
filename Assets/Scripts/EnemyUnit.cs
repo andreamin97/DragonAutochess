@@ -18,6 +18,7 @@ public class EnemyUnit : Unit
         meshFilter = GetComponent<MeshFilter>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _unitInspector = FindObjectOfType<UnitInspector>();
+        unitLevel = _boardManager.Stage;
     }
 
     private void OnMouseDown()

@@ -8,7 +8,7 @@ public class PlayerUnit : Unit
     public int unitCost;
     public GameObject levelUI;
 
-    [HideInInspector] public int unitLevel;
+    
     [SerializeField] private NavMeshAgent _navMeshAgent;
     public bool CanBeSold;
     public GameObject vfx;

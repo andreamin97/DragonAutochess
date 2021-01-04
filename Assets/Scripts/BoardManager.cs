@@ -172,7 +172,7 @@ public class BoardManager : MonoBehaviour
                 {
                     var spawnPosition = enemyBoard[i].tile.transform.position + Vector3.up;
 
-                    var newUnit = Instantiate(baseEnemy, spawnPosition, Quaternion.identity);
+                    var newUnit = Instantiate(enemyPositioning[_currentFightBoardIndex].GetEnemyAtIndex(i), spawnPosition, Quaternion.identity);
 
                     NavMeshHit navHit;
                     if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
@@ -182,9 +182,7 @@ public class BoardManager : MonoBehaviour
                     }
 
                     newUnit.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-                    var temp = newUnit.GetComponent<EnemyUnit>();
-                    temp.enemyClass = enemyPositioning[_currentFightBoardIndex].GetEnemyAtIndex(i);
-                    temp.InitUnit();
+                    newUnit.GetComponent<EnemyUnit>().InitUnit();
 
                     enemyBoard[i].unit = newUnit;
                 }
@@ -198,7 +196,7 @@ public class BoardManager : MonoBehaviour
                 {
                     var spawnPosition = enemyBoard[i].tile.transform.position + Vector3.up;
 
-                    var newUnit = Instantiate(baseEnemy, spawnPosition, Quaternion.identity);
+                    var newUnit = Instantiate(enemyPositioningBoss[_currentFightBoardIndex].GetEnemyAtIndex(i), spawnPosition, Quaternion.identity);
 
                     NavMeshHit navHit;
                     if (NavMesh.SamplePosition(spawnPosition, out navHit, 5, -1))
@@ -208,9 +206,7 @@ public class BoardManager : MonoBehaviour
                     }
 
                     newUnit.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-                    var temp = newUnit.GetComponent<EnemyUnit>();
-                    temp.enemyClass = enemyPositioningBoss[_currentFightBoardIndex].GetEnemyAtIndex(i);
-                    temp.InitUnit();
+                    newUnit.GetComponent<EnemyUnit>().InitUnit();
 
                     enemyBoard[i].unit = newUnit;
                 }

@@ -19,6 +19,11 @@ public class AIController_Base : MonoBehaviour
     protected NavMeshAgent _navMeshAgent;
     protected GoogleSheetsForUnity _sheetsForUnity;
     protected List<GameObject> alliedUnits;
+
+    public List<GameObject> AlliedUnits => alliedUnits;
+
+    public List<GameObject> EnemyUnits => enemyUnits;
+
     protected List<GameObject> enemyUnits;
 
     private void Awake()

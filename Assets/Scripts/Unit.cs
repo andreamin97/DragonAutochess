@@ -14,6 +14,7 @@ public class Unit : MonoBehaviour
     public float _attackDamageMin;
     public float _attackDamageMax;
     public float movementSpeed = 3f;
+    [HideInInspector] public int unitLevel;
 
     public bool isActive;
 

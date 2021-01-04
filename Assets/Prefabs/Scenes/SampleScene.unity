@@ -888,9 +888,9 @@ MonoBehaviour:
   enemyPositioning:
   - {fileID: 11400000, guid: cf8c211d9d0a2a4418bf905a96f55ecc, type: 2}
   - {fileID: 11400000, guid: 282a7138c8326014ebea5869db8b01c2, type: 2}
-  - {fileID: 11400000, guid: 90e44f63c0bec9f46b0ef1c33a9f2af7, type: 2}
-  enemyPositioningBoss:
   - {fileID: 11400000, guid: 781c80886a124014397f2fe25e2703e0, type: 2}
+  enemyPositioningBoss:
+  - {fileID: 11400000, guid: 90e44f63c0bec9f46b0ef1c33a9f2af7, type: 2}
   _ownedUnits: []
   fightingUnits: []
   enemyFightingUnits: []
@@ -10794,15 +10794,15 @@ MonoBehaviour:
       time: 3
       value: 0.9
       inSlope: -0.050000012
-      outSlope: -0.1
+      outSlope: -0.12857142
       tangentMode: 69
       weightedMode: 0
       inWeight: 0.28881884
       outWeight: 0
     - serializedVersion: 3
       time: 10
-      value: 0.2
-      inSlope: -0.1
+      value: 0
+      inSlope: -0.12857142
       outSlope: 0
       tangentMode: 69
       weightedMode: 0
@@ -10829,15 +10829,15 @@ MonoBehaviour:
       time: 3
       value: 0.1
       inSlope: 0.05
-      outSlope: 0.1
+      outSlope: 0.12857142
       tangentMode: 69
       weightedMode: 0
       inWeight: 0.194134
       outWeight: 0.099921666
     - serializedVersion: 3
       time: 10
-      value: 0.8
-      inSlope: 0.1
+      value: 1
+      inSlope: 0.12857142
       outSlope: 0.013471107
       tangentMode: 69
       weightedMode: 0
