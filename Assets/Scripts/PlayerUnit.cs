@@ -170,7 +170,7 @@ public class PlayerUnit : Unit
             {
                 var _ai = unit.GetComponent<EnemyAIController>();
 
-                if (_ai.Target == this) _ai.Target = null;
+                if (_ai.target == this) _ai.target = null;
             }
 
             boardManager.RemoveUnit(gameObject, false);

@@ -27,7 +27,7 @@ public class AnimalCompanion : Ability
             {
                 var _controller = unit.GetComponent<EnemyAIController>();
 
-                if (_controller.Target.gameObject == gameObject) _controller.Target = wolf.GetComponent<PlayerUnit>();
+                if (_controller.target.gameObject == gameObject) _controller.target = wolf.GetComponent<PlayerUnit>();
             }
 
             castOnce = true;

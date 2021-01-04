@@ -3,25 +3,6 @@ using UnityEngine.AI;
 
 public class EnemyAIController : AIController_Base
 {
-    public AIProfile profile;
-    private BoardManager _boardManager;
-    private Unit.Statuses _condition = Unit.Statuses.None;
-    private float _conditionDuration;
-    private NavMeshAgent _navMeshAgent;
-
-    private EnemyUnit _unit;
-    private float distance = float.PositiveInfinity;
-    private float nextAttack;
-
-    public PlayerUnit Target { get; set; }
-
-    private void Start()
-    {
-        _boardManager = FindObjectOfType<BoardManager>();
-        _navMeshAgent = GetComponent<NavMeshAgent>();
-        _unit = GetComponent<EnemyUnit>();
-    }
-
     private void Update()
     {
         if (!_navMeshAgent)
@@ -31,32 +12,30 @@ public class EnemyAIController : AIController_Base
             switch (_condition)
             {
                 case Unit.Statuses.None:
-                    if (Target == null)
-                        Target = profile.AcquireTarget(_boardManager.PlayerFightingUnitList(), transform.position)
+                    if (target == null)
+                        target = profile.AcquireTarget(_boardManager.PlayerFightingUnitList(), transform.position)
                             .GetComponent<PlayerUnit>();
 
-                    if (Target == null)
+                    if (target == null)
                     {
                         FindObjectOfType<PlayerController>().isFighting = false;
                         _unit.isActive = false;
                     }
 
-                    distance = Vector3.Distance(Target.transform.position, transform.position);
+                    _distance = Vector3.Distance(target.transform.position, transform.position);
 
-                    if (distance <= _unit.attackRange)
+                    if (_distance <= _unit.attackRange)
                     {
                         _navMeshAgent.SetDestination(transform.position);
-                        if (nextAttack <= 0f)
+                        if (_nextAttack <= 0f)
                         {
-                            AttackTarget(Target);
-                            nextAttack = _unit._attackSpeed;
+                            AttackTarget(target);
                         }
                     }
-                    else if (distance > _unit.attackRange)
+                    else if (_distance > _unit.attackRange)
                     {
-                        _navMeshAgent.SetDestination(Target.transform.position);
+                        _navMeshAgent.SetDestination(target.transform.position);
                     }
-
                     break;
 
                 case Unit.Statuses.Snared:
@@ -69,7 +48,7 @@ public class EnemyAIController : AIController_Base
                     break;
             }
 
-        nextAttack -= Time.deltaTime;
+        _nextAttack -= Time.deltaTime;
     }
 
     public void SetCondition(Unit.Statuses cond, float duration)
@@ -85,31 +64,4 @@ public class EnemyAIController : AIController_Base
         return _condition;
     }
 
-    private void AttackTarget(PlayerUnit target)
-    {
-        var damage = Random.Range(_unit._attackDamageMin, _unit._attackDamageMax);
-                
-        switch (Range)
-        {
-            case BaseUnit.Range.Melee:
-                target.TakeDamage( damage, damage/_unit._attackDamageMax );
-                Instantiate(attackFX, target.transform);
-        
-                if (_unit.leech > 0f)
-                    _unit.TakeDamage(damage * _unit.leech, 0);
-                break;
-            case BaseUnit.Range.Ranged:
-                var projectile = (GameObject) Instantiate(Resources.Load("Projectile"), gameObject.transform);
-                var projBase = projectile.GetComponent<Projectile_Base>();
-                projBase.damage = damage;
-                projBase.damagePercent = damage / _unit._attackDamageMax;
-                projBase.target = target;
-                projBase.VFX = attackFX;
-        
-                if (_unit.leech > 0f)
-                    _unit.TakeDamage(-damage * _unit.leech, 0);
-        
-                break;
-        }
-    }
 }

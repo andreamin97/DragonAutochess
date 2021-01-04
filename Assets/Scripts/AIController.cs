@@ -4,27 +4,6 @@ using UnityEngine.Serialization;
 
 public class AIController : AIController_Base
 {
-    public AIProfile profile;
-    [FormerlySerializedAs("_target")] public Unit target;
-    private BoardManager _boardManager;
-
-
-    private Unit.Statuses _condition = Unit.Statuses.None;
-    private float _conditionDuration;
-    private float _distance = float.PositiveInfinity;
-    private NavMeshAgent _navMeshAgent;
-    private float _nextAttack;
-    private GoogleSheetsForUnity _sheetsForUnity;
-    private PlayerUnit _unit;
-
-    private void Start()
-    {
-        _sheetsForUnity = FindObjectOfType<GoogleSheetsForUnity>();
-        _boardManager = FindObjectOfType<BoardManager>();
-        _navMeshAgent = GetComponent<NavMeshAgent>();
-        _unit = GetComponent<PlayerUnit>();
-    }
-
     private void Update()
     {
         if (!_navMeshAgent)
@@ -116,38 +95,6 @@ public class AIController : AIController_Base
                     break;
             }
         }
-    }
-
-    private void AttackTarget(Unit target)
-    {
-        var damage = Random.Range(_unit._attackDamageMin, _unit._attackDamageMax);
-        
-        switch (Range)
-        {
-            case BaseUnit.Range.Melee:
-                target.TakeDamage(damage, damage/_unit._attackDamageMax);
-                Instantiate(attackFX, target.transform);
-
-                if (_unit.leech > 0f)
-                    _unit.TakeDamage(-damage * _unit.leech, 0);
-                break;
-            case BaseUnit.Range.Ranged:
-                var projectile = (GameObject) Instantiate(Resources.Load("Projectile"), gameObject.transform);
-                var projBase = projectile.GetComponent<Projectile_Base>();
-                projBase.damage = damage;
-                projBase.damagePercent = damage / _unit._attackDamageMax;
-                projBase.target = target;
-                projBase.VFX = attackFX;
-
-                if (_unit.leech > 0f)
-                    _unit.TakeDamage(-damage * _unit.leech, 0);
-                
-                break;
-        }
-
-
-        ReduceAbilitiesCD(damage/_unit._attackDamageMax);
-        _nextAttack = _unit._attackSpeed;
     }
 
     public void ResetUnit(Vector3 position)
