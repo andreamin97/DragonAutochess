@@ -16,8 +16,8 @@ public class SapLife : Ability
 
         var damage = Random.Range(unit._attackDamageMin, unit._attackDamageMax);
         
-        controller.target.TakeDamage(damage * 2f);
-        unit.TakeDamage(-damage);
+        controller.target.TakeDamage(damage * 2f, 1);
+        unit.TakeDamage(-damage, 0);
 
         currentCd = cd;
         return false;

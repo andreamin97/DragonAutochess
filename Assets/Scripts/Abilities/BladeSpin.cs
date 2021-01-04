@@ -22,7 +22,7 @@ public class BladeSpin : Ability
             if (coll.gameObject.GetComponent<EnemyUnit>())
             {
                 var damage = Random.Range(_unit._attackDamageMin, _unit._attackDamageMax);
-                coll.gameObject.GetComponent<EnemyUnit>().TakeDamage(damage * _unit.unitLevel);
+                coll.gameObject.GetComponent<EnemyUnit>().TakeDamage(damage * _unit.unitLevel, 1);
             }
         }
 

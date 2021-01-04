@@ -15,7 +15,7 @@ public class ConcussiveFist : Ability
         if (Vector3.Distance(transform.position, target.transform.position) <=
             controller.GetComponent<PlayerUnit>().attackRange && !isCasting)
         {
-            target.TakeDamage(target.maxHealth * 0.05f);
+            target.TakeDamage(target.maxHealth * 0.05f, 1);
             target.GetComponent<EnemyAIController>().SetCondition(Unit.Statuses.Snared, 1f);
             // target.GetComponent<NavMeshAgent>().Warp(target.transform.position + transform.forward * 3f);
             knockDirection = transform.right;

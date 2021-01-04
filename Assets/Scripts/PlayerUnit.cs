@@ -158,9 +158,9 @@ public class PlayerUnit : Unit
         // Instantiate(vfx, this.gameObject.transform.position, Quaternion.Euler(-90f, 0f, 0f));
     }
 
-    public override void TakeDamage(float damage)
+    public override void TakeDamage(float damage, float percent)
     {
-        base.TakeDamage(damage);
+        base.TakeDamage(damage, percent);
 
         if (currentHealth <= 0)
         {

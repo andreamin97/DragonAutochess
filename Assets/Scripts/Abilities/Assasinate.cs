@@ -32,7 +32,7 @@ public class Assasinate : Ability
         Instantiate(effect, transform.position, Quaternion.identity);
         navMeshAgent.Warp(hitPosition.position);
         Instantiate(effect, transform.position, Quaternion.identity);
-        lowestEnemy.TakeDamage(5f + 5 * _unit.unitLevel);
+        lowestEnemy.TakeDamage(5f + 5 * _unit.unitLevel, 1);
         controller.ResetTarget();
 
         currentCd = _cd;

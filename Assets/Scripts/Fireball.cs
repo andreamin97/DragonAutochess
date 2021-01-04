@@ -23,7 +23,7 @@ public class Fireball : MonoBehaviour
             foreach (var coll in colls)
                 if (coll.GetComponent<EnemyUnit>() != null)
                 {
-                    coll.GetComponent<EnemyUnit>().TakeDamage(50f);
+                    coll.GetComponent<EnemyUnit>().TakeDamage(1, 50f);
                     Debug.Log("HIT");
                 }
 

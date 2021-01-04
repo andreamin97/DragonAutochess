@@ -39,7 +39,7 @@ public class Singularity_PF : MonoBehaviour
         {
             foreach (var coll in colliders)
                 if (coll.GetComponent<EnemyUnit>() != null)
-                    coll.GetComponent<Unit>().TakeDamage(7f);
+                    coll.GetComponent<Unit>().TakeDamage( 1,7f);
             Destroy(gameObject);
         }
     }

@@ -4,6 +4,7 @@ public class Projectile_Base : MonoBehaviour
 {
     public Unit target;
     public float damage;
+    public float damagePercent;
     public GameObject VFX;
     private readonly float _speed = 0.05f;
 
@@ -34,7 +35,7 @@ public class Projectile_Base : MonoBehaviour
     {
         if (other.gameObject == target.gameObject)
         {
-            target.TakeDamage(damage);
+            target.TakeDamage( damage,damagePercent);
             Instantiate(VFX, target.transform);
             Destroy(gameObject);
         }

@@ -58,7 +58,7 @@ public class Heal : Ability
             //Effect
             Instantiate(vEffect, lowestUnit.transform);
             //heal
-            lowestUnit.TakeDamage(-(amount + perLevel));
+            lowestUnit.TakeDamage(-(amount + perLevel), 0);
 
             //reset the target and set the cooldown, return false to stop casting from the AI controller
             controller.ResetTarget();

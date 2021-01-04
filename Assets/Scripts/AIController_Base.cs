@@ -32,16 +32,15 @@ public class AIController_Base : MonoBehaviour
         public abilityStruct(Ability abi, float cD, bool casting)
         {
             ability = abi;
-            // coolDown = cD;
             isCasting = casting;
         }
     }
 
-    public void ReduceAbilitiesCD(float value=.25f)
+    public void ReduceAbilitiesCD(float percent, float value=.25f)
     {
         foreach (var ability in abilityList)
         {
-            ability.ability.currentCd -= value;
+            ability.ability.currentCd -= value*percent;
         }
     }
 }

@@ -42,12 +42,12 @@ public class Unit : MonoBehaviour
         _controller = GetComponent<AIController_Base>();
     }
 
-    public virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage, float percent)
     {
         if (damage > 0f)
         {
             currentHealth -= Mathf.Clamp(damage - armor, 1f, maxHealth);
-            _controller.ReduceAbilitiesCD();
+            _controller.ReduceAbilitiesCD(percent);
         }
         else if (damage < 0f) currentHealth = Mathf.Clamp(currentHealth -= damage, 0f, maxHealth);
     }

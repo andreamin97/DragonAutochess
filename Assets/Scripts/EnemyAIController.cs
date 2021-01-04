@@ -92,21 +92,22 @@ public class EnemyAIController : AIController_Base
         switch (Range)
         {
             case BaseUnit.Range.Melee:
-                target.TakeDamage(damage);
+                target.TakeDamage( damage, damage/_unit._attackDamageMax );
                 Instantiate(attackFX, target.transform);
         
                 if (_unit.leech > 0f)
-                    _unit.TakeDamage(damage * _unit.leech);
+                    _unit.TakeDamage(damage * _unit.leech, 0);
                 break;
             case BaseUnit.Range.Ranged:
                 var projectile = (GameObject) Instantiate(Resources.Load("Projectile"), gameObject.transform);
                 var projBase = projectile.GetComponent<Projectile_Base>();
                 projBase.damage = damage;
+                projBase.damagePercent = damage / _unit._attackDamageMax;
                 projBase.target = target;
                 projBase.VFX = attackFX;
         
                 if (_unit.leech > 0f)
-                    _unit.TakeDamage(-damage * _unit.leech);
+                    _unit.TakeDamage(-damage * _unit.leech, 0);
         
                 break;
         }

@@ -42,9 +42,9 @@ public class EnemyUnit : Unit
         _aiController.Range = enemyClass.range;
     }
 
-    public override void TakeDamage(float damage)
+    public override void TakeDamage(float damage, float percent)
     {
-        base.TakeDamage(damage);
+        base.TakeDamage(damage, percent);
 
         if (currentHealth - damage <= 0)
         {
