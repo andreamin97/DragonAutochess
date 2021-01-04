@@ -18,6 +18,8 @@ public class AIController_Base : MonoBehaviour
     protected float _conditionDuration;
     protected NavMeshAgent _navMeshAgent;
     protected GoogleSheetsForUnity _sheetsForUnity;
+    protected List<GameObject> alliedUnits;
+    protected List<GameObject> enemyUnits;
 
     private void Awake()
     {
@@ -51,6 +53,115 @@ public class AIController_Base : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (!_navMeshAgent)
+            _navMeshAgent = GetComponent<NavMeshAgent>();
+        
+        if (_unit.isActive)
+        {
+            switch (_condition)
+            {
+                case Unit.Statuses.None:
+        
+                    //Acquire a target if don't have one and save the distance
+                    if (target == null)
+                    {
+                        InitializeLists();
+                        target = profile.AcquireTarget(enemyUnits, transform.position)
+                            .GetComponent<Unit>();
+                    }
+
+                    _distance = Vector3.Distance(target.transform.position, transform.position);
+        
+                    //Always prioritize casting an ability if able, abilities use the unit attackspeed
+                    if (abilityList != null)
+                    {
+                        for (var i = 0; i < abilityList.Count; i++)
+                        {
+                            if (abilityList[i].ability.currentCd <= 0f || abilityList[i].isCasting)
+                            {
+                                var ability = abilityList[i];
+                                ability.isCasting = abilityList[i].ability.Cast(_navMeshAgent, _boardManager, this);
+                                break;
+                            }
+                        }
+                    }
+        
+        
+                    //move to the target or attack based on distance 
+                    if (target != null)
+                    {
+                        if (_distance <= _unit.attackRange)
+                        {
+                            //Stop moving
+                            _navMeshAgent.SetDestination(transform.position);
+                            if (_nextAttack <= 0f)
+                            {
+                                AttackTarget(target);
+                            }
+                        }
+                        else if (_distance > _unit.attackRange)
+                        {
+                            _navMeshAgent.SetDestination(target.transform.position);
+                        }
+        
+                        transform.LookAt(target.transform.position);
+                        transform.Rotate(new Vector3(0f, -90f, 0f));
+        
+                        _nextAttack -= Time.deltaTime;
+                        for (var i = 0; i < abilityList.Count; i++)
+                        {
+                            var ability = abilityList[i];
+                            ability.ability.currentCd -= Time.deltaTime;
+                        }
+                    }
+        
+                    break;
+        
+                case Unit.Statuses.Snared:
+                    _navMeshAgent.SetDestination(transform.position);
+        
+                    //Always prioritize casting an ability if able, abilities use the unit attackspeed
+                    if (abilityList != null)
+                    {
+                        for (var i = 0; i < abilityList.Count; i++)
+                        {
+                            if (abilityList[i].ability.currentCd <= 0f || abilityList[i].isCasting)
+                            {
+                                var ability = abilityList[i];
+                                ability.isCasting = abilityList[i].ability.Cast(_navMeshAgent, _boardManager, this);
+                                break;
+                            }
+                        }
+                    }
+        
+                    _conditionDuration -= Time.deltaTime;
+                    _unit._conditionDuration = _conditionDuration;
+        
+                    if (_conditionDuration <= 0)
+                    {
+                        SetCondition(Unit.Statuses.None, 0f);
+                    }
+        
+                    break;
+            }
+        }
+    }
+
+    public void SetCondition(Unit.Statuses cond, float duration)
+    {
+        _condition = cond;
+        _unit._conditionMaxDuration = duration;
+        _conditionDuration = duration;
+        _unit.currentStatus = cond;
+    }
+    
+    public Unit.Statuses GetCondition()
+    {
+        return _condition;
+    }
+    
     public void ReduceAbilitiesCD(float percent, float value=.25f)
     {
         foreach (var ability in abilityList)
@@ -87,5 +198,15 @@ public class AIController_Base : MonoBehaviour
         }
         ReduceAbilitiesCD(damage/_unit._attackDamageMax);
         _nextAttack = _unit._attackSpeed;
+    }
+    
+    public void ResetTarget()
+    {
+        target = null;
+    }
+
+    protected virtual void InitializeLists()
+    {
+        return;
     }
 }

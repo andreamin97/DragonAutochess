@@ -168,9 +168,9 @@ public class PlayerUnit : Unit
 
             foreach (var unit in boardManager.enemyFightingUnits)
             {
-                var _ai = unit.GetComponent<EnemyAIController>();
-
-                if (_ai.target == this) _ai.target = null;
+                var _ai = unit.GetComponent<AIController_Base>();
+                    
+                if (_ai.target == this) _ai.ResetTarget();
             }
 
             boardManager.RemoveUnit(gameObject, false);

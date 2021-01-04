@@ -45,11 +45,19 @@ public class EnemyUnit : Unit
     public override void TakeDamage(float damage, float percent)
     {
         base.TakeDamage(damage, percent);
-
-        if (currentHealth - damage <= 0)
+    
+        if (currentHealth <= 0)
         {
             boardManager.enemyFightingUnits.Remove(gameObject);
-            Destroy(gameObject);
+    
+            foreach (var unit in boardManager.fightingUnits)
+            {
+                var _ai = unit.GetComponent<AIController_Base>();
+    
+                if (_ai.target == this) _ai.ResetTarget();
+            }
+            
+            _boardManager.RemoveUnit(this.gameObject, false, true);
         }
     }
 }

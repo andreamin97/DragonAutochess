@@ -8,7 +8,7 @@ public class Assasinate : Ability
     private GameObject effect;
     private EnemyUnit lowestEnemy;
 
-    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
+    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController_Base controller)
     {
         effect = (GameObject) Resources.Load("VFX/Smoke");
 

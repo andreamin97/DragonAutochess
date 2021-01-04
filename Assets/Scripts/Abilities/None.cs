@@ -8,7 +8,7 @@ public class None : Ability
         InitAbility("None", "None", 0f, 0f);
     }
 
-    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
+    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController_Base controller)
     {
         return base.Cast(navMeshAgent, boardManager, controller);
     }

@@ -30,7 +30,22 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIController_Base.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIController_Base.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/AnimalCompanion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/AnimalCompanion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/Bastion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Bastion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/BladeSpin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/BladeSpin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/ConcussiveFist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/ConcussiveFist.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/Enrage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Enrage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/Fireball_Ability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Fireball_Ability.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/Heal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Heal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/Inspiration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Inspiration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/None.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/None.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/Singularity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/Singularity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,18 +97,11 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/SellUnuit.cs" />
         <option value="$PROJECT_DIR$/Assets/Fireball.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Enrage.cs" />
         <option value="$PROJECT_DIR$/Assets/GoogleSheetsForUnity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Fireball_Ability.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SellUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/menu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/None.cs" />
         <option value="$PROJECT_DIR$/Assets/cdFillBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Ability.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Singularity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Bastion.cs" />
         <option value="$PROJECT_DIR$/Assets/cleave_vfx_pf.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Inspiration.cs" />
         <option value="$PROJECT_DIR$/Assets/Projectile_Base.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/BaseEnemy.cs" />
         <option value="$USER_HOME$/.ideavimrc" />
@@ -105,32 +113,39 @@
         <option value="$PROJECT_DIR$/Assets/ReplayTutorialButton.cs" />
         <option value="$PROJECT_DIR$/Assets/PauseMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/BaseUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TutorialButton.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Passive.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Ability.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Enrage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/cdFillBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Slot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UnitInspector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Singularity_PF.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Projectile_Base.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ability.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/AnimalCompanion.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Assasinate.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Bastion.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/BladeSpin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/ConcussiveFist.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Fireball_Ability.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Enrage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Heal.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Inspiration.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/None.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SapLife.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Projectile_Base.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/AnimalCompanion.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/Singularity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/SproutingRoots.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AIController_Base.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIController.cs" />
       </list>
     </option>
   </component>
@@ -252,7 +267,8 @@
       <workItem from="1609017858090" duration="1788000" />
       <workItem from="1609089909587" duration="7233000" />
       <workItem from="1609176478473" duration="7842000" />
-      <workItem from="1609723057460" duration="3380000" />
+      <workItem from="1609723057460" duration="4445000" />
+      <workItem from="1609779645535" duration="2385000" />
     </task>
     <servers />
   </component>
@@ -481,10 +497,10 @@
           <line>21</line>
           <properties documentPath="D:\Unity Projects\RogueBattler\Assets\Scripts\Abilities\Heal.cs" initialLine="26">
             <startOffsets>
-              <option value="547" />
+              <option value="552" />
             </startOffsets>
             <endOffsets>
-              <option value="562" />
+              <option value="567" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />

@@ -7,7 +7,7 @@ public class Inspiration : Ability
     private readonly float cd = .2f;
     private readonly float perLevel = 0.1f;
 
-    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
+    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController_Base controller)
     {
         if (!castOnce)
         {

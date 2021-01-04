@@ -17,7 +17,7 @@ public class Ability : MonoBehaviour
         currentCd = InitialCd;
     }
 
-    public virtual bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
+    public virtual bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController_Base controller)
     {
         return true;
     }

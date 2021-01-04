@@ -7,7 +7,7 @@ public class SproutingRoots : Ability
     public float snareDuration = 3f;
     public float durationPerLevel = 0.5f;
 
-    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
+    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController_Base controller)
     {
         var distance = 0f;
         EnemyUnit target = null;

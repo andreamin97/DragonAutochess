@@ -5,7 +5,7 @@ public class SapLife : Ability
 {
     private readonly float cd = 4f;
 
-    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
+    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController_Base controller)
     {
         var unit = controller.GetComponent<PlayerUnit>();
 

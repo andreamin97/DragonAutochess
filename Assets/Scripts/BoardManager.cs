@@ -366,22 +366,33 @@ public class BoardManager : MonoBehaviour
         _playerController.AddOwnedUnit(unit);
     }
 
-    public void RemoveUnit(GameObject unit, bool wasSold)
+    public void RemoveUnit(GameObject unit, bool wasSold, bool enemy=false)
     {
         if (wasSold)
         {
             var _unit = unit.GetComponent<PlayerUnit>();
             _playerController.EditGold(_unit.unitCost + (_unit.unitLevel - 1) * _unit.unitCost / 2);
-            Debug.Log(unit.GetComponent<PlayerUnit>().unitCost);
         }
 
-        for (var i = 0; i < 32; i++)
-            if (board[i].unit == unit)
-                SetUnitAtSlot(null, board[i].tile);
-
-        _ownedUnits.Remove(unit);
-        _playerController.RemoveOwnedUnit(unit);
-        Destroy(unit);
+        if (!enemy)
+        {
+            
+            for (var i = 0; i < 32; i++)
+                if (board[i].unit == unit)
+                    SetUnitAtSlot(null, board[i].tile);
+            
+            _ownedUnits.Remove(unit);
+            _playerController.RemoveOwnedUnit(unit);
+            Destroy(unit);
+        }
+        else{
+            
+            for (var i = 0; i < 32; i++)
+                if (enemyBoard[i].unit == unit)
+                    SetUnitAtSlot(null, board[i].tile);
+            
+            Destroy(unit);
+        }
     }
 
     public void SellSelectedUnit()

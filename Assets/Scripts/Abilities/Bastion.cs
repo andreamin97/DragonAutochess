@@ -17,7 +17,7 @@ public class Bastion : Ability
         vEffect = (GameObject) Resources.Load("VFX/CFX4 Aura Bubble C");
     }
 
-    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
+    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController_Base controller)
     {
         if (_unit == null)
             _unit = controller.GetComponent<PlayerUnit>();

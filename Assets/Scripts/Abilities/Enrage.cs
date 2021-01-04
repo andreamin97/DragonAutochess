@@ -6,7 +6,7 @@ public class Enrage : Ability
     private PlayerUnit _unit;
     private float healthPercent = 1f;
 
-    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
+    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController_Base controller)
     {
         if (_unit == null)
             _unit = controller.GetComponent<PlayerUnit>();

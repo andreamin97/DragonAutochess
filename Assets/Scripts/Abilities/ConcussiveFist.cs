@@ -8,7 +8,7 @@ public class ConcussiveFist : Ability
     private Vector3 knockDirection;
     private float timer;
 
-    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
+    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController_Base controller)
     {
         var target = controller.target;
 

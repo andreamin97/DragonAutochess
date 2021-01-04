@@ -9,7 +9,7 @@ public class Singularity : Ability
     private GameObject prefab;
     private float time;
 
-    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
+    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController_Base controller)
     {
         if (_fb == null)
             _fb = Resources.Load("Singularity");

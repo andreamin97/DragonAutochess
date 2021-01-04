@@ -17,7 +17,7 @@ public class Heal : Ability
         vEffect = (GameObject) Resources.Load("VFX/FX_Healing_AOE_AA");
     }
 
-    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
+    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController_Base controller)
     {
         if (!hasTarget)
         {

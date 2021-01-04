@@ -10,7 +10,7 @@ public class AnimalCompanion : Ability
     private float perLevel = 0.1f;
     private GameObject wolf;
 
-    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController controller)
+    public override bool Cast(NavMeshAgent navMeshAgent, BoardManager boardManager, AIController_Base controller)
     {
         if (!castOnce)
         {
