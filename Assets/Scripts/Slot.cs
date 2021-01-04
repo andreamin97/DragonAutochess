@@ -141,6 +141,9 @@ public class Slot : MonoBehaviour
             ad.text = "";
             atkSpd.text = "";
             abilityName.text = GetAbilityTextByClass("");
+            unitName.text = "HIRED";
+            unitCost.text = "";
+            role.text = "";
         }
 
         CheckForLevelUp();
